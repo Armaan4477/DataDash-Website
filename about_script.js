@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     student1Photo.src = 'photos/samay.jpg'; // Update the path as necessary
 
     const student2Photo = document.getElementById('student2-photo');
-    student2Photo.src = 'photos/nishal.jpeg'; // Ensure the file name and path are correct
+    student2Photo.src = 'photos/nishal.jpg'; // Ensure the file name and path are correct
 
     const student3Photo = document.getElementById('student3-photo');
-    student3Photo.src = 'photos/urmi.jpeg'; // Update the path as necessary
+    student3Photo.src = 'photos/urmi.jpg'; // Update the path as necessary
 
     const student4Photo = document.getElementById('student4-photo');
     student4Photo.src = 'photos/vedashree.jpeg'; // Update the path as necessary
@@ -23,5 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
     specialThanksPhoto2.src = 'photos/yash.jpeg'; // Update the path as necessary
 
     const specialThanksPhoto3 = document.getElementById('special-thanks-photo3');
-    specialThanksPhoto3.src = 'photos/adwait.jpeg'; // Update the path as necessary
+    specialThanksPhoto3.src = 'photos/adwait.jpg'; // Update the path as necessary
 });
