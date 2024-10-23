@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: url('path_to_background_image.jpg') no-repeat center center fixed; /* Ensure background covers entire page */
+    background: #fef9e5;
     background-size: cover;
 }
 
