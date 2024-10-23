@@ -213,7 +213,7 @@ footer {
 /* Responsive Design for Smaller Screens */
 @media (max-width: 1200px) {
     .install-info, .dropdown {
-        width: 70%; /* Ensure full width on smaller screens */
+        width: 80%; /* Ensure full width on smaller screens */
         padding: 10px;
     }
 
