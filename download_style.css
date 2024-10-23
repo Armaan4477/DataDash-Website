@@ -218,7 +218,7 @@ footer {
     }
 
     .install-info{
-        width: 93%; /* Ensure full width on smaller screens */
+        width: 90%; /* Ensure full width on smaller screens */
         padding: 10px;
     }
 
