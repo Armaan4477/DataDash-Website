@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataDash</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="download_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
@@ -34,6 +34,7 @@
     <hr>
 
     <div class="download-section">
+
         <div class="dropdown">
             <button class="dropbtn">Windows</button>
             <div class="dropdown-content">
@@ -42,12 +43,13 @@
             </div>
         </div>
         <div class="install-info">
-            <h3>Installation Instructions:</h3>
-            <p>1. Download the setup file.<br>
-               2. Double-click the downloaded file.<br>
-               3. Follow the on-screen instructions to complete the installation.
+            <h3>Running the App:</h3>
+            <p>1. Download the EXE file.<br>
+               2. Double-click the EXE file to run the app directly.<br>
+               3. No installation required.
             </p>
         </div>
+        
 
         <hr>
 
@@ -66,22 +68,27 @@
             </p>
         </div>
 
+
         <hr>
 
-        <div class="dropdown">
-            <button class="dropbtn">Linux</button>
-            <div class="dropdown-content">
-                <a href="https://drive.google.com/link_to_linux_arm" target="_blank" class="btn">Linux (ARM) (Available Soon)</a>
-                <a href="https://drive.google.com/link_to_linux_x64" target="_blank" class="btn">Linux (x64) (Available Soon)</a>
+            <div class="dropdown">
+                <button class="dropbtn">Linux</button>
+                <div class="dropdown-content">
+                    <a href="https://drive.google.com/link_to_linux_arm" target="_blank" class="btn">Linux (ARM) (Available Soon)</a>
+                    <a href="https://drive.google.com/link_to_linux_x64" target="_blank" class="btn">Linux (x64) (Available Soon)</a>
+                </div>
             </div>
-        </div>
-        <div class="install-info">
-            <h3>Installation Instructions:</h3>
-            <p>1. Download the .tar.gz or .deb file.<br>
-               2. Extract the files or use the package manager to install.<br>
-               3. Run the application from your applications menu.
-            </p>
-        </div>
+            <div class="install-info">
+                <h3>Building and Running the App:</h3>
+                <p>1. Download the binary file.<br>
+                2. Give the binary file execute permissions:<br>
+                <code>chmod +x filename</code><br>
+                3. Run the app using:<br>
+                <code>./filename</code><br>
+                4. No further build steps are necessary.
+                </p>
+            </div>
+
 
         <hr>
 
@@ -96,6 +103,42 @@
                    4. Follow the instructions to install the application.
                 </p>
             </div>
+
+            <hr>
+
+<div class="download-section">
+    <h2>Source Files</h2>
+    <p>Below are the source files for our application, including the Python desktop app (built with PyQt6 and Cryptography) and the Android app.</p>
+
+    <div class="download-section">
+        <h2>Android</h2>
+          <a href="https://drive.google.com/link_to_python_source" target="_blank" class="btn">Download Python Source Code</a>
+        
+    
+    <div class="install-info">
+        <h3>Python App Setup Instructions:</h3>
+        <p>1. Download the source files.<br>
+           2. Install the required dependencies using the following command:<br>
+           <code>pip install PyQt6 cryptography</code><br>
+           3. Run the application with the main Python script.
+        </p>
+    </div>
+
+    <div class="download-section">
+        <h2>Android</h2>
+          <a href="https://drive.google.com/link_to_android_source" target="_blank" class="btn">Download Android Source Code</a>
+        
+
+    <div class="install-info">
+        <h3>Android App Development Instructions:</h3>
+        <p>1. Download the Android source files.<br>
+           2. Open the project in Android Studio.<br>
+           3. Set up the required dependencies and SDK versions.<br>
+           4. Compile and run the app on an Android device.
+        </p>
+    </div>
+</div>
+
         </div>
     </div>
 

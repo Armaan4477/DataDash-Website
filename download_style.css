@@ -1,0 +1,222 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url('path_to_background_image.jpg') no-repeat center center fixed; /* Ensure background covers entire page */
+    background-size: cover;
+}
+
+/* Centering text in headers and sections */
+h1, h2, p {
+    text-align: center; /* Consistent text alignment for headings and paragraphs */
+}
+
+/* Navbar Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#name {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+#navbar-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* Center the navigation links */
+.nav-center {
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+}
+
+.nav-center a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-center a:hover {
+    background-color: #555;
+}
+
+/* Add space for the navbar */
+body {
+    padding-top: 60px;
+}
+
+/* Landing Page Styles */
+#logodiv {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#intro {
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #fff9e3;
+    font-family: 'Georgia', serif;
+    max-width: 100%;
+}
+
+#intro h1 {
+    font-family: 'Pirata One', cursive;
+    font-size: 3em;
+    color: #5c6b49;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Consistent layout for dropdown buttons and sections */
+.dropdown {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.dropbtn {
+    background-color: #f77f00;
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 200px;
+}
+
+.dropbtn:hover {
+    background-color: #d46400;
+    transform: translateY(-4px);
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-align: center; /* Consistent text alignment */
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Install info consistent alignment and padding */
+.install-info {
+    text-align: center;
+    max-width: 700px;
+    margin: 20px auto; /* Center content */
+    padding: 20px;
+    background-color: #fff; /* Consistent background */
+    border-radius: 10px; /* Rounded corners for consistency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for section separation */
+}
+
+.install-info h3 {
+    font-size: 24px;
+    color: #5c6b49;
+    margin-bottom: 10px;
+}
+
+.install-info p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 20px;
+    padding: 0 15px; /* Padding for readability */
+}
+
+/* Button styling for the Android section */
+.download-section {
+    text-align: center; /* Center the content within the section */
+}
+
+.download-section a.btn {
+    background-color: #f77f00;
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    margin: 10px 0; /* Center margin to keep consistency */
+    width: auto;
+}
+
+.download-section a.btn:hover {
+    background-color: #d46400;
+    transform: translateY(-4px);
+}
+
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    margin-top: auto;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .install-info, .dropdown {
+        width: 100%; /* Ensure full width on smaller screens */
+        padding: 10px;
+    }
+
+    .dropbtn {
+        width: 100%; /* Full width button on smaller screens */
+    }
+}
