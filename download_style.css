@@ -199,7 +199,6 @@ body {
     transform: translateY(-4px);
 }
 
-
 /* Footer Styles */
 footer {
     text-align: center;
@@ -219,5 +218,16 @@ footer {
 
     .dropbtn {
         width: 100%; /* Full width button on smaller screens */
+    }
+
+    /* Dropdown content styles for mobile */
+    .dropdown-content {
+        min-width: 100%; /* Full width dropdown */
+        left: 0; /* Align to the left */
+    }
+
+    .dropdown-content a {
+        padding: 12px; /* Add padding for clickable area */
+        text-align: left; /* Align text to the left for better readability */
     }
 }
