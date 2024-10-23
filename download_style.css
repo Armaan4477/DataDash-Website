@@ -103,6 +103,7 @@ body {
     display: flex;
     justify-content: center;
     margin: 20px;
+    position: relative; /* Ensure dropdowns are positioned correctly */
 }
 
 .dropbtn {
@@ -114,7 +115,7 @@ body {
     border-radius: 12px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 200px;
+    width: 200px; /* Fixed width for desktop */
 }
 
 .dropbtn:hover {
@@ -212,12 +213,14 @@ footer {
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     .install-info, .dropdown {
-        width: 100%; /* Ensure full width on smaller screens */
+        width: 90%; /* Ensure full width on smaller screens */
         padding: 10px;
     }
 
     .dropbtn {
-        width: 100%; /* Full width button on smaller screens */
+        width: auto; /* Remove fixed width on mobile */
+        max-width: 90%; /* Limit max width to 90% of the screen */
+        padding: 12px; /* Adjust padding for better fit */
     }
 
     /* Dropdown content styles for mobile */
