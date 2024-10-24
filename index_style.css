@@ -6,14 +6,7 @@ body {
     background-color: #fef9e5;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    background: #fef9e5;
-    background-size: cover;
-}
-
-/* Centering text in headers and sections */
-h1, h2, p {
-    text-align: center; /* Consistent text alignment for headings and paragraphs */
+    min-height: 100vh; /* Ensures body takes full viewport height */
 }
 
 /* Navbar Styles */
@@ -21,8 +14,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 1000;
+    width: 100%; /* Ensure the header spans the full width */
+    z-index: 1000; /* Ensures the header stays above other content */
 }
 
 .navbar {
@@ -39,14 +32,14 @@ header {
     font-size: 18px;
     font-weight: bold;
     display: flex;
-    align-items: center;
+    align-items: center; /* Align image and text vertically */
 }
 
 #navbar-logo {
     width: 30px;
     height: 30px;
     margin-right: 10px;
-    border-radius: 50%;
+    border-radius: 50%; /* Optional: Make the image circular */
 }
 
 /* Center the navigation links */
@@ -65,9 +58,21 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.nav-center a:hover {
+.nav-center .dropbtn {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-center .dropbtn:hover {
     background-color: #555;
 }
+
 
 /* Add space for the navbar */
 body {
@@ -83,10 +88,9 @@ body {
 #intro {
     padding: 40px;
     border-radius: 10px;
-    font-size: 1.3em;
     text-align: center;
     background-color: #fff9e3;
-    font-family: 'Georgia', serif;
+    font-family: 'Georgia', serif; /* Elegant, classic font */
     max-width: 100%;
 }
 
@@ -98,38 +102,45 @@ body {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+#intro h1 span {
+    color: rgb(230, 115, 0); /* Highlight the brand name */
+    font-style: italic;
+}
 
-/* Install info consistent alignment and padding */
-.install-info {
+#intro p {
+    font-size: 1.3em;
+    line-height: 1.8em;
+    color: #333333;
+    margin-top: 20px;
+}
+
+
+/* Partition (hr) Styles */
+hr {
+    border: 0;
+    height: 2px;
+    background-color: #e67300;
+    width: 80%;
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+/* Footer Styles */
+footer {
     text-align: center;
-    max-width: 700px;
-    margin: 20px auto; /* Center content */
     padding: 20px;
-    background-color: #fff; /* Consistent background */
-    border-radius: 10px; /* Rounded corners for consistency */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for section separation */
-}
-
-.install-info h3 {
-    font-size: 24px;
-    color: #5c6b49;
-    margin-bottom: 10px;
-}
-
-.install-info p {
+    background-color: #333;
+    color: white;
     font-size: 16px;
-    line-height: 1.5;
-    color: #333;
-    margin-bottom: 20px;
-    padding: 0 15px; /* Padding for readability */
+    margin-top: auto; /* Pushes the footer to the bottom */
 }
 
 /* Button styling for the Android section */
-.download-section {
+.download-center {
     text-align: center; /* Center the content within the section */
 }
 
-.download-section a.btn {
+.download-center a.btn {
     background-color: #f77f00;
     color: white;
     padding: 16px;
@@ -144,28 +155,22 @@ body {
     width: auto;
 }
 
-.download-section a.btn:hover {
+.download-center a.btn:hover {
     background-color: #d46400;
     transform: translateY(-4px);
 }
 
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    font-size: 16px;
-    margin-top: auto;
-}
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 1200px) {
 
-    .install-info{
-        width: 90%; /* Ensure full width on smaller screens */
-        padding: 10px;
+/* Responsive Design for Options Section */
+@media (max-width: 768px) {
+    #intro h1 {
+        font-size: 28px;
     }
 
-
+    .nav-center a,
+    .nav-center .dropbtn {
+        padding: 10px 8px;
+        font-size: 14px;
+    }
 }

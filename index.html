@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataDash</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
@@ -18,7 +18,6 @@
           </div>
           <div class="nav-center">
             <a href="#" onclick="navigateTo('index.html')">Home</a>
-            <a href="#" onclick="navigateTo('download.html')">Download</a>
                 <a href="#" onclick="navigateTo('about.html')">About</a>
             </div>
         </nav>
@@ -28,18 +27,22 @@
         <div id="intro">
           <h1>Welcome to <span>DataDash</span></h1>
           <p>
-            Easily share media files across multiple platforms! Our application supports macOS, Windows, Linux, and Android, allowing seamless sharing and access to your files wherever you are.
+            Easily share media files across multiple platforms! Our application supports macOS, Windows, Linux, and Android, allowing seamless sharing over the local network, without the need for an internet connection.
          </p>
         </div>
       </div>
 
     <hr>
 
-    <div class="about-section" id="project-info">
-        <h2>About the Project</h2>
-        <p>This project is a cross-platform media sharing application that allows users to easily share media files between devices. It supports macOS, Windows, Linux, and Android platforms.</p>
-    </div>
-    
+    <!-- add a section related to the downloads page -->
+    <section class="download">
+        <h2>Download DataDash</h2>
+        <p>Download the latest version of DataDash for your operating system here.</p>
+        <div class="download-center">
+            <a href="#" onclick="navigateTo('download.html')" class="btn">Downloads Page</a>
+        </div>
+
+
     <footer> 
         <p>&copy; 2024 DataDash. All rights reserved.</p>
     </footer>
