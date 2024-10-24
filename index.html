@@ -12,36 +12,82 @@
 <body>
     <header>
         <nav class="navbar">
-          <div id="name">
-            <img src="" alt="Logo" id="navbar-logo">
-            DataDash
-          </div>
-          <div class="nav-center">
-            <a href="#" onclick="navigateTo('index.html')">Home</a>
+            <div id="name">
+                <img src="" alt="Logo" id="navbar-logo">
+                DataDash
+            </div>
+            <div class="nav-center">
+                <a href="#" onclick="navigateTo('index.html')">Home</a>
                 <a href="#" onclick="navigateTo('about.html')">About</a>
             </div>
         </nav>
-      </header>
+    </header>
 
-      <div id="logodiv">
+    <div id="logodiv">
         <div id="intro">
-          <h1>Welcome to <span>DataDash</span></h1>
-          <p>
-            Easily share media files across multiple platforms! Our application supports macOS, Windows, Linux, and Android, allowing seamless sharing over the local network, without the need for an internet connection.
-         </p>
+            <h1>Welcome to <span>DataDash</span></h1>
+            <p>
+                Easily share media files across multiple platforms! DataDash supports macOS, Windows, Linux, and Android, providing seamless file transfers over local networks, without relying on internet connections.
+            </p>
         </div>
-      </div>
+    </div>
 
     <hr>
 
-    <!-- add a section related to the downloads page -->
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Key Features</h2>
+        <div class="features-list">
+            <div class="feature-item">
+                <h3>Cross-Platform Support</h3>
+                <p>DataDash works seamlessly on multiple platforms, including macOS, Windows, Linux, and Android.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Secure Transfers</h3>
+                <p>Keep your data safe with our optional AES-256 encryption, ensuring that all file transfers remain secure and private.</p>
+            </div>
+            <div class="feature-item">
+                <h3>No Internet Required</h3>
+                <p>Transfer your files over a local network without needing an active internet connection, making sharing faster and more reliable.</p>
+            </div>
+            <div class="feature-item">
+                <h3>High-Speed Sharing</h3>
+                <p>Enjoy high-speed file sharing, thanks to optimized peer-to-peer connections using UDP and TCP protocols.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Download Section -->
     <section class="download">
         <h2>Download DataDash</h2>
-        <p>Download the latest version of DataDash for your operating system here.</p>
+        <p>Get the latest version of DataDash for your preferred operating system below.</p>
         <div class="download-center">
-            <a href="#" onclick="navigateTo('download.html')" class="btn">Downloads Page</a>
+            <a href="#" onclick="navigateTo('download.html')" class="btn">Visit Downloads Page</a>
         </div>
+    </section>
 
+    <hr>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Users Are Saying</h2>
+        <div class="testimonial-list">
+            <div class="testimonial-item">
+                <p>"DataDash is a lifesaver! I can now transfer files between my Mac and Android phone without a hitch!"</p>
+                <h4>- Mandaar P.</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"DataDash is exactly what I needed for sharing files across different platforms."</p>
+                <h4>- Zane F.</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"The best part is that it doesn't require internet! I can transfer files even when there is no internet connection."</p>
+                <h4>- Amaan S.</h4>
+            </div>
+        </div>
+    </section>
 
     <footer> 
         <p>&copy; 2024 DataDash. All rights reserved.</p>

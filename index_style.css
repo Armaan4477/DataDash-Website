@@ -6,7 +6,14 @@ body {
     background-color: #fef9e5;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures body takes full viewport height */
+    min-height: 100vh;
+    background: #fef9e5;
+    background-size: cover;
+}
+
+/* Centering text in headers and sections */
+h1, h2, p {
+    text-align: center;
 }
 
 /* Navbar Styles */
@@ -14,8 +21,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Ensure the header spans the full width */
-    z-index: 1000; /* Ensures the header stays above other content */
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar {
@@ -32,17 +39,16 @@ header {
     font-size: 18px;
     font-weight: bold;
     display: flex;
-    align-items: center; /* Align image and text vertically */
+    align-items: center;
 }
 
 #navbar-logo {
     width: 30px;
     height: 30px;
     margin-right: 10px;
-    border-radius: 50%; /* Optional: Make the image circular */
+    border-radius: 50%;
 }
 
-/* Center the navigation links */
 .nav-center {
     display: flex;
     justify-content: space-evenly;
@@ -58,28 +64,16 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.nav-center .dropbtn {
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px 15px;
-    font-size: 16px;
-    margin: 0 10px;
-    transition: background-color 0.3s ease;
-}
-
-.nav-center .dropbtn:hover {
+.nav-center a:hover {
     background-color: #555;
 }
-
 
 /* Add space for the navbar */
 body {
     padding-top: 60px;
 }
 
-/* Landing Page Styles */
+/* Intro Section Styles */
 #logodiv {
     margin-bottom: 0;
     padding-bottom: 0;
@@ -88,9 +82,10 @@ body {
 #intro {
     padding: 40px;
     border-radius: 10px;
+    font-size: 1.3em;
     text-align: center;
     background-color: #fff9e3;
-    font-family: 'Georgia', serif; /* Elegant, classic font */
+    font-family: 'Georgia', serif;
     max-width: 100%;
 }
 
@@ -102,42 +97,66 @@ body {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-#intro h1 span {
-    color: rgb(230, 115, 0); /* Highlight the brand name */
-    font-style: italic;
-}
-
-#intro p {
-    font-size: 1.3em;
-    line-height: 1.8em;
-    color: #333333;
-    margin-top: 20px;
-}
-
-
-/* Partition (hr) Styles */
-hr {
-    border: 0;
-    height: 2px;
-    background-color: #e67300;
-    width: 80%;
-    margin: 0 auto;
-    opacity: 0.8;
-}
-
-/* Footer Styles */
-footer {
+/* Features Section */
+.features {
+    background-color: #f9f6ef;
+    padding: 40px 20px;
     text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    font-size: 16px;
-    margin-top: auto; /* Pushes the footer to the bottom */
 }
 
-/* Button styling for the Android section */
+.features h2 {
+    font-size: 28px;
+    color: #5c6b49;
+    margin-bottom: 20px;
+}
+
+.features-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Download Section */
+.download {
+    background-color: #fff9e3;
+    padding: 40px 20px;
+}
+
+.download h2 {
+    font-size: 28px;
+    color: #5c6b49;
+    margin-bottom: 20px;
+}
+
+.download p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
 .download-center {
-    text-align: center; /* Center the content within the section */
+    text-align: center;
 }
 
 .download-center a.btn {
@@ -151,7 +170,7 @@ footer {
     transition: background-color 0.3s ease, transform 0.3s ease;
     display: inline-block;
     text-align: center;
-    margin: 10px 0; /* Center margin to keep consistency */
+    margin: 10px 0;
     width: auto;
 }
 
@@ -160,17 +179,73 @@ footer {
     transform: translateY(-4px);
 }
 
+/* Testimonials Section */
+.testimonials {
+    background-color: #f9f6ef;
+    padding: 40px 20px;
+}
 
+.testimonials h2 {
+    font-size: 28px;
+    color: #5c6b49;
+    margin-bottom: 20px;
+}
 
-/* Responsive Design for Options Section */
-@media (max-width: 768px) {
-    #intro h1 {
-        font-size: 28px;
+.testimonial-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.testimonial-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item p {
+    font-size: 16px;
+    color: #555;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.testimonial-item h4 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    margin-top: auto;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 1200px) {
+    .features-list,
+    .testimonial-list {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .nav-center a,
-    .nav-center .dropbtn {
-        padding: 10px 8px;
-        font-size: 14px;
+    .feature-item, 
+    .testimonial-item {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .install-info {
+        width: 90%;
+        padding: 10px;
     }
 }
