@@ -98,57 +98,6 @@ body {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Consistent layout for dropdown buttons and sections */
-.dropdown {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-    position: relative; /* Ensure dropdowns are positioned correctly */
-}
-
-.dropbtn {
-    background-color: #f77f00;
-    color: white;
-    padding: 16px;
-    font-size: 20px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 200px; /* Fixed width for desktop */
-}
-
-.dropbtn:hover {
-    background-color: #d46400;
-    transform: translateY(-4px);
-}
-
-/* Dropdown content */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 200px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    text-align: center; /* Consistent text alignment */
-}
-
-.dropdown-content a {
-    color: #333;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
 /* Install info consistent alignment and padding */
 .install-info {
@@ -212,30 +161,11 @@ footer {
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 1200px) {
-    .dropdown {
-        width: 90%; /* Ensure full width on smaller screens */
-        padding: 10px;
-    }
 
     .install-info{
         width: 90%; /* Ensure full width on smaller screens */
         padding: 10px;
     }
 
-    .dropbtn {
-        width: auto; /* Remove fixed width on mobile */
-        max-width: 90%; /* Limit max width to 90% of the screen */
-        padding: 12px; /* Adjust padding for better fit */
-    }
 
-    /* Dropdown content styles for mobile */
-    .dropdown-content {
-        min-width: 100%; /* Full width dropdown */
-        left: 0; /* Align to the left */
-    }
-
-    .dropdown-content a {
-        padding: 12px; /* Add padding for clickable area */
-        text-align: left; /* Align text to the left for better readability */
-    }
 }
