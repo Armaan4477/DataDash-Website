@@ -167,6 +167,20 @@ p {
     color: #00ffff;
 }
 
+.linkedin-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #00bfff; /* Glowing blue for GitHub links */
+    text-decoration: none;
+    text-shadow: 0 0 8px #00bfff; /* Glow effect for GitHub links */
+}
+
+.linkedin-link:hover {
+    text-decoration: underline;
+    color: #00ffff;
+}
+
 .special-thanks {
     margin-top: 40px;
     text-align: center;
