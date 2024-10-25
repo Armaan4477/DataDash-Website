@@ -9,74 +9,69 @@ body {
 
 /* Navbar Styles */
 
+/* Navbar Styles */
 header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Ensure the header spans the full width */
-    z-index: 1000; /* Ensures the header stays above other content */
-  }
-  
-  
-  
-  .navbar {
-    position: fixed;
-    top: 0;
     width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #333;
     padding: 10px 20px;
-    font-family: Arial, sans-serif;
     color: white;
-    z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Position the name on the left */
-  #name {
+}
+
+#name {
     font-size: 18px;
     font-weight: bold;
     display: flex;
-    align-items: center; /* Align image and text vertically */
-  }
-  
-  #navbar-logo {
-    width: 30px; /* Adjust the size of the image */
+    align-items: center;
+}
+
+#navbar-logo {
+    width: 30px;
     height: 30px;
-    margin-right: 10px; /* Adds space between the image and the text */
-    border-radius: 50%; /* Optional: Make the image circular */
-  }
-  
-  /* Center the navigation links */
-  .nav-center {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* Center the navigation links */
+.nav-center {
     display: flex;
     justify-content: space-evenly;
     flex: 1;
-  }
-  
-  
-  
-  /* Style the links in the center and right sections */
-  .nav-center a {
+}
+
+.nav-center a {
     color: white;
     text-decoration: none;
     font-size: 16px;
     padding: 8px 12px;
     margin: 0 10px;
     transition: background-color 0.3s ease;
-  }
-  
-  .nav-center a:hover {
+}
+
+.nav-center a:hover {
     background-color: #555;
-    border-radius: 4px;
-  }
-  
-  /* Add space for the navbar */
-  body {
+}
+
+/* Add space for the navbar */
+body {
     padding-top: 60px;
-  }
+}
+
+/* Landing Page Styles */
+#logodiv {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
 
 .about-container {
     max-width: 1200px;
