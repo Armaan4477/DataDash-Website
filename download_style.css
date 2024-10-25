@@ -142,6 +142,7 @@ body {
     text-align: center;
     margin: 10px 0; /* Center margin to keep consistency */
     width: auto;
+    text-decoration: none;
 }
 
 .download-section a.btn:hover {
