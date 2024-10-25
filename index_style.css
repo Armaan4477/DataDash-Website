@@ -84,7 +84,7 @@ body {
     border-radius: 10px;
     font-size: 1.3em;
     text-align: center;
-    background-color: #fff9e3;
+    background-color: #fef9e5;
     font-family: 'Georgia', serif;
     max-width: 100%;
 }
@@ -99,7 +99,7 @@ body {
 
 /* Features Section */
 .features {
-    background-color: #f9f6ef;
+    background-color: #fef9e5;
     padding: 40px 20px;
     text-align: center;
 }
@@ -139,7 +139,7 @@ body {
 
 /* Download Section */
 .download {
-    background-color: #fff9e3;
+    background-color: #fef9e5;
     padding: 40px 20px;
 }
 
@@ -182,7 +182,7 @@ body {
 
 /* Testimonials Section */
 .testimonials {
-    background-color: #f9f6ef;
+    background-color: #fef9e5;
     padding: 40px 20px;
 }
 
