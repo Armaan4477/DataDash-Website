@@ -27,8 +27,33 @@
         <div id="intro">
             <h1>Download Our Application</h1>
             <p>Select your platform below to download the appropriate version.</p>
+            <button id="help-button" class="btn">Help Choosing Arm or x64</button> <!-- Help button -->
         </div>
     </div>
+
+<!-- Modal for Help Choosing -->
+<div id="help-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Help Choosing Your Version</h2>
+        <p>
+            <strong>ARM vs x64:</strong><br>
+            <ul>
+                <li><strong>Windows/Linux:</strong> <br>
+                    - Devices using Intel and AMD processors, choose the x64 version.<br>
+                    - If your device has a Qualcomm chip (e.g., Snapdragon X Elite), choose the ARM version.<br><br>
+                </li>
+                <li><strong>macOS:</strong><br>
+                    - Devices with Apple M1 chip and above are ARM versions.<br>
+                    - All Intel-based Macs should select the x64 version.<br><br>
+                </li>
+            </ul>
+        </p>
+        <p>
+            If you're unsure which version to select, you can check your device's specifications or consult the manufacturer's website for more information.
+        </p>
+    </div>
+</div>
 
     <hr>
 
@@ -36,8 +61,8 @@
 
         <div class="download-section">
             <h2>Windows</h2>
-            <a href="https://drive.google.com/uc?export=download&id=1KKwa88nxefWLSeHfS5A9Ye24ROEvkD3U" target="_blank" class="btn">Windows (ARM)</a>    
-            <a href="https://drive.google.com/uc?export=download&id=1kUPFhi4cEUHesOXFddOagD5jQZeTLkz6" target="_blank" class="btn">Windows (x64)</a>    
+            <a href="https://drive.google.com/uc?export=download&id=1TZQvAXv7eS7o4NsvN0yQAJo0fmAqfXGi" target="_blank" class="btn">Windows (ARM)</a>    
+            <a href="https://drive.google.com/uc?export=download&id=1SXTjIfCGlbbl136eWkY7ROv5nWsas9J-" target="_blank" class="btn">Windows (x64)</a>    
          
         <div class="install-info">
             <h3>Running the App:</h3>
@@ -52,24 +77,26 @@
 
         <div class="download-section">
             <h2>MacOS</h2>
-            <a href="https://drive.google.com/uc?export=download&id=1BhqeO6-LWBUd5y16vFChsvtFUh46XiNt" target="_blank" class="btn">MacOS (ARM)</a>    
+            <a href="https://drive.google.com/uc?export=download&id=1cfJ9EM75dM4IqH_LRNeEQVIWBXNwl90s" target="_blank" class="btn">MacOS (ARM)</a>    
             <a href="https://drive.google.com/link_to_macos_x64" target="_blank" class="btn">MacOS (x64) (Available Soon)</a>    
-         
-        <div class="install-info">
-            <h3>Installation Instructions:</h3>
-            <p>1. Download the .dmg file.<br>
-               2. Open the file and drag the application to your Applications folder.<br>
-               3. Launch the application from the Applications folder.
-            </p>
-        </div>
+        
+            <div class="install-info">
+                <h3>Installation Instructions:</h3>
+                <p>1. Download the .dmg file.<br>
+                   2. Open the file and drag the application to your Applications folder.<br>
+                   3. Launch the application from the Applications folder.
+                </p>
+                <p style="font-weight: bold; color: #d9534f;">Note: After launching the application, it may take up to 20 seconds to open. This is a known issue and we are actively working on a fix.</p>
+            </div>
+        </div>        
 
 
         <hr>
         
             <div class="download-section">
                 <h2>Linux</h2>
-                <a href="https://drive.google.com/link_to_linux_arm" target="_blank" class="btn">Linux (ARM) (Available Soon)</a>    
-                <a href="https://drive.google.com/link_to_linux_x64" target="_blank" class="btn">Linux (x64) (Available Soon)</a>    
+                <a href="https://drive.google.com/uc?export=download&id=1qdvLPXMwwoxBA9w3JwM9EZy4irSHGaeJ" target="_blank" class="btn">Linux (ARM)</a>    
+                <a href="https://drive.google.com/uc?export=download&id=1TOBk5uQHExIn78smDO48079NSIMPpn2O" target="_blank" class="btn">Linux (x64)</a>    
              <div class="install-info">
             <h3>Building and Running the App:</h3>
             <p>1. Download the binary file.<br>
@@ -85,7 +112,7 @@
 
         <div class="download-section">
             <h2>Android</h2>
-            <a href="https://drive.google.com/uc?export=download&id=1h-92IycV5bazPDrd60x8GIRQ3axQYXL-" target="_blank" class="btn">Download Android App</a>
+            <a href="https://drive.google.com/uc?export=download&id=1RmUmED8DfAuSsuS8vQ366oWBSbHW3FcS" target="_blank" class="btn">Android App</a>
             <div class="install-info">
                 <h3>Installation Instructions:</h3>
                 <p>1. Download the APK file.<br>
@@ -93,7 +120,8 @@
                    3. Allow installations from unknown sources if prompted.<br>
                    4. Follow the instructions to install the application.
                 </p>
-            </div>
+             </div>
+        </div>     
 
             <hr>
 
@@ -103,20 +131,21 @@
 
                 <div class="download-section">
                     <h2>Python</h2>
-                    <a href="https://drive.google.com/link_to_python_source" target="_blank" class="btn">Download Python Source Code</a>
+                    <a href="https://drive.google.com/drive/folders/1RzYu7OD9H5bw_g9b_HUPwbgVjoXoXBD-?usp=sharing" target="_blank" class="btn">Download Python Source Code</a>
                 
                     <div class="install-info">
                         <h3>Python App Setup Instructions:</h3>
                         <p>1. Download the source files.<br>
                            2. Install the required dependencies using the following command:<br>
-                           <code>pip install PyQt6 cryptography</code><br>
+                           <code>pip install -r requirements.txt</code><br>
                            3. Run the application with the main Python script.
                         </p>
                     </div>
+                </div>                
 
                     <div class="download-section">
                         <h2>Android</h2>
-                        <a href="https://drive.google.com/link_to_android_source" target="_blank" class="btn">Download Android Source Code</a>
+                        <a href="https://drive.google.com/drive/folders/1lixAo8em3-CXZVBnXsftC4f0xrU7MGkA?usp=sharing" target="_blank" class="btn">Download Android Source Code</a>
                     
                         <div class="install-info">
                             <h3>Android App Development Instructions:</h3>
@@ -136,5 +165,6 @@
         </footer>
 
         <script src="navigation.js" type="module"></script>
+        <script src="download_script.js" type="module"></script>
     </body>
 </html>
