@@ -27,8 +27,33 @@
         <div id="intro">
             <h1>Download Our Application</h1>
             <p>Select your platform below to download the appropriate version.</p>
+            <button id="help-button" class="btn">Help Choosing Arm or x64</button> <!-- Help button -->
         </div>
     </div>
+
+<!-- Modal for Help Choosing -->
+<div id="help-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Help Choosing Your Version</h2>
+        <p>
+            <strong>ARM vs x64:</strong><br>
+            <ul>
+                <li><strong>Windows/Linux:</strong> <br>
+                    - Devices using Intel and AMD processors, choose the x64 version.<br>
+                    - If your device has a Qualcomm chip (e.g., Snapdragon X Elite), choose the ARM version.<br><br>
+                </li>
+                <li><strong>macOS:</strong><br>
+                    - Devices with Apple M1 chip and above are ARM versions.<br>
+                    - All Intel-based Macs should select the x64 version.<br><br>
+                </li>
+            </ul>
+        </p>
+        <p>
+            If you're unsure which version to select, you can check your device's specifications or consult the manufacturer's website for more information.
+        </p>
+    </div>
+</div>
 
     <hr>
 
@@ -141,5 +166,6 @@
         </footer>
 
         <script src="navigation.js" type="module"></script>
+        <script src="download_script.js" type="module"></script>
     </body>
 </html>
