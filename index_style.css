@@ -172,6 +172,7 @@ body {
     text-align: center;
     margin: 10px 0;
     width: auto;
+    text-decoration: none;
 }
 
 .download-center a.btn:hover {
