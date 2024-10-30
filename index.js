@@ -1,43 +1,24 @@
 const testimonials = document.querySelectorAll('.testimonial-item');
+const testimonialList = document.querySelector('.testimonial-list');
 let currentIndex = 0;
 
+// Function to update the testimonials
 function updateTestimonials() {
-    // Remove active and visible classes from all testimonials
-    testimonials.forEach((testimonial) => {
-        testimonial.classList.remove('active');
-        testimonial.classList.remove('visible');
+    // Calculate new position for the testimonials
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    
+    // Update the transform property to slide the testimonials
+    testimonialList.style.transform = `translateX(${-currentIndex * (100 / 3)}%)`;
+
+    // Update visibility of the items
+    testimonials.forEach((testimonial, index) => {
+        if (index >= currentIndex && index < currentIndex + 3) {
+            testimonial.classList.add('active');
+        } else {
+            testimonial.classList.remove('active');
+        }
     });
-
-    // Set active class on current three testimonials
-    testimonials[currentIndex].classList.add('active');
-    testimonials[(currentIndex + 1) % testimonials.length].classList.add('active');
-    testimonials[(currentIndex + 2) % testimonials.length].classList.add('active');
-
-    // Set visible class to create the visual effect
-    testimonials[currentIndex].classList.add('visible');
-    testimonials[(currentIndex + 1) % testimonials.length].classList.add('visible');
-    testimonials[(currentIndex + 2) % testimonials.length].classList.add('visible');
-
-    // Move testimonials in a circular manner
-    currentIndex = (currentIndex + 1) % testimonials.length;
 }
 
-// For mobile, show one testimonial at a time
-function updateTestimonialsMobile() {
-    testimonials.forEach((testimonial) => testimonial.classList.remove('active'));
-    testimonials[currentIndex].classList.add('active');
-    currentIndex = (currentIndex + 1) % testimonials.length;
-}
-
-// Detect screen width and adjust animation
-function startCarousel() {
-    if (window.innerWidth <= 768) {
-        setInterval(updateTestimonialsMobile, 3000); // 3s interval for mobile
-    } else {
-        setInterval(updateTestimonials, 3000); // 3s interval for desktop
-    }
-}
-
-// Start carousel and update on resize
-startCarousel();
-window.addEventListener('resize', startCarousel);
+// Start carousel with interval
+setInterval(updateTestimonials, 3000); // Change testimonials every 3 seconds

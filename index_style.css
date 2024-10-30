@@ -180,46 +180,9 @@ body {
     transform: translateY(-4px);
 }
 
-/* Testimonials Section */
-.testimonials {
-    background-color: #fef9e5;
-    padding: 40px 20px;
-}
 
-.testimonials h2 {
-    font-size: 28px;
-    color: #5c6b49;
-    margin-bottom: 20px;
-}
 
-.testimonial-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
 
-.testimonial-item {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-item p {
-    font-size: 16px;
-    color: #555;
-    font-style: italic;
-    line-height: 1.5;
-}
-
-.testimonial-item h4 {
-    font-size: 18px;
-    color: #333;
-    margin-top: 10px;
-    text-align: right;
-}
 
 /* Footer Styles */
 footer {
@@ -233,14 +196,12 @@ footer {
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 1200px) {
-    .features-list,
-    .testimonial-list {
+    .features-list {
         flex-direction: column;
         align-items: center;
     }
 
-    .feature-item, 
-    .testimonial-item {
+    .feature-item {
         width: 100%;
         max-width: 90%;
     }
@@ -251,38 +212,45 @@ footer {
     }
 }
 
+
+/* Add to your existing CSS */
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #fef9e5;
+    padding: 40px 20px;
+}
+
+.testimonials h2 {
+    font-size: 28px;
+    color: #5c6b49;
+    margin-bottom: 20px;
+}
+
 .testimonial-carousel {
-    width: 100%;
     overflow: hidden; /* Hide overflowing testimonials */
+    position: relative; /* Position relative for inner elements */
+    width: 100%; /* Full width */
 }
 
 .testimonial-list {
     display: flex; /* Align items in a row */
-    justify-content: center; /* Center testimonials */
     transition: transform 0.5s ease; /* Smooth transition for movement */
+    width: calc(100% * 7 / 3); /* Adjust width to accommodate all testimonials */
 }
 
 .testimonial-item {
-    width: 300px; /* Set width for each testimonial */
+    flex: 0 0 33.33%; /* Each testimonial takes up one-third of the carousel */
     padding: 20px;
-    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     opacity: 0; /* Start as invisible */
-    transform: scale(0.8); /* Slightly smaller at first */
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease; /* Add transition for opacity */
 }
 
 /* Active class to make visible */
 .testimonial-item.active {
     opacity: 1; /* Make visible */
-    transform: scale(1); /* Reset scale */
-}
-
-/* Styles to show three testimonials in one line */
-.testimonial-item.visible {
-    opacity: 1; /* Make visible */
-    transform: scale(1); /* Reset scale */
 }
 
 /* Mobile Styling */
@@ -301,3 +269,4 @@ footer {
         opacity: 1; /* Make visible */
     }
 }
+
