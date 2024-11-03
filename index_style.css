@@ -224,7 +224,7 @@ footer {
     margin-bottom: 20px;
 }
 
-/* Updated CSS */
+/* Testimonial Carousel Styles */
 .testimonial-carousel {
     overflow: hidden;
     position: relative;
@@ -233,26 +233,19 @@ footer {
 
 .testimonial-list {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease-in-out;
 }
 
 .testimonial-item {
     flex: 0 0 100%;
     max-width: 100%;
     box-sizing: border-box;
-    opacity: 0;
-    transition: opacity 0.5s ease;
     /* Box Style */
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
-    width: 60%;
     margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-item.active {
-    opacity: 1;
 }
 
 .testimonial-item p {
