@@ -224,51 +224,53 @@ footer {
     margin-bottom: 20px;
 }
 
+/* Updated CSS */
 .testimonial-carousel {
-    overflow: hidden; /* Hide overflowing testimonials */
-    position: relative; /* Position relative for inner elements */
-    width: 100%; /* Full width */
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 
 .testimonial-list {
-    display: flex; /* Align items in a row */
-    transition: transform 0.5s ease; /* Smooth transition for movement */
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
 .testimonial-item {
-    flex: 0 0 300px; /* Maintain original width for each testimonial */
-    margin: 0 15px; /* Add more spacing between boxes */
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 0 0 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    /* Box Style */
     background-color: #fff;
-    opacity: 0; /* Start as invisible */
-    transition: opacity 0.5s ease; /* Add transition for opacity */
+    border-radius: 10px;
+    padding: 20px;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Active class to make visible */
 .testimonial-item.active {
-    opacity: 1; /* Make visible */
+    opacity: 1;
 }
 
-/* Show 3 testimonials in the center */
-.testimonial-item:nth-child(n+1):nth-child(-n+3),
-.testimonial-item.active {
-    opacity: 1; /* Show first 3 testimonials */
+.testimonial-item p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    text-align: center;
 }
 
-/* Mobile Styling */
+.testimonial-item h4 {
+    font-size: 20px;
+    color: #333;
+    margin-top: 10px;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
-    .testimonial-list {
-        flex-direction: column; /* Stack items vertically on mobile */
-        width: 100%; /* Full width for mobile */
-        align-items: center; /* Center items */
-    }
     .testimonial-item {
-        width: 100%; /* Full width for mobile */
-        position: absolute; /* Stack items for fade effect */
-        opacity: 0; /* Start as invisible */
-    }
-    .testimonial-item.active {
-        opacity: 1; /* Make visible */
+        width: 90%;
     }
 }
