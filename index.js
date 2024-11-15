@@ -46,7 +46,7 @@ feedbackForm.addEventListener('submit', function(event) {
     };
 
     // Send the email using EmailJS
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+    emailjs.send('service_pkzzkvw', 'template_dczsrp9', templateParams)
     .then(function(response) {
         console.log('SUCCESS!', response.status, response.text);
         document.getElementById('feedback-message').innerText = 'Thank you for your feedback!';
