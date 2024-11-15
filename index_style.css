@@ -180,10 +180,6 @@ body {
     transform: translateY(-4px);
 }
 
-
-
-
-
 /* Footer Styles */
 footer {
     text-align: center;
@@ -266,4 +262,62 @@ footer {
     .testimonial-item {
         width: 90%;
     }
+}
+
+/* Feedback Section */
+.feedback {
+    background-color: #fef9e5;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.feedback h2 {
+    font-size: 28px;
+    color: #5c6b49;
+    margin-bottom: 20px;
+}
+
+#feedback-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#feedback-form label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#feedback-form input,
+#feedback-form select,
+#feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#feedback-form button {
+    background-color: #f77f00;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#feedback-form button:hover {
+    background-color: #d46400;
+}
+
+#feedback-message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #5c6b49;
 }
