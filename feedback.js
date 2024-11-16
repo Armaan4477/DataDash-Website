@@ -9,17 +9,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Collect form data
         const feedbackType = document.getElementById('feedback-type').value;
-        const userName = document.getElementById('name').value;
+        const name = document.getElementById('name').value; // Fetches the value of the name field
+        console.log("Name value:", name);
+
         const userEmail = document.getElementById('email').value;
         const message = document.getElementById('details').value;
 
-        // Prepare the email parameters
         const templateParams = {
-            feedbackType: feedbackType,
-            userName: userName,
-            userEmail: userEmail,
-            message: message
+            feedbackType: feedbackType, // Feedback type (e.g., Feature Request, Bug Report)
+            name: name,         // User's name
+            userEmail: userEmail,       // User's email
+            message: message            // Feedback message
         };
+        
 
         // Send the email using EmailJS
         emailjs.send('service_pkzzkvw', 'template_dczsrp9', templateParams)
