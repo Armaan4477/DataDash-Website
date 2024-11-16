@@ -23,3 +23,23 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+// Function to display version numbers
+function displayVersionNumbers() {
+    const platforms = {
+        'windows-version': 'python_windows',
+        'macos-version': 'python_macos',
+        'linux-version': 'python_linux',
+        'android-version': 'android'
+    };
+
+    for (const [elementId, platformName] of Object.entries(platforms)) {
+        const version = window.platformValues[platformName] || 'Unknown';
+        document.getElementById(elementId).textContent = `Version: ${version}`;
+    }
+}
+
+// Call the function when the page loads
+window.addEventListener('DOMContentLoaded', () => {
+    displayVersionNumbers();
+});
