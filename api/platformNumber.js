@@ -1,11 +1,13 @@
-// JavaScript
 export default async function handler(req, res) {
   const { platform } = req.query;
 
   try {
     // Fetch the platform values from the remote JSON file
     const response = await fetch('https://raw.githubusercontent.com/Project-Bois/DataDash-files/main/version.json');
-    const platformValues = await response.json();
+    const data = await response.json();
+
+    // Access the platformValues object
+    const platformValues = data.platformValues;
 
     // Validate the platform and respond accordingly
     if (platform in platformValues) {
