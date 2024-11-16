@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Collect form data
         const feedbackType = document.getElementById('feedback-type').value;
-        const name = document.getElementById('name').value; // Fetches the value of the name field
+        const name = document.getElementById('user-name').value; // Fetches the value of the name field
         console.log("Name value:", name);
 
         const userEmail = document.getElementById('email').value;
