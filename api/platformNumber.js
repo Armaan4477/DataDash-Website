@@ -4,8 +4,8 @@ export default function handler(req, res) {
     python_linux: "7.0.0",
     python_macos: "8.0.0",
     python_windows: "9.0.0",
-    python_test_old: "3.0.0",
-    python_test_new: "6.0.0",
+    python_uga: "3.0.0",
+    python_buga: "6.0.0",
     android: "7.6.6"
   };
 
