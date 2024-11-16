@@ -1,7 +1,9 @@
 export default function handler(req, res) {
   // Updated values for each platform
   const platformValues = {
-    python: "7.0.0",
+    python_linux: "7.0.0",
+    python_macos: "8.0.0",
+    python_windows: "9.0.0",
     android: "7.6.6"
   };
 
