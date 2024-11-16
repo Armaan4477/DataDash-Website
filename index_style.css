@@ -321,3 +321,26 @@ footer {
     font-size: 18px;
     color: #5c6b49;
 }
+
+#feedback-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    font-family: inherit;
+
+    /* Remove default arrow for custom styling */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* Custom arrow icon */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg%20xmlns="http://www.w3.org/2000/svg"%20viewBox="0%200%2010%205"><polyline%20points="0,0%205,5%2010,0"%20style="fill:none;%20stroke:%20%23ccc;%20stroke-width:2"%20/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 5px;
+}
