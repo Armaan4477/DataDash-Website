@@ -110,12 +110,40 @@
         </div>
     </section>
     
-
+    <!-- Feedback Form Section -->
+    <section class="feedback">
+        <h2>We Value Your Feedback</h2>
+        <form id="feedback-form">
+            <label for="feedback-type">Type of Feedback:</label>
+            <select id="feedback-type" name="feedbackType" required>
+                <option value="">Select an option</option>
+                <option value="Feature Request">Feature Request</option>
+                <option value="Bug Report">Bug Report</option>
+                <option value="Testimony">Testimony</option>
+            </select>
+            <label for="user-name">Name:</label>
+            <input type="text" id="user-name" name="name" required>           
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="userEmail" required>
+            <label for="details">Details:</label>
+            <textarea id="details" name="message" rows="5" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="feedback-message"></div>
+    </section>
+    
     <footer> 
         <p>&copy; 2024 DataDash. All rights reserved.</p>
     </footer>
 
     <script src="navigation.js" type="module"></script>
     <script src="index.js" type="module"></script>
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.11.0/dist/email.min.js"></script>
+
+<!-- Feedback Script -->
+<script src="feedback.js" type="module"></script>
+
+
 </body>
 </html>

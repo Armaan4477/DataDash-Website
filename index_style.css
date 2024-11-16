@@ -180,10 +180,6 @@ body {
     transform: translateY(-4px);
 }
 
-
-
-
-
 /* Footer Styles */
 footer {
     text-align: center;
@@ -266,4 +262,85 @@ footer {
     .testimonial-item {
         width: 90%;
     }
+}
+
+/* Feedback Section */
+.feedback {
+    background-color: #fef9e5;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.feedback h2 {
+    font-size: 28px;
+    color: #5c6b49;
+    margin-bottom: 20px;
+}
+
+#feedback-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#feedback-form label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#feedback-form input,
+#feedback-form select,
+#feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#feedback-form button {
+    background-color: #f77f00;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#feedback-form button:hover {
+    background-color: #d46400;
+}
+
+#feedback-message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #5c6b49;
+}
+
+#feedback-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    font-family: inherit;
+
+    /* Remove default arrow for custom styling */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* Custom arrow icon */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg%20xmlns="http://www.w3.org/2000/svg"%20viewBox="0%200%2010%205"><polyline%20points="0,0%205,5%2010,0"%20style="fill:none;%20stroke:%20%23ccc;%20stroke-width:2"%20/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 5px;
 }
