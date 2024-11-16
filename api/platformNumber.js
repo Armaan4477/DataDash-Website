@@ -1,22 +1,19 @@
-export default function handler(req, res) {
-  // Updated values for each platform
-  const platformValues = {
-    python_linux: "3.2.8",
-    python_macos: "3.2.8",
-    python_windows: "3.2.8",
-    python_auga: "3.0.0",
-    python_buga: "6.0.0",
-    python_cuga: "3.2.8",
-    android: "7.6.6"
-  };
-
-  // Extract platform type from query parameters
+// JavaScript
+export default async function handler(req, res) {
   const { platform } = req.query;
 
-  // Validate the platform and respond accordingly
-  if (platform in platformValues) {
-    res.status(200).json({ value: platformValues[platform] });
-  } else {
-    res.status(400).json({ error: 'Invalid platform specified.' });
+  try {
+    // Fetch the platform values from the remote JSON file
+    const response = await fetch('https://raw.githubusercontent.com/Project-Bois/DataDash-files/main/version.json');
+    const platformValues = await response.json();
+
+    // Validate the platform and respond accordingly
+    if (platform in platformValues) {
+      res.status(200).json({ value: platformValues[platform] });
+    } else {
+      res.status(400).json({ error: 'Invalid platform specified.' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch platform values.' });
   }
 }
