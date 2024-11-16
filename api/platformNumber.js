@@ -6,7 +6,7 @@ export default function handler(req, res) {
     python_windows: "3.2.8",
     python_auga: "3.0.0",
     python_buga: "6.0.0",
-    python_cuga: "3.2.7",
+    python_cuga: "3.2.8",
     android: "7.6.6"
   };
 
