@@ -225,5 +225,10 @@ footer {
         padding: 10px;
     }
 
+}
 
+.version-number {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
 }
