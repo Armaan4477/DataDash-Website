@@ -1,0 +1,234 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fef9e5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #fef9e5;
+    background-size: cover;
+}
+
+/* Centering text in headers and sections */
+h1, h2, p {
+    text-align: center; /* Consistent text alignment for headings and paragraphs */
+}
+
+/* Navbar Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#name {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+#navbar-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* Center the navigation links */
+.nav-center {
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+}
+
+.nav-center a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-center a:hover {
+    background-color: #555;
+}
+
+/* Add space for the navbar */
+body {
+    padding-top: 60px;
+}
+
+/* Landing Page Styles */
+#logodiv {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#intro {
+    padding: 40px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    text-align: center;
+    background-color: #fff9e3;
+    font-family: 'Georgia', serif;
+    max-width: 100%;
+}
+
+#intro h1 {
+    font-family: 'Pirata One', cursive;
+    font-size: 3em;
+    color: #5c6b49;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Install info consistent alignment and padding */
+.install-info {
+    text-align: center;
+    max-width: 700px;
+    margin: 20px auto; /* Center content */
+    padding: 20px;
+    background-color: #fff; /* Consistent background */
+    border-radius: 10px; /* Rounded corners for consistency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for section separation */
+}
+
+.install-info h3 {
+    font-size: 24px;
+    color: #5c6b49;
+    margin-bottom: 10px;
+}
+
+.install-info p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 20px;
+    padding: 0 15px; /* Padding for readability */
+}
+
+/* Button styling for the Android section */
+.download-section {
+    text-align: center; /* Center the content within the section */
+}
+
+.download-section a.btn {
+    background-color: #f77f00;
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    margin: 10px 0; /* Center margin to keep consistency */
+    width: auto;
+    text-decoration: none;
+}
+
+.download-section a.btn:hover {
+    background-color: #d46400;
+    transform: translateY(-4px);
+}
+
+#help-button {
+    background-color: #f77f00; /* Same background color as other buttons */
+    color: white;
+    padding: 12px; /* Reduced padding */
+    font-size: 16px; /* Reduced font size */
+    border: none;
+    border-radius: 11px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    margin: 10px 0; /* Center margin to keep consistency */
+    width: auto;
+}
+
+#help-button:hover {
+    background-color: #d46400; /* Hover color for the help button */
+    transform: translateY(-4px); /* Same hover effect */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    margin-top: auto;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fef9e5;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 1200px) {
+
+    .install-info{
+        width: 90%; /* Ensure full width on smaller screens */
+        padding: 10px;
+    }
+
+}
+
+.version-number {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}

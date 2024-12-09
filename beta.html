@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataDash</title>
+    <link rel="stylesheet" href="beta_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+          <div id="name">
+            <img src="" alt="Logo" id="navbar-logo">
+            DataDash
+          </div>
+          <div class="nav-center">
+            <a href="#" onclick="navigateTo('index.html')">Home</a>
+            <a href="#" onclick="navigateTo('about.html')">About</a>
+          </div>
+        </nav>
+      </header>
+
+    <div id="logodiv">
+        <div id="intro">
+            <h1>Download Our Application</h1>
+            <p>Select your platform below to download the appropriate version.</p>
+            <button id="help-button" class="btn">Help Choosing Arm or x64</button> <!-- Help button -->
+            <p class="version-number" id="version">Desktop Version: Loading...</p>
+            <p class="version-number" id="android-version">Android Version: Loading...</p>
+        </div>
+    </div>
+
+ 
+
+<!-- Modal for Help Choosing -->
+<div id="help-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Help Choosing Your Version</h2>
+        <p>
+            <strong>ARM vs x64:</strong><br>
+            <ul>
+                <li><strong>Windows/Linux:</strong> <br>
+                    - Devices using Intel and AMD processors, choose the x64 version.<br>
+                    - If your device has a Qualcomm chip (e.g., Snapdragon X Elite), choose the ARM version.<br><br>
+                </li>
+                <li><strong>macOS:</strong><br>
+                    - Devices with Apple M1 chip and above are ARM versions.<br>
+                    - All Intel-based Macs should select the x64 version.<br><br>
+                </li>
+            </ul>
+        </p>
+        <p>
+            If you're unsure which version to select, you can check your device's specifications or consult the manufacturer's website for more information.
+        </p>
+    </div>
+</div>
+
+    <hr>
+
+    <div class="download-section">
+
+        <div class="download-section">
+            <h2>Windows</h2>    
+            <a href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/Windows.exe" class="btn">Windows (x64)</a>    
+            <div class="install-info">
+                <h3>Installation Instructions:</h3>
+                <p>1. Download the EXE file.<br>
+                   2. Open the installer.<br>
+                   3. Follow the steps to install the app on your device.
+                </p>
+            </div>
+        </div>
+        
+        <hr>
+
+        <div class="download-section">
+            <h2>MacOS</h2>
+            <a href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/Macos(arm).dmg" class="btn">MacOS (ARM)</a>        
+        
+            <div class="install-info">
+                <h3>Installation Instructions:</h3>
+                <p>
+                    1. Download the .dmg file.<br>
+                    2. Open the file and drag the application to your Applications folder.<br>
+                    3. Launch the application from the Applications folder.<br>
+                    4. If you see a warning message, go to <strong>System Settings</strong> > <strong>Privacy & Security</strong>.<br>
+                    5. Scroll down to the "Security" section and find a message about the app.<br>
+                    6. Click <strong>"Allow Anyway"</strong> to grant permission to open the app <br>(Note: There is no app signing certificate, so this warning is expected).
+                </p>
+                <p style="font-weight: bold; color: #d9534f;">
+                    Note: After launching the application, it may take up to 20 seconds to open. This is a known issue, and we are actively working on a fix.
+                </p>
+            </div>
+        </div>
+             
+
+
+        <hr>
+        
+            <div class="download-section">
+                <h2>Linux</h2>    
+                <a href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/Linux" class="btn">Linux (x64)</a>    
+             <div class="install-info">
+            <h3>Building and Running the App:</h3>
+            <p>1. Download the binary file.<br>
+               2. Give the binary file execute permissions:<br>
+               <code>chmod +x filename</code><br>
+               3. Run the app using:<br>
+               <code>./filename</code><br>
+               4. No further build steps are necessary.
+            </p>
+        </div>
+
+        <hr>
+
+        <div class="download-section">
+            <h2>Android</h2>
+            <a href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/Android.apk" class="btn">Android App</a>
+            <div class="install-info">
+                <h3>Installation Instructions:</h3>
+                <p>1. Download the APK file.<br>
+                   2. Open the file on your Android device.<br>
+                   3. Allow installations from unknown sources if prompted.<br>
+                   4. Follow the instructions to install the application.
+                </p>
+                <p style="font-weight: bold; color: #d9534f;">Note: While installing the app, android will warn that the app is unsafe, this is due to there being no signing certificate present, it can be ignored.</p>
+             </div>
+        </div>     
+
+        <footer> 
+            <p>&copy; 2024 DataDash. All rights reserved.</p>
+        </footer>
+
+        <script src="navigation.js" type="module"></script>
+        <script src="beta_script.js" type="module"></script>
+    </body>
+</html>
