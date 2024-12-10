@@ -232,3 +232,39 @@ footer {
     color: #777;
     margin-bottom: 10px;
 }
+
+.beta-section {
+    background-color: #e0f7fa;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 30px auto;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.beta-section h2 {
+    font-size: 32px;
+    color: #00796b;
+    margin-bottom: 15px;
+}
+
+.beta-section p {
+    font-size: 18px;
+    color: #004d40;
+}
+
+.beta-section a {
+    color: #00796b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.beta-section a:hover {
+    text-decoration: underline;
+}
+
+.beta-section .btn {
+    display: block;
+    margin: 20px auto 0;
+}

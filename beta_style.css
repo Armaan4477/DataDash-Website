@@ -228,7 +228,40 @@ footer {
 }
 
 .version-number {
-    font-size: 14px;
+    font-size: 15px;
     color: #777;
     margin-bottom: 10px;
+}
+
+.important-notice {
+    background-color: #fff;
+    border: 2px solid #5c6b49;
+    border-radius: 10px;
+    padding: 20px 40px;
+    margin: 20px auto;
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.important-notice ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.important-notice ul li {
+    color: #5c6b49;
+    font-size: 18px;
+    padding: 5px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.important-notice ul li:before {
+    content: "!";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #f77f00;
 }
