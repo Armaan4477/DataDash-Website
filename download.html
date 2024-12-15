@@ -41,7 +41,8 @@
             <ul>
                 <li><strong>Windows/Linux:</strong> <br>
                     - Devices using Intel and AMD processors, choose the x64 version.<br>
-                    - If your device has a Qualcomm chip (e.g., Snapdragon X Elite), choose the ARM version.<br><br>
+                    - If your device has a Qualcomm chip (e.g., Snapdragon X Elite), choose the ARM version.<br>
+                    - If you are running a VM on a mac with Apple M1 chip or higher, choose the ARM version.<br><br>
                 </li>
                 <li><strong>macOS:</strong><br>
                     - Devices with Apple M1 chip and above are ARM versions.<br>
@@ -68,8 +69,11 @@
         <div class="install-info">
             <h3>Running the App:</h3>
             <p>1. Download the EXE file.<br>
-               2. Double-click the EXE file to run the app directly.<br>
-               3. No installation required.
+                2. Open the installer.<br>
+                3. Follow the steps to install the app on your device.
+             </p>
+             <p style="font-weight: bold; color: #d9534f;">
+                Note: Due to no signing certificate, Windows will warn that the app is unsafe, click <strong>"More Info"</strong> and then <strong>"Run Anyway"</strong> to install the app. It may also block the download from happening,so you will need to disable microsoft defender for the time being (For instructions click here).
             </p>
         </div>
         
@@ -143,6 +147,58 @@
                 <p style="font-weight: bold; color: #d9534f;">Note: The Application is still under development and will be available in the coming months.</p>
              </div>
         </div>  
+
+        <hr>
+
+        <div class="download-section">
+            <h2>Source Files</h2>
+            <p>Below are the source files for our application, including the Python desktop app (built with PyQt6 and Cryptography) and the Android app.</p>
+        
+            <div class="download-section">
+                <h2>Download Source Code</h2>
+                <a href="https://github.com/Armaan4477/Cross-Platform-Media-Sharing" target="_blank" class="btn">Download Full Source Code on GitHub</a>
+            </div>
+        
+            <div class="install-info">
+                <h3>Cloning the Repository:</h3>
+                <p>1. Open a terminal and clone the repository with the following command:<br>
+                   <code>git clone https://github.com/Armaan4477/Cross-Platform-Media-Sharing.git</code>
+                </p>
+            </div>
+        
+            <div class="download-section">
+                <h2>Python (Desktop Application)</h2>
+                
+                <div class="install-info">
+                    <h3>Python App Setup Instructions:</h3>
+                    <p>
+                        1. After cloning, navigate to the <code>Desktop-app</code> folder:<br>
+                        <code>cd DataDash-codes/Desktop-app</code><br>
+                        2. Install the required dependencies:<br>
+                        <code>pip install -r requirements.txt</code><br>
+                        3. Run the application with the main Python script.
+                    </p>
+                </div>
+            </div>
+        
+            <div class="download-section">
+                <h2>Android (Mobile Application)</h2>
+                
+                <div class="install-info">
+                    <h3>Android App Setup Instructions:</h3>
+                    <p>
+                        1. After cloning, open Android Studio.<br>
+                        2. In Android Studio, navigate to and open the project folder located at:<br>
+                        <code>DataDash-codes/Android-app/CrossPlatform</code><br>
+                        3. Set up the required dependencies and SDK versions.<br>
+                        4. Compile and run the app on an Android device.
+                    </p>
+                    <p style="font-weight: bold; color: #d9534f;">
+                        Note: The app wont work in the android emulator present in Android Studio as there are restrictions to the access to ports.
+                    </p>
+                </div>
+            </div>
+        </div>
 
         <hr>
 
