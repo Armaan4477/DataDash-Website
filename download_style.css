@@ -217,6 +217,14 @@ footer {
     cursor: pointer;
 }
 
+/* Styles for the video player */
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
 /* Responsive Design for Smaller Screens */
 @media (max-width: 1200px) {
 

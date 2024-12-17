@@ -265,3 +265,11 @@ footer {
     font-weight: bold;
     color: #f77f00;
 }
+
+/* Styles for the video player */
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
