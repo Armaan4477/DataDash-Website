@@ -1,14 +1,14 @@
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    background-color: #000000;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fef9e5;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: #fef9e5;
     background-size: cover;
+    padding-top: 60px;
 }
 
 /* Centering text in headers and sections */
@@ -29,10 +29,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #000000;
     padding: 10px 20px;
     color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 #name {
@@ -40,6 +41,9 @@ header {
     font-weight: bold;
     display: flex;
     align-items: center;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    color: #0ca699;
 }
 
 #navbar-logo {
@@ -63,6 +67,12 @@ header {
     padding: 8px 12px;
     margin: 0 10px;
     transition: background-color 0.3s ease;
+    background: linear-gradient(47deg, #10b981, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 25px;
+    font-weight: 600;
 }
 
 .nav-center a:hover {
@@ -85,19 +95,28 @@ body {
     border-radius: 10px;
     font-size: 1.3em;
     text-align: center;
-    background-color: #fff9e3;
+    background-color: #000000;
     font-family: 'Georgia', serif;
     max-width: 100%;
 }
 
 #intro h1 {
-    font-family: 'Pirata One', cursive;
-    font-size: 3em;
-    color: #5c6b49;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    background: linear-gradient(47deg, #10b981, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 45px;
     margin-bottom: 20px;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+#intro p {
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
 
 /* Install info consistent alignment and padding */
 .install-info {
@@ -105,23 +124,33 @@ body {
     max-width: 700px;
     margin: 20px auto; /* Center content */
     padding: 20px;
-    background-color: #fff; /* Consistent background */
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 10px; /* Rounded corners for consistency */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for section separation */
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.1);
 }
 
 .install-info h3 {
     font-size: 24px;
     color: #5c6b49;
     margin-bottom: 10px;
+    background: linear-gradient(47deg, #10b981, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: "Poppins", serif;
+    font-weight: 600;
 }
 
 .install-info p {
     font-size: 16px;
     line-height: 1.5;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 20px;
     padding: 0 15px; /* Padding for readability */
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
 }
 
 /* Button styling for the Android section */
@@ -130,12 +159,12 @@ body {
 }
 
 .download-section a.btn {
-    background-color: #f77f00;
+    background: linear-gradient(135deg, #10b981, #ec4899);
     color: white;
     padding: 16px;
     font-size: 20px;
     border: none;
-    border-radius: 12px;
+    border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     display: inline-block;
@@ -143,41 +172,104 @@ body {
     margin: 10px 0; /* Center margin to keep consistency */
     width: auto;
     text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .download-section a.btn:hover {
     background-color: #d46400;
     transform: translateY(-4px);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.download-section a.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, 
+        rgba(255,255,255,0) 0%, 
+        rgba(255,255,255,0.3) 50%, 
+        rgba(255,255,255,0) 100%
+    );
+    transition: all 0.5s ease;
+}
+
+.download-section a.btn:hover::before {
+    left: 100%;
 }
 
 #help-button {
-    background-color: #f77f00; /* Same background color as other buttons */
+    background: linear-gradient(135deg, #10b981, #ec4899);
     color: white;
     padding: 12px; /* Reduced padding */
     font-size: 16px; /* Reduced font size */
     border: none;
-    border-radius: 11px;
+    border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     display: inline-block;
     text-align: center;
     margin: 10px 0; /* Center margin to keep consistency */
     width: auto;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 #help-button:hover {
     background-color: #d46400; /* Hover color for the help button */
     transform: translateY(-4px); /* Same hover effect */
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+#help-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, 
+        rgba(255,255,255,0) 0%, 
+        rgba(255,255,255,0.3) 50%, 
+        rgba(255,255,255,0) 100%
+    );
+    transition: all 0.5s ease;
+}
+
+#help-button:hover::before {
+    left: 100%;
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
+    background-color: transparent;
     color: white;
     font-size: 16px;
     margin-top: auto;
+    border-top: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+footer p {
+    background: linear-gradient(47deg, #10b981, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: "Poppins", sans-serif;
 }
 
 .modal {
@@ -194,17 +286,34 @@ footer {
 }
 
 .modal-content {
-    background-color: #fef9e5;
+    background-color: #000000;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.2);
+}
+
+.modal-content h2 {
+    background: linear-gradient(47deg, #10b981, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.modal-content p, .modal-content ul {
+    color: #ffffff;
+}
+
+.modal-content strong {
+    color: #10b981;
 }
 
 .close {
-    color: #aaa;
+    color: #ec4899;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -212,7 +321,7 @@ footer {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #10b981;
     text-decoration: none;
     cursor: pointer;
 }
@@ -229,18 +338,22 @@ footer {
 
 .version-number {
     font-size: 15px;
-    color: #777;
+    color: #ec4899;
     margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
 }
 
 .important-notice {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
     border: 2px solid #5c6b49;
     border-radius: 10px;
     padding: 20px 40px;
     margin: 20px auto;
     max-width: 700px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.1);
 }
 
 .important-notice ul {
@@ -251,11 +364,13 @@ footer {
 }
 
 .important-notice ul li {
-    color: #5c6b49;
+    color: #ffffff;
     font-size: 18px;
     padding: 5px 0;
     position: relative;
     padding-left: 25px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
 }
 
 .important-notice ul li:before {
@@ -263,7 +378,7 @@ footer {
     position: absolute;
     left: 0;
     font-weight: bold;
-    color: #f77f00;
+    color: #ec4899;
 }
 
 /* Styles for the video player */
@@ -272,4 +387,21 @@ video {
     height: auto;
     display: block;
     margin: 20px auto;
+}
+
+/* Warning Text */
+p[style*="color: #d9534f"] {
+    color: #ec4899 !important;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Horizontal Rule */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, #10b981, #ec4899);
+    margin: 30px 0;
+    opacity: 0.3;
 }
