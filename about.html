@@ -8,20 +8,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Prevent theme flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
 </head>
 <body>
     <header>
         <nav class="navbar">
-          <div id="name">
-            <img src="" alt="Logo" id="navbar-logo">
-            DataDash
-          </div>
-          <div class="nav-center">
-            <a href="#" onclick="navigateTo('index.html')">Home</a>
+            <div id="name" onclick="navigateTo('index.html')" style="cursor: pointer;">
+                <img src="" alt="Logo" id="navbar-logo">
+                DataDash
+            </div>
+            <div class="nav-main">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#" onclick="navigateTo('index.html')">Home</a>
                 <a href="#" onclick="navigateTo('about.html')">About</a>
+                <a href="#" onclick="navigateTo('feedback.html')">Feedback</a>
             </div>
         </nav>
-      </header>
+    </header>
       
     <div class="about-container">
         <h1>DataDash: Cross Platform Data Sharing App</h1>
