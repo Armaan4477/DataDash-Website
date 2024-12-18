@@ -141,7 +141,7 @@ text-align: center;
 font-family: "Poppins", serif;
 font-weight: 400;
 font-size: 20px;
-color: #ffffff;
+color: var(--text-color);
 margin-bottom: -5px;
 }
 
@@ -173,7 +173,7 @@ margin-bottom: -5px;
 .install-info p {
     font-size: 16px;
     line-height: 1.5;
-    color: #ffffff;
+    color: var(--text-color);
     margin-bottom: 20px;
     padding: 0 15px; /* Padding for readability */
     font-family: "Poppins", sans-serif;
@@ -192,7 +192,7 @@ margin-bottom: -5px;
 .download-section {
     text-align: center; /* Center the content within the section */
     padding: 40px 20px;
-    color: #ffffff;
+    color: var(--text-color); /* Changed from #ffffff to var(--text-color) */
 }
 .button-container {
     display: flex;
@@ -299,7 +299,7 @@ footer p {
 }
 
 .modal-content p {
-    color: #ffffff;
+    color: var(--text-color);
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-size: 16px;
@@ -307,7 +307,7 @@ footer p {
 }
 
 .modal-content ul {
-    color: #ffffff;
+    color: var(--text-color);
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     padding-left: 20px;

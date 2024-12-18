@@ -161,7 +161,7 @@ body {
 }
 
 #intro p {
-    color: #ffffff;
+    color: var(--text-color);
     font-family: "Poppins", sans-serif;
     font-weight: 300;
 }
@@ -194,7 +194,7 @@ body {
 .install-info p {
     font-size: 16px;
     line-height: 1.5;
-    color: #ffffff;
+    color: var(--text-color);
     margin-bottom: 20px;
     padding: 0 15px; /* Padding for readability */
     font-family: "Poppins", sans-serif;
@@ -204,6 +204,7 @@ body {
 /* Button styling for the Android section */
 .download-section {
     text-align: center; /* Center the content within the section */
+    color: var(--text-color);  /* Changed from #ffffff to var(--text-color) */
 }
 
 .download-section a.btn {
@@ -353,7 +354,7 @@ footer p {
 }
 
 .modal-content p, .modal-content ul {
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 .modal-content strong {
@@ -412,7 +413,7 @@ footer p {
 }
 
 .important-notice ul li {
-    color: #ffffff;
+    color: var(--text-color);
     font-size: 18px;
     padding: 5px 0;
     position: relative;
