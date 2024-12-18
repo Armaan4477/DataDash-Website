@@ -277,7 +277,7 @@ footer p {
 }
 
 .modal-content {
-    background-color: #000000;
+    background-color: var(--bg-color);
     margin: 15% auto;
     padding: 30px;
     border: 1px solid rgba(16, 185, 129, 0.3);
