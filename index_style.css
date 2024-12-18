@@ -1,6 +1,50 @@
+/* Theme Variables */
+:root {
+    /* Dark theme (default) */
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --secondary-text: #ebdcdc;
+    --navbar-bg: #000000;
+    --card-bg: rgba(255, 255, 255, 0.166);
+    --feature-text: rgba(255, 255, 255, 0.8);
+    --feature-shadow: 
+        0 10px 25px rgba(19, 156, 111, 0.384), 
+        0 15px 35px rgba(236, 72, 154, 0.503);
+}
+
+/* Light theme */
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --secondary-text: #333333;
+    --navbar-bg: #ffffff;
+    --card-bg: rgba(0, 0, 0, 0.05);
+    --feature-text: rgba(0, 0, 0, 0.8);
+    --feature-shadow: 
+        0 10px 25px rgba(19, 156, 111, 0.2), 
+        0 15px 35px rgba(236, 72, 154, 0.2);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: #10b981;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-right: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
 /* Global Styles */
 body {
-    background-color: #000000;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -28,7 +72,7 @@ header {
 
 .navbar {
     position: fixed; 
-    background-color: #000000;
+    background-color: var(--navbar-bg);
     top: 0;
     left: 0;
     width: 100%; 
@@ -124,7 +168,7 @@ body {
     font-family: "Poppins", serif;
     font-weight: 400;
     font-size: 30px;
-    color: #ffffff;
+    color: var(--text-color);
     margin-bottom: -21px;
 
 }
@@ -134,7 +178,7 @@ body {
     font-family: "Poppins", serif;
     font-weight: 200;
     font-size: 30px;
-    color: #ebdcdc;
+    color: var(--secondary-text);
     
 }
 .button-container {
@@ -214,18 +258,15 @@ body {
 }
 
 .feature-item {
-    background: linear-gradient(135deg, #10b981, #ec4899);
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 20px;
     width: 280px;
     height: 300px;
     margin: 15px;
 
-    box-shadow: 
-        0 10px 25px rgba(19, 156, 111, 0.384), 
-        0 15px 35px rgba(236, 72, 154, 0.503); 
+    box-shadow: var(--feature-shadow);
     /* Glassmorphism effect */
-    background: rgba(255, 255, 255, 0.166);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.125);
     
@@ -267,7 +308,7 @@ body {
 
 .feature-item p {
     font-family: "poppins";
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--feature-text);
     line-height: 1.6;
     font-size: 20px;
 }
@@ -288,7 +329,7 @@ body {
 
 .download p {
     font-size: 20px;
-    color: #d7dbdb;
+    color: var(--text-color);
     margin-bottom: 30px;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
@@ -359,7 +400,7 @@ footer {
     max-width: 100%;
     box-sizing: border-box;
     /* Box Style */
-    background-color: #000000;
+    background-color: var(--card-bg);
     border-radius: 10px;
     padding: 20px;
     margin: 0 auto;
@@ -370,7 +411,7 @@ footer {
     line-height: 1.5;
     text-align: center;
     font-size: 22px;
-    color: #e3fff9;
+    color: var(--text-color);
     margin-bottom: 40px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -418,10 +459,10 @@ footer {
 
 #feedback-form label {
     display: block;
-  font-size: 16px;
-  color: #fff7f7;
-  margin-bottom: 5px;
-  font-weight: 500;
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-weight: 500;
 }
 
 #feedback-form input,
@@ -436,6 +477,9 @@ footer {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   transition: border-color 0.3s ease;
+    background: var(--card-bg);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    color: var(--text-color);
 }
 .feedback-form input:focus,
 .feedback-form textarea:focus,
@@ -536,7 +580,7 @@ footer {
 
 .feedback-hero p {
     font-size: 20px;
-    color: #ffffff;
+    color: var(--text-color);
     max-width: 600px;
     margin: 0 auto;
     font-family: "Poppins", sans-serif;
@@ -583,13 +627,13 @@ footer {
 }
 
 .feedback-type-card h3 {
-    color: #ffffff;
+    color: var(--text-color);
     margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
 }
 
 .feedback-type-card p {
-    color: #ffffff80;
+    color: var(--secondary-text);
     font-size: 14px;
     font-family: "Poppins", sans-serif;
 }
@@ -608,12 +652,12 @@ footer {
 }
 
 .form-header h2 {
-    color: #ffffff;
+    color: var(--text-color);
     margin-bottom: 10px;
 }
 
 .form-header p {
-    color: #ffffff80;
+    color: var(--secondary-text);
     font-size: 14px;
 }
 
@@ -625,9 +669,9 @@ footer {
 #feedback-form input,
 #feedback-form select,
 #feedback-form textarea {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--card-bg);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+    color: var(--text-color);
     padding: 15px;
     border-radius: 10px;
     font-size: 16px;
