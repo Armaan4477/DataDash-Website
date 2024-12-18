@@ -79,7 +79,7 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.nav-center a:hover {
+.nav-main a:hover {
     background-color: #cbc9c9;
 }
 
