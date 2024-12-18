@@ -27,9 +27,14 @@
     <div id="logodiv">
         <div id="intro">
             <h1>DataDash</h1>
-            <!--<p>
-                Easily share media files across multiple platforms! DataDash supports macOS, Windows, Linux, and Android, providing seamless file transfers over local networks, without relying on internet connections.
-            </p>-->
+            <p id="tag">
+                Effortless File Sharing Anywhere!</p>
+               <p id="desc"> DataDash lets you share media seamlessly across macOS,<br> Windows, Linux, and Android—fast, secure,<br> and internet-free over local networks!
+            </p>
+            <div class="button-container">
+            <a href="#" onclick="navigateTo('download.html')" class="btn">Visit Downloads </a> 
+            </button>
+            </div>
         </div>
     </div>
 
@@ -37,7 +42,7 @@
 
     <!-- Features Section -->
     <section class="features">
-        <h2>Key Features</h2>
+        <h2> Features</h2>
         <div class="features-list">
             <div class="feature-item">
                 <h3>Cross-Platform Support</h3>
@@ -45,15 +50,15 @@
             </div>
             <div class="feature-item">
                 <h3>Secure Transfers</h3>
-                <p>Keep your data safe with our optional AES-256 encryption, ensuring that all file transfers remain secure and private.</p>
+                <p>Keep your files safe and private with optional AES-256 encryption, ensuring every transfer is secure and protected.</p>
             </div>
             <div class="feature-item">
-                <h3>No Internet Required</h3>
-                <p>Transfer your files over a local network without needing an active internet connection, making sharing faster and more reliable.</p>
+                <h3>Internet-Free Sharing</h3>
+                <p>Share files effortlessly over your local network—no internet needed! <br>Enjoy faster, more reliable transfers anytime, anywhere.</p>
             </div>
             <div class="feature-item">
                 <h3>High-Speed Sharing</h3>
-                <p>Enjoy high-speed file sharing, thanks to optimized peer-to-peer connections using UDP and TCP protocols.</p>
+                <p>Transfer files at lightning speed with optimized peer-to-peer connections using UDP and TCP protocols.</p>
             </div>
         </div>
     </section>
@@ -72,7 +77,7 @@
     <hr>
 
     <section class="testimonials">
-        <h2>What Our Users Are Saying</h2>
+        <h2>What Our Users Are Raving About</h2>
         <div class="testimonial-carousel">
             <div class="testimonial-list">
                 <div class="testimonial-item">
@@ -122,18 +127,20 @@
                 <option value="Bug Report">Bug Report</option>
                 <option value="Testimony">Testimony</option>
             </select>
+            <div id="input-form">
             <label for="user-name">Name:</label>
             <input type="text" id="user-name" name="name" required>           
             <label for="email">Email:</label>
             <input type="email" id="email" name="userEmail" required>
             <label for="details">Details:</label>
             <textarea id="details" name="message" rows="5" required></textarea>
+            </div>
             <button type="submit">Submit</button>
         </form>
         <div id="feedback-message"></div>
     </section>
     
-    <footer> 
+    <footer class="footer"> 
         <p>&copy; 2024 DataDash. All rights reserved.</p>
     </footer>
 
