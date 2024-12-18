@@ -601,20 +601,36 @@ footer {
 }
 
 .feedback-type-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     border-radius: 15px;
     padding: 30px;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(128, 128, 128, 0.2);
     text-decoration: none;
     display: block;
+    /* Add box shadow for better visibility */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .feedback-type-card:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--card-bg);
+    /* Enhance hover effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border-color: rgba(16, 185, 129, 0.5);
+}
+
+/* Add these new style definitions */
+[data-theme="light"] .feedback-type-card {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .feedback-type-card:hover {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(16, 185, 129, 0.5);
 }
 
 .feedback-type-card i {
