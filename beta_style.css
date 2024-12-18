@@ -62,24 +62,38 @@ header {
 }
 
 .navbar {
+    position: fixed; 
+    background-color: var(--navbar-bg);
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: var(--navbar-bg);
+    align-items: right;
     padding: 10px 20px;
     color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 #name {
+    font-family: "Poppins", serif;
+    font-weight: 500;
     font-size: 18px;
     font-weight: bold;
     display: flex;
     align-items: center;
-    font-family: "Poppins", serif;
-    font-weight: 500;
     color: #0ca699;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+#name:hover {
+    transform: scale(1.05);
+}
+
+#name:active {
+    transform: scale(0.95);
 }
 
 #navbar-logo {
@@ -89,7 +103,6 @@ header {
     border-radius: 50%;
 }
 
-/* Replace nav-center styles with nav-main */
 .nav-main {
     display: flex;
     justify-content: flex-end;
