@@ -70,21 +70,19 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 30px;
     color: white;
 }
 
 #name {
-    font-family: "Poppins", serif;
-    font-weight: 500;
-    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
     font-weight: bold;
     display: flex;
     align-items: center;
     color: #0ca699;
     transition: transform 0.3s ease;
-    cursor: pointer;
-    user-select: none;
+    margin-left: 20px;
 }
 
 #name:hover {
@@ -105,8 +103,8 @@ header {
 /* Center the navigation links */
 .nav-main {
     display: flex;
-    justify-content: flex-end;
-    flex: 1;
+    align-items: center;
+    margin-right: 20px;
 }
 
 .nav-main a {
@@ -116,16 +114,16 @@ header {
     -webkit-text-fill-color: transparent;
     color: transparent;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
-    padding: 7px 9px;
-    margin: 1px 47px;
-    transition: background-color 0.3s ease;
+    padding: 7px 15px;
+    margin: 0 20px;
+    transition: transform 0.3s ease;
     font-family: "Poppins", sans-serif;
 }
 
 .nav-main a:hover {
-    background-color: #cbc9c9;
+    transform: scale(1.1);
 }
 
 /* Add space for the navbar */
