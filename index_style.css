@@ -93,6 +93,17 @@ header {
     display: flex;
     align-items: center;
     color: #0ca699;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+#name:hover {
+    transform: scale(1.05);
+}
+
+#name:active {
+    transform: scale(0.95);
 }
 
 #navbar-logo {
