@@ -756,3 +756,27 @@ html {
 a.feedback-type-card:hover {
     text-decoration: none;
 }
+
+/* Style for horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(16, 185, 129, 0.2),
+        rgba(236, 72, 153, 0.2),
+        transparent
+    );
+    margin: 2rem 0;
+}
+
+[data-theme="light"] hr {
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(16, 185, 129, 0.1),
+        rgba(236, 72, 154, 0.1),
+        transparent
+    );
+}
