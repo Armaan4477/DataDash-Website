@@ -1,6 +1,26 @@
+/* Theme Variables */
+:root {
+    /* Dark theme (default) */
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --secondary-text: #ebdcdc;
+    --navbar-bg: #000000;
+    --card-bg: rgba(255, 255, 255, 0.166);
+}
+
+/* Light theme */
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --secondary-text: #333333;
+    --navbar-bg: #ffffff;
+    --card-bg: rgba(0, 0, 0, 0.05);
+}
+
 /* Global Styles */
 body {
-    background-color: #000000;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -28,7 +48,7 @@ header {
 
 .navbar {
     position: fixed; 
-    background-color: #000000;
+    background-color: var(--navbar-bg);
     top: 0;
     left: 0;
     width: 100%; 
@@ -446,4 +466,20 @@ hr {
     background: linear-gradient(90deg, #10b981, #ec4899);
     margin: 30px 0;
     opacity: 0.3;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: #10b981;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-right: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
 }
