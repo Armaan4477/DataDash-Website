@@ -101,10 +101,9 @@ body {
 }
 
 h1 {
-    font-size: 121px;
-    margin-bottom: -39px;
+    font-size: 80px; /* Reduced from 121px */
+    margin-bottom: 20px; /* Adjusted from -39px */
     color: transparent;
-    text-shadow: 0 0 10px #ff8800; /* Glowing effect for the title */
     font-family: "Poppins", serif;
     font-weight: 700;
     background: linear-gradient(47deg, #10b981, #ec4899);
@@ -112,7 +111,29 @@ h1 {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-top: 20px;
-    text-align: left;
+    text-align: center; /* Changed from left to center */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Show ellipsis if text overflows */
+}
+
+/* Add responsive font sizes for h1 */
+@media screen and (max-width: 1200px) {
+    h1 {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 30px;
+    }
 }
 
 .intro {
