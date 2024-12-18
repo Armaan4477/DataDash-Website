@@ -1,2 +1,0 @@
- Easily share media files across multiple platforms! Our application supports macOS, Windows, Linux, and Android, allowing seamless sharing and access to your files wherever you are.
-           
