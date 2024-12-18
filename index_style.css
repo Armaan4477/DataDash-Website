@@ -67,10 +67,10 @@ header {
 
 .nav-main a {
     background: linear-gradient(47deg, #10b981, #ec4899);
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-     background-clip: text;
-     color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
     text-decoration: none;
     font-size: 25px;
     font-weight: 600;
@@ -106,12 +106,12 @@ body {
 
 #intro h1 {
     font-family: "Poppins", serif;
-     font-weight: 700;
-     background: linear-gradient(47deg, #10b981, #ec4899);
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-     background-clip: text;
-     color: transparent;
+    font-weight: 700;
+    background: linear-gradient(47deg, #10b981, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
     text-align: left;
     font-size: 121px;
     margin-top: 20px;
@@ -259,8 +259,8 @@ body {
     margin-bottom: 10px;
     background: linear-gradient(135deg, #10b981, #ec4899);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: transparent;
     font-weight: bold;
 }
@@ -498,11 +498,10 @@ footer {
     background-size: 10px 5px;
 }
 .footer{
-    background: white;
     background: linear-gradient(47deg, #10b981, #ec4899);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: transparent;
    text-decoration: none;
    font-size: 20px;
@@ -515,4 +514,174 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* New Feedback Page Styles */
+.feedback-hero {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(236, 72, 153, 0.1));
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.feedback-hero h1 {
+    font-size: 48px;
+    background: linear-gradient(47deg, #10b981, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.feedback-hero p {
+    font-size: 20px;
+    color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+.feedback-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.feedback-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.feedback-type-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    display: block;
+}
+
+.feedback-type-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.feedback-type-card i {
+    font-size: 32px;
+    margin-bottom: 15px;
+    background: linear-gradient(47deg, #10b981, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.feedback-type-card h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+.feedback-type-card p {
+    color: #ffffff80;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+}
+
+.feedback-form-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: #ffffff80;
+    font-size: 14px;
+}
+
+#feedback-form {
+    display: grid;
+    gap: 20px;
+}
+
+#feedback-form input,
+#feedback-form select,
+#feedback-form textarea {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+#feedback-form input:focus,
+#feedback-form select:focus,
+#feedback-form textarea:focus {
+    border-color: #10b981;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+#feedback-form button {
+    background: linear-gradient(135deg, #10b981, #ec4899);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+#feedback-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
+@media (max-width: 768px) {
+    .feedback-hero {
+        padding: 40px 20px;
+    }
+    
+    .feedback-hero h1 {
+        font-size: 36px;
+    }
+    
+    .feedback-container {
+        padding: 0 15px;
+    }
+    
+    .feedback-form-section {
+        padding: 20px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Override any default anchor styles */
+a.feedback-type-card:hover {
+    text-decoration: none;
 }

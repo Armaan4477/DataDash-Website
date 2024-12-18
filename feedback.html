@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -25,29 +26,56 @@
     </header>
 
     <div class="content-wrapper">
-        <!-- Feedback Form Section -->
-        <section class="feedback">
-            <h2>We Value Your Feedback</h2>
-            <form id="feedback-form">
-                <label for="feedback-type">Type of Feedback:</label>
-                <select id="feedback-type" name="feedbackType" required>
-                    <option value="">Select an option</option>
-                    <option value="Feature Request">Feature Request</option>
-                    <option value="Bug Report">Bug Report</option>
-                    <option value="Testimony">Testimony</option>
-                </select>
-                <div id="input-form">
-                    <label for="user-name">Name:</label>
-                    <input type="text" id="user-name" name="name" required>           
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="userEmail" required>
-                    <label for="details">Details:</label>
-                    <textarea id="details" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-            <div id="feedback-message"></div>
-        </section>
+        <div class="feedback-hero">
+            <h1>Your Feedback Matters</h1>
+            <p>Help us improve DataDash by sharing your thoughts, reporting issues, or suggesting new features.</p>
+        </div>
+
+        <div class="feedback-container">
+            <div class="feedback-types">
+                <a href="#feedback-form-section" class="feedback-type-card" data-type="Feature Request">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Feature Request</h3>
+                    <p>Suggest new features or improvements</p>
+                </a>
+                <a href="#feedback-form-section" class="feedback-type-card" data-type="Bug Report">
+                    <i class="fas fa-bug"></i>
+                    <h3>Bug Report</h3>
+                    <p>Report issues or unexpected behavior</p>
+                </a>
+                <a href="#feedback-form-section" class="feedback-type-card" data-type="Testimony">
+                    <i class="fas fa-comment"></i>
+                    <h3>Testimony</h3>
+                    <p>Share your experience with DataDash</p>
+                </a>
+            </div>
+
+            <section id="feedback-form-section" class="feedback-form-section">
+                <form id="feedback-form">
+                    <div class="form-header">
+                        <h2>Submit Your Feedback</h2>
+                        <p>All fields are required</p>
+                    </div>
+                    <label for="feedback-type">Type of Feedback:</label>
+                    <select id="feedback-type" name="feedbackType" required>
+                        <option value="">Select an option</option>
+                        <option value="Feature Request">Feature Request</option>
+                        <option value="Bug Report">Bug Report</option>
+                        <option value="Testimony">Testimony</option>
+                    </select>
+                    <div id="input-form">
+                        <label for="user-name">Name:</label>
+                        <input type="text" id="user-name" name="name" required>           
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="userEmail" required>
+                        <label for="details">Details:</label>
+                        <textarea id="details" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="feedback-message"></div>
+            </section>
+        </div>
     </div>
 
     <footer class="footer"> 

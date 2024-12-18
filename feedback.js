@@ -1,3 +1,10 @@
+document.querySelectorAll('.feedback-type-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const feedbackType = card.dataset.type;
+        document.getElementById('feedback-type').value = feedbackType;
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize EmailJS
     emailjs.init('q9tVbleQ2wLKetQGl'); // Replace with your actual Public Key
