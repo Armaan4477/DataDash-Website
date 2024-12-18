@@ -116,9 +116,8 @@ body {
 #intro {
     padding: 40px;
     border-radius: 10px;
-  
     text-align: center;
-    background-color: #000000;
+    background-color: var(--bg-color);  /* Changed from #000000 to var(--bg-color) */
     font-family: 'Georgia', serif;
     max-width: 100%;
 }
