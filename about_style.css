@@ -7,6 +7,7 @@
     --container-bg: #1e1e1e;
     --special-thanks-bg: #2b2b2b;
     --name-color: #ffffff;
+    --college-color: #ffffff;
 }
 
 [data-theme="light"] {
@@ -14,9 +15,10 @@
     --text-color: #000000;
     --secondary-text: #333333;
     --navbar-bg: #ffffff;
-    --container-bg: #f5f5f5;
+    --container-bg: #ffffff;
     --special-thanks-bg: #ffffff;
     --name-color: #000000;
+    --college-color: #141313;
 }
 
 /* Theme toggle button */
@@ -140,7 +142,7 @@ body {
 .about-container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0px;
     text-align: left;
     background-color: var(--container-bg);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -159,9 +161,9 @@ h1 {
     background-clip: text;
     margin-top: 20px;
     text-align: center; /* Changed from left to center */
-    white-space: nowrap; /* Prevent wrapping */
+    white-space: wrap; /* Prevent wrapping */
     overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Show ellipsis if text overflows */
+   /* text-overflow: ellipsis;  Show ellipsis if text overflows */
 }
 
 /* Add responsive font sizes for h1 */
@@ -193,9 +195,8 @@ h2 {
     font-size: 38px;
     margin-top: 50px;
     color: rgb(64, 206, 171);
-    text-shadow: 0 0 10px #00ff88; /* Glow effect on the section title */
     font-family: "Poppins", sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -210,7 +211,7 @@ h2 {
 }
 
 .student-card {
-    background: linear-gradient(135deg, #10b981, #ec4899); /* Dark card background */
+    
     padding: 20px;
     border-radius: 20px;
     width: 280px;
@@ -219,7 +220,6 @@ h2 {
         0 10px 25px rgba(19, 156, 111, 0.384),
         0 15px 35px rgba(236, 72, 154, 0.503);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.125);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -241,24 +241,22 @@ h2 {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 3px solid #ff8800; /* Glowing border for photos */
-    box-shadow: 0 0 10px #ff8800; /* Glow effect on photos */
+    border: 3px solid #ffffff; /* Glowing border for photos */
+    box-shadow: 0 0 10px  #fd49b8f1; /* Glow effect on photos */
 }
 
 h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #ffffff; /* Changed to solid white */
+    color: var(--name-color); /* Changed to solid white */
     font-family: "Poppins", sans-serif;
     font-weight: bold;
-    text-shadow: 
-        0 0 10px rgba(16, 185, 129, 0.5),
-        0 0 20px rgba(236, 72, 153, 0.5); /* Softer dual-color glow effect */
+    text-shadow: 0 0 5px  #fd49b8f1;
 }
 
 p {
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.8); /* Softer text color for college names */
+    color: var(--college-color); /* Softer text color for college names */
     font-family: "Poppins", sans-serif;
     line-height: 1.6;
     font-size: 20px;
@@ -268,28 +266,28 @@ p {
     display: inline-block;
     margin-top: 10px;
     font-size: 20px;
-    color: #00bfff; /* Glowing blue for GitHub links */
+    color: #0b3b4a; /* Glowing blue for GitHub links */
     text-decoration: none;
-    text-shadow: 0 0 8px #00bfff; /* Glow effect for GitHub links */
+    text-shadow: 0 0 5px #00bfff; /* Glow effect for GitHub links */
 }
 
 .github-link:hover {
     text-decoration: underline;
-    color: #00ffff;
+    color: #156565;
 }
 
 .linkedin-link {
     display: inline-block;
     margin-top: 10px;
     font-size: 20px;
-    color: #00bfff; /* Glowing blue for GitHub links */
+    color: #0b3b4a; /* Glowing blue for GitHub links */
     text-decoration: none;
-    text-shadow: 0 0 8px #00bfff; /* Glow effect for GitHub links */
+    text-shadow: 0 0 5px #00bfff; /* Glow effect for GitHub links */
 }
 
 .linkedin-link:hover {
     text-decoration: underline;
-    color: #00ffff;
+    color: #156565;
 }
 
 .special-thanks {
@@ -302,17 +300,19 @@ p {
     height: 150px;
     border-radius: 50%;
     margin-bottom: 20px;
-    border: 3px solid #ff8800; /* Glowing border */
-    box-shadow: 0 0 15px #ff8800; /* Glow effect */
+    border: 3px solid #fefdfd; /* Glowing border */
+    box-shadow: 0 0 15px #fd49b8f1; /* Glow effect */
 }
 
 .special-thanks h3 {
     color: var(--name-color);
-    text-shadow: 0 0 10px rgba(255, 136, 0, 0.5);
+    text-shadow: 0 0 5px  #fd49b8f1;
+    font-family: "Poppins", sans-serif;
 }
 
 
 .special-thanks-container {
+    
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -322,8 +322,10 @@ p {
 
 .special-thanks {
     background-color: var(--special-thanks-bg);
-    padding: 20px;
+    
+    padding: 40px;
     border-radius: 10px;
+    margin: 22px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     max-width: 300px;
@@ -331,6 +333,8 @@ p {
 }
 
 .special-thanks:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #ff8800; /* Glow effect similar to student cards */
+    transform: translateY(-15px); /* Lift effect on hover */
+    box-shadow: 
+        0 15px 35px rgba(19, 156, 111, 0.384), 
+        0 20px 45px rgba(236, 72, 154, 0.503);
 }
