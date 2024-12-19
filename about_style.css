@@ -8,6 +8,8 @@
     --special-thanks-bg: #2b2b2b;
     --name-color: #ffffff;
     --college-color: #ffffff;
+    --link-color:  #07b8ed;
+    --shadow-color:  #dcf7ff;
 }
 
 [data-theme="light"] {
@@ -19,6 +21,8 @@
     --special-thanks-bg: #ffffff;
     --name-color: #000000;
     --college-color: #141313;
+    --link-color:  #1b88a9;
+    --shadow-color:  #56d5fc;
 }
 
 /* Theme toggle button */
@@ -266,28 +270,28 @@ p {
     display: inline-block;
     margin-top: 10px;
     font-size: 20px;
-    color: #0b3b4a; /* Glowing blue for GitHub links */
+    color: var(--link-color); /* Glowing blue for GitHub links */
     text-decoration: none;
-    text-shadow: 0 0 5px #00bfff; /* Glow effect for GitHub links */
+    text-shadow: var(--shadow-color); /* Glow effect for GitHub links */
 }
 
 .github-link:hover {
     text-decoration: underline;
-    color: #156565;
+    color: #9ccaca;
 }
 
 .linkedin-link {
     display: inline-block;
     margin-top: 10px;
     font-size: 20px;
-    color: #0b3b4a; /* Glowing blue for GitHub links */
+    color: var(--link-color); /* Glowing blue for GitHub links */
     text-decoration: none;
-    text-shadow: 0 0 5px #00bfff; /* Glow effect for GitHub links */
+    text-shadow: var(--shadow-color); /* Glow effect for GitHub links */
 }
 
 .linkedin-link:hover {
     text-decoration: underline;
-    color: #156565;
+    color: #9ccaca;
 }
 
 .special-thanks {
