@@ -30,6 +30,33 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme, icon);
     });
+
+    const hamburger = document.querySelector('.hamburger');
+    const navMain = document.querySelector('.nav-main');
+    
+    if (hamburger && navMain) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMain.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMain.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMain.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-main a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMain.classList.remove('active');
+            });
+        });
+    }
 });
 
 // Update theme icon based on current theme
