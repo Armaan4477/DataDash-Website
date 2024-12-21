@@ -32,15 +32,6 @@ body {
     background-size: cover;
 }
 
-/* Centering text in headers and sections */
-h1, h2, p {
-    text-align: center; /* Consistent text alignment for headings and paragraphs */
-}
-
-/* Add space for the navbar */
-body {
-    padding-top: 60px;
-}
 
 /* Landing Page Styles */
 #logodiv {
