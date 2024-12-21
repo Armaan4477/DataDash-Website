@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Update theme icon based on current theme
 function updateThemeIcon(theme, icon) {
     icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    icon.style.color = theme === 'light' ? 'black' : 'white';
 }
 
 // Export for use in inline script
