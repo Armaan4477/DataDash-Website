@@ -1,24 +1,21 @@
 /* Navbar Styles */
 header {
+    position: static; /* Remove or override fixed positioning */
+    width: 100%;
+}
+
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
-}
-
-.navbar {
-    position: fixed; 
-    background-color: var(--navbar-bg);
-    top: 0;
-    left: 0;
-    width: 100%; 
-    z-index: 1000;
+    height: 60px; /* Fixed height */
     display: flex;
+    align-items: center; /* Center items vertically */
     justify-content: space-between;
-    align-items: right;
-    padding: 10px 20px;
-    color: white;
+    background-color: var(--navbar-bg);
+    padding: 0 20px;
+    z-index: 1000;
 }
 
 #name {
