@@ -29,6 +29,9 @@ header {
     transition: transform 0.3s ease;
     cursor: pointer;
     user-select: none;
+    margin: 0;
+    padding: 0;
+    line-height: 60px;
 }
 
 #name:hover {
@@ -47,9 +50,12 @@ header {
 }
 
 .nav-main {
+    font-family: "Poppins", serif;
     display: flex;
     justify-content: flex-end;
     flex: 1;
+    font-size: 25px;
+    margin: 0 20px;
 }
 
 .nav-main a {
