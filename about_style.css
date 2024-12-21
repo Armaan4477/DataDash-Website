@@ -342,3 +342,76 @@ p {
         0 15px 35px rgba(19, 156, 111, 0.384), 
         0 20px 45px rgba(236, 72, 154, 0.503);
 }
+
+/* ...existing code... */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 1001;
+    position: absolute; /* Ensure it stays within the navbar */
+    right: 40px; /* Adjust as needed to keep it within the screen */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: linear-gradient(45deg, #4CAF50, #E91E63);
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 700px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-main {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-main.active {
+        right: 0;
+    }
+
+    .nav-main a {
+        font-size: 1.5rem;
+        padding: 1rem 0;
+    }
+
+    .theme-toggle {
+        margin-bottom: 1rem;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+}
+
+/* ...existing code... */
