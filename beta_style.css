@@ -17,22 +17,6 @@
     --card-bg: rgba(0, 0, 0, 0.05);
 }
 
-/* Theme toggle button */
-.theme-toggle {
-    background: none;
-    border: none;
-    color: #10b981;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    margin-right: 2rem;
-    transition: transform 0.3s ease;
-}
-
-.theme-toggle:hover {
-    transform: scale(1.1);
-}
-
 /* Global Styles */
 body {
     background-color: var(--bg-color);
