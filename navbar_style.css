@@ -92,7 +92,7 @@ header {
     display: block;
     width: 25px;
     height: 3px;
-    background: linear-gradient(45deg, #4CAF50, #E91E63);
+    background: linear-gradient(47deg, #10b981, #ec4899);
     transition: all 0.3s ease;
 }
 
