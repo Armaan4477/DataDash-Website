@@ -141,6 +141,10 @@ header {
     cursor: pointer;
     gap: 6px;
     z-index: 1001;
+    position: absolute; /* Ensure it stays within the navbar */
+    right: 40px; /* Adjust as needed to keep it within the screen */
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .hamburger span {
