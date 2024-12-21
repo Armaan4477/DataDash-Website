@@ -19,4 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const specialThanksPhoto4 = document.getElementById('special-thanks-photo4');
     specialThanksPhoto4.src = 'photos/adwait.jpg'; // Update the path as necessary
+
+    const specialThanksPhoto5 = document.getElementById('special-thanks-photo5');
+    specialThanksPhoto5.src = 'photos/aarya.jpg'; // Update the path as necessary
 });
