@@ -93,6 +93,26 @@ header {
     transition: all 0.3s ease;
 }
 
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+[data-theme="dark"] .theme-toggle i {
+    color: white;
+}
+
+[data-theme="light"] .theme-toggle i {
+    color: black;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
 @media screen and (max-width: 700px) {
     .navbar {
         padding: 1rem;
