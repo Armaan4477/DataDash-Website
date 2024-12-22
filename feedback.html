@@ -72,24 +72,35 @@
                 <form id="feedback-form">
                     <div class="form-header">
                         <h2>Submit Your Feedback</h2>
-                        <p>All fields are required</p>
+                        <p>Help us improve DataDash with your valuable input</p>
                     </div>
-                    <label for="feedback-type">Type of Feedback:</label>
-                    <select id="feedback-type" name="feedbackType" required>
-                        <option value="">Select an option</option>
-                        <option value="Feature Request">Feature Request</option>
-                        <option value="Bug Report">Bug Report</option>
-                        <option value="Testimony">Testimony</option>
-                    </select>
-                    <div id="input-form">
-                        <label for="user-name">Name:</label>
-                        <input type="text" id="user-name" name="name" required>           
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="userEmail" required>
-                        <label for="details">Details:</label>
-                        <textarea id="details" name="message" rows="5" required></textarea>
+                    
+                    <div class="form-group">
+                        <label for="feedback-type">Type of Feedback</label>
+                        <select id="feedback-type" name="feedbackType" required>
+                            <option value="" disabled selected>Choose feedback type</option>
+                            <option value="Feature Request">Feature Request</option>
+                            <option value="Bug Report">Bug Report</option>
+                            <option value="Testimony">Testimony</option>
+                        </select>
                     </div>
-                    <button type="submit">Submit</button>
+
+                    <div class="form-group">
+                        <label for="user-name">Your Name</label>
+                        <input type="text" id="user-name" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="userEmail" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="details">Your Message</label>
+                        <textarea id="details" name="message" rows="5" placeholder="Share your thoughts with us" required></textarea>
+                    </div>
+
+                    <button type="submit">Submit Feedback</button>
                 </form>
                 <div id="feedback-message"></div>
             </section>
