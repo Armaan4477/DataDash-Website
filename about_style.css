@@ -1,71 +1,47 @@
+/* Theme Variables */
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --secondary-text: #ebdcdc;
+    --navbar-bg: #000000;
+    --container-bg: #1e1e1e;
+    --special-thanks-bg: #2b2b2b;
+    --name-color: #ffffff;
+    --college-color: #ffffff;
+    --link-color:  #07b8ed;
+    --shadow-color:  #dcf7ff;
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --secondary-text: #333333;
+    --navbar-bg: #ffffff;
+    --container-bg: #ffffff;
+    --special-thanks-bg: #ffffff;
+    --name-color: #000000;
+    --college-color: #141313;
+    --link-color:  #1b88a9;
+    --shadow-color:  #56d5fc;
+}
+
+/* Theme toggle button */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text for contrast */
+    background-color: var(--bg-color); /* Dark background */
+    color: var(--text-color); /* Light text for contrast */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 60px; /* Add space for the navbar */
 }
 
 
 /* Navbar Styles */
-
-/* Navbar Styles */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
-    color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-#name {
-    font-size: 18px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-#navbar-logo {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    border-radius: 50%;
-}
-
-/* Center the navigation links */
-.nav-center {
-    display: flex;
-    justify-content: space-evenly;
-    flex: 1;
-}
-
-.nav-center a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 12px;
-    margin: 0 10px;
-    transition: background-color 0.3s ease;
-}
-
-.nav-center a:hover {
-    background-color: #555;
-}
-
-/* Add space for the navbar */
-body {
-    padding-top: 60px;
-}
 
 /* Landing Page Styles */
 #logodiv {
@@ -74,20 +50,49 @@ body {
 }
 
 .about-container {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 20px;
-    text-align: center;
-    background-color: #1e1e1e; /* Slightly lighter dark background */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+    text-align: left;
+    background-color: var(--container-bg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
 
 h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #ffffff;
-    text-shadow: 0 0 10px #ff8800; /* Glowing effect for the title */
+    font-size: 80px; /* Reduced from 121px */
+    margin-bottom: 20px; /* Adjusted from -39px */
+    color: transparent;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    background: linear-gradient(47deg, #10b981, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 20px;
+    text-align: center; /* Changed from left to center */
+    white-space: wrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+   /* text-overflow: ellipsis;  Show ellipsis if text overflows */
+}
+
+/* Add responsive font sizes for h1 */
+@media screen and (max-width: 1200px) {
+    h1 {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 30px;
+    }
 }
 
 .intro {
@@ -97,33 +102,47 @@ h1 {
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 38px;
     margin-top: 50px;
-    color: #ffffff;
-    text-shadow: 0 0 10px #00ff88; /* Glow effect on the section title */
+    color: rgb(64, 206, 171);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .team-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
     margin-top: 20px;
+    padding: 20px;
 }
 
 .student-card {
-    background-color: #2b2b2b; /* Dark card background */
+    
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow */
+    border-radius: 20px;
+    width: 280px;
+    margin: 15px;
+    box-shadow:
+        0 10px 25px rgba(19, 156, 111, 0.384),
+        0 15px 35px rgba(236, 72, 154, 0.503);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    color: white;
     text-align: center;
-    max-width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .student-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #ff8800; /* Glow effect when hovering over a student card */
+    transform: translateY(-15px);
+    box-shadow:
+        0 15px 35px rgba(19, 156, 111, 0.384),
+        0 20px 45px rgba(236, 72, 154, 0.503);
 }
 
 .student-photo {
@@ -132,48 +151,53 @@ h2 {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 3px solid #ff8800; /* Glowing border for photos */
-    box-shadow: 0 0 10px #ff8800; /* Glow effect on photos */
+    border: 3px solid #ffffff; /* Glowing border for photos */
+    box-shadow: 0 0 10px  #fd49b8f1; /* Glow effect on photos */
 }
 
 h3 {
-    font-size: 22px;
+    font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #ffffff;
-    text-shadow: 0 0 10px #00ff88; /* Glow effect on student name */
+    color: var(--name-color); /* Changed to solid white */
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    text-shadow: 0 0 5px  #fd49b8f1;
 }
 
 p {
     font-size: 16px;
-    color: #bbbbbb; /* Softer text color for college names */
+    color: var(--college-color); /* Softer text color for college names */
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    font-size: 20px;
 }
 
 .github-link {
     display: inline-block;
     margin-top: 10px;
-    font-size: 16px;
-    color: #00bfff; /* Glowing blue for GitHub links */
+    font-size: 20px;
+    color: var(--link-color); /* Glowing blue for GitHub links */
     text-decoration: none;
-    text-shadow: 0 0 8px #00bfff; /* Glow effect for GitHub links */
+    text-shadow: var(--shadow-color); /* Glow effect for GitHub links */
 }
 
 .github-link:hover {
     text-decoration: underline;
-    color: #00ffff;
+    color: #9ccaca;
 }
 
 .linkedin-link {
     display: inline-block;
     margin-top: 10px;
-    font-size: 16px;
-    color: #00bfff; /* Glowing blue for GitHub links */
+    font-size: 20px;
+    color: var(--link-color); /* Glowing blue for GitHub links */
     text-decoration: none;
-    text-shadow: 0 0 8px #00bfff; /* Glow effect for GitHub links */
+    text-shadow: var(--shadow-color); /* Glow effect for GitHub links */
 }
 
 .linkedin-link:hover {
     text-decoration: underline;
-    color: #00ffff;
+    color: #9ccaca;
 }
 
 .special-thanks {
@@ -186,17 +210,19 @@ p {
     height: 150px;
     border-radius: 50%;
     margin-bottom: 20px;
-    border: 3px solid #ff8800; /* Glowing border */
-    box-shadow: 0 0 15px #ff8800; /* Glow effect */
+    border: 3px solid #fefdfd; /* Glowing border */
+    box-shadow: 0 0 15px #fd49b8f1; /* Glow effect */
 }
 
 .special-thanks h3 {
-    color: #ffffff;
-    text-shadow: 0 0 10px #ff8800; /* Glow effect for special thanks title */
+    color: var(--name-color);
+    text-shadow: 0 0 5px  #fd49b8f1;
+    font-family: "Poppins", sans-serif;
 }
 
 
 .special-thanks-container {
+    
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -205,16 +231,24 @@ p {
 }
 
 .special-thanks {
-    background-color: #2b2b2b; /* Dark card background similar to student cards */
-    padding: 20px;
+    background-color: var(--special-thanks-bg);
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow */
+    margin: 22px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    max-width: 300px;
+    width: 200px; /* Set a fixed width */
+    height: 320px; /* Set a fixed height */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .special-thanks:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #ff8800; /* Glow effect similar to student cards */
+    transform: translateY(-15px); /* Lift effect on hover */
+    box-shadow: 
+        0 15px 35px rgba(19, 156, 111, 0.384), 
+        0 20px 45px rgba(236, 72, 154, 0.503);
 }
+
+/* ...existing code... */
+
+/* ...existing code... */

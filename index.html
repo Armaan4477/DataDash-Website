@@ -5,30 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataDash</title>
     <link rel="stylesheet" href="index_style.css">
+    <link rel="stylesheet" href="navbar_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!-- Add Font Awesome to the head section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+    <!-- Prevent theme flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div id="name">
+            <div id="name" onclick="navigateTo('index.html')" style="cursor: pointer;">
                 <img src="" alt="Logo" id="navbar-logo">
                 DataDash
             </div>
-            <div class="nav-center">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-main">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
                 <a href="#" onclick="navigateTo('index.html')">Home</a>
                 <a href="#" onclick="navigateTo('about.html')">About</a>
+                <a href="#" onclick="navigateTo('feedback.html')">Feedback</a>
             </div>
         </nav>
     </header>
 
     <div id="logodiv">
         <div id="intro">
-            <h1>Welcome to <span>DataDash</span></h1>
-            <p>
-                Easily share media files across multiple platforms! DataDash supports macOS, Windows, Linux, and Android, providing seamless file transfers over local networks, without relying on internet connections.
+            <h1>DataDash</h1>
+            <p id="tag">
+                Effortless File Sharing Anywhere!</p>
+               <p id="desc"> DataDash lets you share media seamlessly across <br>Android, Windows, macOS and Linux —fast, secure,<br> and internet-free over local networks!
             </p>
+            <div class="button-container">
+            <a href="#" onclick="navigateTo('download.html')" class="btn">Visit Downloads </a> 
+            </div>
         </div>
     </div>
 
@@ -36,26 +62,26 @@
 
     <!-- Features Section -->
     <section class="features">
-        <h2>Key Features</h2>
+        <h2> Features</h2>
         <div class="features-list">
             <div class="feature-item">
                 <h3>Cross-Platform Support</h3>
-                <p>DataDash works seamlessly on multiple platforms, including macOS, Windows, Linux, and Android.</p>
+                <p>DataDash works seamlessly on multiple platforms, including Android, Windows, macOS  and Linux.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Internet-Free & High-Speed Sharing</h3>
+                <p>Share files seamlessly over your local network—no internet required. Experience lightning-fast transfers using TCP.</p>
             </div>
             <div class="feature-item">
                 <h3>Secure Transfers</h3>
-                <p>Keep your data safe with our optional AES-256 encryption, ensuring that all file transfers remain secure and private.</p>
+                <p>Keep your files safe and private with optional AES-256 encryption, ensuring every transfer is secure and protected.</p>
             </div>
             <div class="feature-item">
-                <h3>No Internet Required</h3>
-                <p>Transfer your files over a local network without needing an active internet connection, making sharing faster and more reliable.</p>
-            </div>
-            <div class="feature-item">
-                <h3>High-Speed Sharing</h3>
-                <p>Enjoy high-speed file sharing, thanks to optimized peer-to-peer connections using UDP and TCP protocols.</p>
+                <h3>Open Source</h3>
+                <p>Dive into our publicly available codebase, collaborate with other developers, and shape the future of DataDash on GitHub.</p>
             </div>
         </div>
-    </section>
+</section>
 
     <hr>
 
@@ -71,7 +97,7 @@
     <hr>
 
     <section class="testimonials">
-        <h2>What Our Users Are Saying</h2>
+        <h2>What Our Users Are Raving About</h2>
         <div class="testimonial-carousel">
             <div class="testimonial-list">
                 <div class="testimonial-item">
@@ -110,29 +136,7 @@
         </div>
     </section>
     
-    <!-- Feedback Form Section -->
-    <section class="feedback">
-        <h2>We Value Your Feedback</h2>
-        <form id="feedback-form">
-            <label for="feedback-type">Type of Feedback:</label>
-            <select id="feedback-type" name="feedbackType" required>
-                <option value="">Select an option</option>
-                <option value="Feature Request">Feature Request</option>
-                <option value="Bug Report">Bug Report</option>
-                <option value="Testimony">Testimony</option>
-            </select>
-            <label for="user-name">Name:</label>
-            <input type="text" id="user-name" name="name" required>           
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="userEmail" required>
-            <label for="details">Details:</label>
-            <textarea id="details" name="message" rows="5" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-        <div id="feedback-message"></div>
-    </section>
-    
-    <footer> 
+    <footer class="footer"> 
         <p>&copy; 2024 DataDash. All rights reserved.</p>
     </footer>
 

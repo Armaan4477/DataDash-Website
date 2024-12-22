@@ -5,29 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataDash</title>
     <link rel="stylesheet" href="download_style.css">
+    <link rel="stylesheet" href="navbar_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Prevent theme flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
 </head>
 <body>
     <header>
         <nav class="navbar">
-          <div id="name">
-            <img src="" alt="Logo" id="navbar-logo">
-            DataDash
-          </div>
-          <div class="nav-center">
-            <a href="#" onclick="navigateTo('index.html')">Home</a>
-            <a href="#" onclick="navigateTo('about.html')">About</a>
-          </div>
+            <div id="name" onclick="navigateTo('index.html')" style="cursor: pointer;">
+                <img src="" alt="Logo" id="navbar-logo">
+                DataDash
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-main">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#" onclick="navigateTo('index.html')">Home</a>
+                <a href="#" onclick="navigateTo('about.html')">About</a>
+                <a href="#" onclick="navigateTo('feedback.html')">Feedback</a>
+            </div>
         </nav>
-      </header>
+    </header>
 
     <div id="logodiv">
         <div id="intro">
             <h1>Download Our Application</h1>
-            <p>Select your platform below to download the appropriate version.</p>
+            <p id="desc">Select your platform below to download the appropriate version.</p>
+            <div class="button-container">
             <button id="help-button" class="btn">Help Choosing Arm or x64</button> <!-- Help button -->
+            </div>
         </div>
     </div>
 

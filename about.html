@@ -5,23 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataDash</title>
     <link rel="stylesheet" href="about_style.css">
+    <link rel="stylesheet" href="navbar_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Prevent theme flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
 </head>
 <body>
     <header>
         <nav class="navbar">
-          <div id="name">
-            <img src="" alt="Logo" id="navbar-logo">
-            DataDash
-          </div>
-          <div class="nav-center">
-            <a href="#" onclick="navigateTo('index.html')">Home</a>
+            <div id="name" onclick="navigateTo('index.html')" style="cursor: pointer;">
+                <img src="" alt="Logo" id="navbar-logo">
+                DataDash
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-main">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#" onclick="navigateTo('index.html')">Home</a>
                 <a href="#" onclick="navigateTo('about.html')">About</a>
+                <a href="#" onclick="navigateTo('feedback.html')">Feedback</a>
             </div>
         </nav>
-      </header>
+    </header>
       
     <div class="about-container">
         <h1>DataDash: Cross Platform Data Sharing App</h1>
@@ -32,7 +51,6 @@
             <div class="student-card">
                 <img src="" alt="Student 1 Photo" class="student-photo" id="student1-photo">
                 <h3>Armaan Nakhuda</h3>
-                <p>KC College of Engineering</p>
                 <a href="https://github.com/Armaan4477" target="_blank" class="github-link">GitHub Profile</a>
                 <br>
                 <a href="https://www.linkedin.com/in/armaan-nakhuda-756492235" target="_blank" class="linkedin-link">LinkedIn Profile</a>
@@ -41,7 +59,6 @@
             <div class="student-card">
                 <img src="" alt="Student 2 Photo" class="student-photo" id="student2-photo">
                 <h3>Samay Pandey</h3>
-                <p>KC College of Engineering</p>
                 <a href="https://github.com/ChampionSamay1644" target="_blank" class="github-link">GitHub Profile</a>
                 <br>
                 <a href="https://www.linkedin.com/in/samaypandey1644" target="_blank" class="linkedin-link">LinkedIn Profile</a>
@@ -50,7 +67,6 @@
             <div class="student-card">
                 <img src="" alt="Student 3 Photo" class="student-photo" id="student3-photo">
                 <h3>Yash Patil</h3>
-                <p>KC College of Engineering</p>
                 <a href="https://github.com/FrosT2k5" target="_blank" class="github-link">GitHub Profile</a>
                 <br>
                 <a href="https://www.linkedin.com/in/yash-patil-385171257" target="_blank" class="linkedin-link">LinkedIn Profile</a>
@@ -59,6 +75,20 @@
 
         <h2>Special Thanks To</h2>
         <div class="special-thanks-container">
+            <div class="special-thanks">
+                <img src="" alt="Special Thanks Photo 5" class="student-photo" id="special-thanks-photo5">
+                <h3>Aarya Walve</h3>
+                <a href="https://github.com/aaryaa28" target="_blank" class="github-link">GitHub Profile</a>
+                <br>
+                <a href="https://www.linkedin.com/in/aarya-walve-10259325b/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
+            </div>
+            <div class="special-thanks">
+                <img src="" alt="Special Thanks Photo 4" class="student-photo" id="special-thanks-photo4">
+                <h3>Adwait Patil</h3>
+                <a href="https://github.com/Adwait0901" target="_blank" class="github-link">GitHub Profile</a>
+                <br>
+                <a href="https://www.linkedin.com/in/adwaitpatil0901/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
+            </div>
             <div class="special-thanks">
                 <img src="" alt="Special Thanks Photo 1" class="student-photo" id="special-thanks-photo1">
                 <h3>Nishal Poojary</h3>
@@ -72,13 +102,6 @@
                 <a href="https://github.com/ura-dev04" target="_blank" class="github-link">GitHub Profile</a>
                 <br>
                 <a href="https://www.linkedin.com/in/urmi-joshi-6697a7320/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
-            </div>
-            <div class="special-thanks">
-                <img src="" alt="Special Thanks Photo 4" class="student-photo" id="special-thanks-photo4">
-                <h3>Adwait Patil</h3>
-                <a href="https://github.com/Adwait0901" target="_blank" class="github-link">GitHub Profile</a>
-                <br>
-                <a href="https://www.linkedin.com/in/adwaitpatil0901/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
             </div>
         </div>
 

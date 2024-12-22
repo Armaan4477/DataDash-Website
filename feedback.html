@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataDash - Feedback</title>
+  
+    <link rel="stylesheet" href="navbar_style.css">
+    <link rel="stylesheet" href="feedback-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Prevent theme flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div id="name" onclick="navigateTo('index.html')" style="cursor: pointer;">
+                <img src="" alt="Logo" id="navbar-logo">
+                DataDash
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-main">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#" onclick="navigateTo('index.html')">Home</a>
+                <a href="#" onclick="navigateTo('about.html')">About</a>
+                <a href="#" onclick="navigateTo('feedback.html')">Feedback</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="feedback-hero">
+            <h1>Your Feedback Matters</h1>
+            <p>Help us improve DataDash by sharing your thoughts, reporting issues, or suggesting new features.</p>
+        </div>
+
+        <div class="feedback-container">
+            <div class="feedback-types">
+                <a href="#feedback-form-section" class="feedback-type-card" data-type="Feature Request">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Feature Request</h3>
+                    <p>Suggest new features or improvements</p>
+                </a>
+                <a href="#feedback-form-section" class="feedback-type-card" data-type="Bug Report">
+                    <i class="fas fa-bug"></i>
+                    <h3>Bug Report</h3>
+                    <p>Report issues or unexpected behavior</p>
+                </a>
+                <a href="#feedback-form-section" class="feedback-type-card" data-type="Testimony">
+                    <i class="fas fa-comment"></i>
+                    <h3>Testimony</h3>
+                    <p>Share your experience with DataDash</p>
+                </a>
+            </div>
+
+            <section id="feedback-form-section" class="feedback-form-section">
+                <form id="feedback-form">
+                    <div class="form-header">
+                        <h2>Submit Your Feedback</h2>
+                        <p>Help us improve DataDash with your valuable input</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedback-type">Type of Feedback</label>
+                        <select id="feedback-type" name="feedbackType" required>
+                            <option value="" disabled selected>Choose feedback type</option>
+                            <option value="Feature Request">Feature Request</option>
+                            <option value="Bug Report">Bug Report</option>
+                            <option value="Testimony">Testimony</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-name">Your Name</label>
+                        <input type="text" id="user-name" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="userEmail" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="details">Your Message</label>
+                        <textarea id="details" name="message" rows="5" placeholder="Share your thoughts with us" required></textarea>
+                    </div>
+
+                    <button type="submit">Submit Feedback</button>
+                </form>
+                <div id="feedback-message"></div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer"> 
+        <p>&copy; 2024 DataDash. All rights reserved.</p>
+    </footer>
+
+    <script src="navigation.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.11.0/dist/email.min.js"></script>
+    <script src="feedback.js" type="module"></script>
+</body>
+</html>
