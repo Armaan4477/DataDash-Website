@@ -1,3 +1,10 @@
+/* Add at the beginning of the file */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
 /* Theme Variables */
 :root {
   /* Dark theme (default) */
@@ -50,9 +57,11 @@ body {
   padding-top: 60px;
 }/* Main container */
 .feedback-container {
-  width: min(95%, 1400px);
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Hero section */
@@ -62,6 +71,7 @@ body {
   text-align: center;
   margin-bottom: 40px;
   width: 100%;
+  box-sizing: border-box;
 }
 .feedback-hero h1 {
   font-size: clamp(32px, 5vw, 56px);
@@ -365,7 +375,7 @@ body {
 @media (max-width: 768px) {
   .feedback-container {
       width: min(98%, 1400px);
-      padding: 16px;
+      padding: 10px;
   }
 
   .feedback-types {
@@ -377,8 +387,10 @@ body {
       min-height: 200px;
   }
   #feedback-form {
-        padding: 24px;
-        margin: 16px;
+        padding: 20px;
+        margin: 16px 0;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .form-header h2 {
