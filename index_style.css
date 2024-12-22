@@ -68,7 +68,7 @@ body {
 
 #intro h1 {
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(1.8rem, calc(1rem + 3vw), 4rem);
+    font-size: clamp(3rem, calc(2rem + 4vw), 4.5rem);
     line-height: 1.2;
     background: linear-gradient(47deg, #10b981, #ec4899);
     -webkit-background-clip: text;
@@ -76,8 +76,9 @@ body {
     -webkit-text-fill-color: transparent;
     text-align: left;
     margin: clamp(1rem, 5vw, 3rem) 0;
-    padding: 0 1rem;
+    padding: 0;
     word-wrap: break-word;
+    margin-left: 0;
 }
 @media screen and (min-width: 1024px) {
     .heading {
