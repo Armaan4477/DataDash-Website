@@ -370,66 +370,6 @@ footer {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#feedback-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(236, 72, 153, 0.1));
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-#feedback-form label {
-    display: block;
-    font-size: 16px;
-    color: var(--text-color);
-    margin-bottom: 5px;
-    font-weight: 500;
-}
-
-#feedback-form input,
-#feedback-form select,
-#feedback-form textarea {
-    width: 100%;
-  padding: 12px 20px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  transition: border-color 0.3s ease;
-    background: var(--card-bg);
-    border: 1px solid rgba(128, 128, 128, 0.2);
-    color: var(--text-color);
-}
-.feedback-form input:focus,
-.feedback-form textarea:focus,
-.feedback-form select:focus {
-  outline: none;
-  border-color: #10b981;
-}
-#feedback-form button {
-    background: linear-gradient(135deg, #10b981, #ec4899);
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#feedback-form button:hover {
-    transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-.feedback-form button:active {
-    transform: translateY(1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
-
 #feedback-message {
     margin-top: 20px;
     font-size: 18px;
@@ -597,48 +537,6 @@ footer {
 .form-header p {
     color: var(--secondary-text);
     font-size: 14px;
-}
-
-#feedback-form {
-    display: grid;
-    gap: 20px;
-}
-
-#feedback-form input,
-#feedback-form select,
-#feedback-form textarea {
-    background: var(--card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--text-color);
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 16px;
-}
-
-#feedback-form input:focus,
-#feedback-form select:focus,
-#feedback-form textarea:focus {
-    border-color: #10b981;
-    outline: none;
-    background: rgba(255, 255, 255, 0.15);
-}
-
-#feedback-form button {
-    background: linear-gradient(135deg, #10b981, #ec4899);
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-}
-
-#feedback-form button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
 }
 
 @media (max-width: 768px) {

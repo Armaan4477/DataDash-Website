@@ -200,6 +200,107 @@ body {
   color: var(--text-color);
 }
 
+/* Transferred feedback form styles */
+.feedback {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+.feedback h2 {
+    color: rgb(64, 206, 171);
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+#feedback-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(236, 72, 153, 0.1));
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+#feedback-form label {
+    display: block;
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+#feedback-form input,
+#feedback-form select,
+#feedback-form textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    transition: border-color 0.3s ease;
+    background: var(--card-bg);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    color: var(--text-color);
+}
+.feedback-form input:focus,
+.feedback-form textarea:focus,
+.feedback-form select:focus {
+    outline: none;
+    border-color: #10b981;
+}
+#feedback-form button {
+    background: linear-gradient(135deg, #10b981, #ec4899);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#feedback-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.feedback-form button:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+#feedback-message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: rgb(12, 93, 73);
+}
+.feedback-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+#feedback-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    color: rgb(12, 93, 73);
+    font-family: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg%20xmlns="http://www.w3.org/2000/svg"%20viewBox="0%200%2010%205"><polyline%20points="0,0%205,5%2010,0"%20style="fill:none;%20stroke:%20%23ccc;%20stroke-width:2"%20/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 5px;
+}
+
 /* Screen size adjustments */
 @media (max-width: 1200px) {
   .feedback-types {
