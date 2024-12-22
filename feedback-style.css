@@ -1,0 +1,252 @@
+/* Theme Variables */
+:root {
+  /* Dark theme (default) */
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --secondary-text: #ebdcdc;
+  --navbar-bg: #000000;
+  --card-bg: rgba(255, 255, 255, 0.166);
+  --feature-text: rgba(255, 255, 255, 0.8);
+  --feature-shadow: 
+      0 10px 25px rgba(19, 156, 111, 0.384), 
+      0 15px 35px rgba(236, 72, 154, 0.503);
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --secondary-text: #333333;
+  --navbar-bg: #ffffff;
+  --card-bg: rgba(0, 0, 0, 0.05);
+  --feature-text: rgba(0, 0, 0, 0.8);
+  --feature-shadow: 
+      0 10px 25px rgba(19, 156, 111, 0.2), 
+      0 15px 35px rgba(236, 72, 154, 0.2);
+}
+
+/* Global Styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+  background-size: cover;
+}
+
+/* Centering text in headers and sections */
+h1, h2, p {
+  text-align: center;
+}
+
+/* Add space for the navbar */
+body {
+  padding-top: 60px;
+}/* Main container */
+.feedback-container {
+  width: min(95%, 1400px);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Hero section */
+.feedback-hero {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(236, 72, 153, 0.1));
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+.feedback-hero h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  background: linear-gradient(47deg, #10b981, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 24px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.feedback-hero p {
+  font-size: clamp(16px, 2vw, 22px);
+  color: var(--text-color);
+  max-width: min(90%, 700px);
+  margin: 0 auto 40px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Card grid */
+.feedback-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(16px, 3vw, 40px);
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+/* Individual cards */
+.feedback-type-card {
+  background: var(--card-bg);
+  border-radius: clamp(15px, 2vw, 20px);
+  padding: clamp(24px, 4vw, 40px);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.feedback-type-card:hover {
+  transform: translateY(-5px);
+  background: var(--card-bg);
+    /* Enhance hover effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border-color: rgba(16, 185, 129, 0.5);
+}
+/* Add these new style definitions */
+[data-theme="light"] .feedback-type-card {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .feedback-type-card:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(16, 185, 129, 0.5);
+}
+.feedback-type-card i {
+  font-size: 32px;
+  margin-bottom: 15px;
+  background: linear-gradient(47deg, #10b981, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+.feedback-type-card img {
+  width: clamp(60px, 8vw, 80px);
+  height: clamp(60px, 8vw, 80px);
+  object-fit: cover;
+}
+
+.feedback-type-card h3 {
+  font-size: clamp(20px, 2.5vw, 24px);
+  margin: 0;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.feedback-type-card p {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: var(--secondary-text);
+  line-height: 1.6;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Feedback form */
+.feedback-form-container {
+  max-width: min(90%, 800px);
+  margin: 0 auto;
+  background: var(--card-bg);
+  border-radius: clamp(16px, 2vw, 24px);
+  padding: clamp(24px, 4vw, 40px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.feedback-form-container h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  margin-bottom: clamp(24px, 4vw, 32px);
+  color: var(--heading-color);
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: clamp(16px, 3vw, 24px);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: clamp(12px, 2vw, 16px);
+  border: 2px solid #e2e8f0;
+  border-radius: clamp(8px, 1.5vw, 12px);
+  font-size: clamp(14px, 1.5vw, 16px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: var(--input-bg);
+  color: var(--text-color);
+}
+
+/* Screen size adjustments */
+@media (max-width: 1200px) {
+  .feedback-types {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .feedback-container {
+      width: min(98%, 1400px);
+      padding: 16px;
+  }
+
+  .feedback-types {
+      gap: 20px;
+  }
+
+  .feedback-type-card {
+      min-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-types {
+      grid-template-columns: 1fr;
+  }
+
+  .feedback-type-card {
+      padding: 20px;
+      min-height: 180px;
+  }
+}
+.footer{
+  background: linear-gradient(47deg, #10b981, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+ text-decoration: none;
+ font-size: 20px;
+}
+
+/* Add these new styles */
+.content-wrapper {
+  padding-top: 80px;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
