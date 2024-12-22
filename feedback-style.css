@@ -98,20 +98,22 @@ body {
 /* Card grid */
 .feedback-types {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  gap: clamp(16px, 3vw, 40px);
-  margin-bottom: 80px; /* Increased from 40px to 80px */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 80px;
   width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 /* Individual cards */
 .feedback-type-card {
   background: var(--card-bg);
   border-radius: clamp(15px, 2vw, 20px);
-  padding: clamp(24px, 4vw, 40px);
+  padding: 20px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
+  height: auto;
   display: flex;
   text-decoration: none;
   flex-direction: column;
@@ -119,6 +121,9 @@ body {
   align-items: center;
   gap: 16px;
   border: 1px solid rgba(128, 128, 128, 0.2);
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .feedback-type-card:hover {
@@ -379,12 +384,14 @@ body {
   }
 
   .feedback-types {
-      gap: 20px;
-      margin-bottom: 60px; /* Slightly less spacing on mobile */
+      grid-template-columns: 1fr;
+      gap: 15px;
+      padding: 0 5px;
   }
 
   .feedback-type-card {
-      min-height: 200px;
+      padding: 15px;
+      margin: 0;
   }
   #feedback-form {
         padding: 20px;
@@ -411,7 +418,9 @@ body {
 
 @media (max-width: 480px) {
   .feedback-types {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
   }
 
   .feedback-type-card {
