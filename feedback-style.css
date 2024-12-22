@@ -232,10 +232,12 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 #feedback-form {
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
     background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(236, 72, 153, 0.05));
-    padding: 40px;
     border-radius: 24px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
@@ -273,6 +275,7 @@ body {
 #feedback-form select,
 #feedback-form textarea {
     width: 100%;
+    max-width: 100%;
     padding: 16px;
     margin-bottom: 24px;
     border-radius: 12px;
@@ -394,10 +397,8 @@ body {
       margin: 0;
   }
   #feedback-form {
-        padding: 20px;
-        margin: 16px 0;
+        padding: 15px;
         width: 100%;
-        box-sizing: border-box;
     }
 
     .form-header h2 {
@@ -413,6 +414,23 @@ body {
     .feedback-form-section {
         margin-top: 30px;
         padding-top: 30px;
+    }
+    .feedback-form-section {
+        width: 100%;
+        padding: 20px 10px;
+        box-sizing: border-box;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
     }
 }
 
@@ -453,3 +471,49 @@ body {
     padding-top: 40px; /* Added padding-top */
     border-top: 1px solid rgba(128, 128, 128, 0.1); /* Optional: adds a subtle divider */
 }
+
+/* ...existing code... */
+
+#feedback-form {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#feedback-form input,
+#feedback-form select,
+#feedback-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .feedback-form-section {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    #feedback-form {
+        padding: 10px;
+        margin: 0;
+        width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+}
+
+/* ...existing code... */
