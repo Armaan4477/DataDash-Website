@@ -1,0 +1,32 @@
+Windows:
+1) Click on the search bar/icon
+2) search for run and open it
+3) Type %temp% and click on ok or press the enter button on the keyboard
+4) look for the folder named DataDash and open it
+5) You should see a text file named datadashlog.txt which is the log file
+
+Linux:
+1) Open Files
+2) go to the home directory (root folder)
+3) show hidden files if you havent already by pressing ctrl+H
+4) search for the .cache folder and open it
+5) look for the folder named DataDash and open it
+6) You should see a text file named datadashlog.txt which is the log file
+
+MacOS:
+1) Open Finder
+2) go to the home directory (root folder)
+3) show hidden files if you havent already by pressing cmd+shift+.
+4) Search for the Library folder and open it
+5) Search for the caches folder and open it
+6) look for the folder named DataDash and open it 
+7) You should see a text file named datadashlog.txt which is the log file
+
+Android:
+1) Open Files
+2) Scroll Down and click on internal storage
+3) Look for the Android Folder and open it
+4) Look for the Media Folder and open it
+5) Look for the com.an.crossplatform Folder and open it
+6) Look for the Logs Folder and open it
+7) You should see a text file named log.txt which is the log file

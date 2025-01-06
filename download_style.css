@@ -294,6 +294,14 @@ footer p {
     font-weight: 300;
 }
 
+.minimum-requirements {
+    font-size: 15px;
+    color: #c90065;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
 .important-notice {
     background-color: rgba(255, 255, 255, 0.05);
     border: 2px solid #5c6b49;
