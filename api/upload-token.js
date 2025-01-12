@@ -1,4 +1,6 @@
-import { generateClientTokenFromReadWriteToken } from '@vercel/blob/client';
+import { generateClientTokenFromReadWriteToken } from '@vercel/blob';
+// ...or if using require:
+const { generateClientTokenFromReadWriteToken } = require('@vercel/blob');
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
