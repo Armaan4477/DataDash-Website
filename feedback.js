@@ -62,7 +62,7 @@ document.getElementById('feedback-form').addEventListener('submit', async (e) =>
       console.error('Error:', error);
     }
   });
-  import { put } from '@vercel/blob/client';
+import { put } from './node_modules/@vercel/blob/client/index.js';
 
 async function uploadFile(file) {
   const filename = file.name;
@@ -84,4 +84,3 @@ document.getElementById('fileInput').addEventListener('change', (e) => {
   }
 });
 
-  
