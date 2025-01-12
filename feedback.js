@@ -62,7 +62,7 @@ document.getElementById('feedback-form').addEventListener('submit', async (e) =>
       console.error('Error:', error);
     }
   });
-import { put } from 'https://cdn.jsdelivr.net/npm/@vercel/blob@latest/client/dist/client.esm.js';
+import { put } from 'https://unpkg.com/@vercel/blob/client@latest/dist/client.esm.js';
 
 async function uploadFile(file) {
   const filename = file.name;
