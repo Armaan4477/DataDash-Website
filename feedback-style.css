@@ -498,6 +498,14 @@ body {
     margin: 0;
 }
 
+.form-group input[type="file"] {
+  padding: clamp(12px, 2vw, 16px);
+  font-size: clamp(14px, 1.5vw, 16px);
+  background: var(--input-bg);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
     .feedback-form-section {
         width: 100%;

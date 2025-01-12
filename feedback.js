@@ -45,3 +45,21 @@ document.addEventListener('DOMContentLoaded', function () {
             );
     });
 });
+document.getElementById('feedback-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    const fileInput = document.getElementById('fileInput');
+    formData.append('file', fileInput.files[0]);
+  
+    try {
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+      document.getElementById('result').textContent = `File uploaded: ${data.url}`;
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  });
+  
