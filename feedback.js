@@ -62,4 +62,26 @@ document.getElementById('feedback-form').addEventListener('submit', async (e) =>
       console.error('Error:', error);
     }
   });
+  import { put } from '@vercel/blob/client';
+
+async function uploadFile(file) {
+  const filename = file.name;
+  const tokenResponse = await fetch(`/api/upload-token?filename=${encodeURIComponent(filename)}`);
+  const { clientToken } = await tokenResponse.json();
+
+  const blob = await put(filename, file, {
+    access: 'public',
+    token: clientToken,
+  });
+
+  console.log('File uploaded:', blob.url);
+}
+
+document.getElementById('fileInput').addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    uploadFile(file);
+  }
+});
+
   
