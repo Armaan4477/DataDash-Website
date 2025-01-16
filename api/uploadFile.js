@@ -33,7 +33,7 @@ export default async function handler(req, res) {
     }
 
     const file = files.file[0]; // Assuming 'file' is the form field name
-    const fileName = randomPrefix+file.originalFilename;
+    const fileName = randomPrefix + "_" + file.originalFilename;
 
     if (!file) {
       return res.status(400).json({ error: 'No file uploaded' });
