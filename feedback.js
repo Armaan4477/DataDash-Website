@@ -5,22 +5,33 @@ document.querySelectorAll('.feedback-type-card').forEach(card => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     // Initialize EmailJS
     emailjs.init('q9tVbleQ2wLKetQGl'); // Replace with your actual Public Key
-
     // Feedback Form Submission Logic
     const feedbackForm = document.getElementById('feedback-form');
-    feedbackForm.addEventListener('submit', function (event) {
+
+    feedbackForm.addEventListener('submit', async function (event) {
         event.preventDefault();
 
         // Collect form data
         const feedbackType = document.getElementById('feedback-type').value;
+        const fileInput = document.getElementById('fileInput').files;
         const name = document.getElementById('user-name').value; // Fetches the value of the name field
         console.log("Name value:", name);
 
         const userEmail = document.getElementById('email').value;
-        const message = document.getElementById('details').value;
+        let message = document.getElementById('details').value;
+        var fileUrl = ""
+      
+        if (fileInput.length > 0) {
+          fileUrl = await uploadFile(fileInput[0]);
+        } 
+
+        if (fileUrl) {
+          message += "\n\nFile Url: "  + fileUrl
+        }
+        console.log(message);
 
         const templateParams = {
             feedbackType: feedbackType, // Feedback type (e.g., Feature Request, Bug Report)
@@ -45,43 +56,3 @@ document.addEventListener('DOMContentLoaded', function () {
             );
     });
 });
-document.getElementById('feedback-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    const fileInput = document.getElementById('fileInput');
-    formData.append('file', fileInput.files[0]);
-  
-    try {
-      const response = await fetch('/api/upload', {
-        method: 'POST',
-        body: formData
-      });
-      const data = await response.json();
-      document.getElementById('result').textContent = `File uploaded: ${data.url}`;
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  });
-  import { put } from '@vercel/blob/client';
-
-async function uploadFile(file) {
-  const filename = file.name;
-  const tokenResponse = await fetch(`/api/upload-token?filename=${encodeURIComponent(filename)}`);
-  const { clientToken } = await tokenResponse.json();
-
-  const blob = await put(filename, file, {
-    access: 'public',
-    token: clientToken,
-  });
-
-  console.log('File uploaded:', blob.url);
-}
-
-document.getElementById('fileInput').addEventListener('change', (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    uploadFile(file);
-  }
-});
-
-  
