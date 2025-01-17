@@ -16,7 +16,9 @@ const s3Client = new S3Client({
 });
 
 // Set up formidable for handling file uploads
-const form = formidable({});
+const form = formidable({
+  maxFileSize: 10 * 1024 * 1024, //10MB Max File Size Limit
+});
 form.keepExtensions = true; // Keep file extensions
 
 export default async function handler(req, res) {
@@ -29,7 +31,10 @@ export default async function handler(req, res) {
     const randomPrefix = crypto.randomBytes(10).toString('hex');
     if (err) {
       console.error('Error parsing form data:', err);
-      return res.status(500).json({ error: 'Failed to parse form data' });
+      return res.status(500).json({ 
+        "error": 'Failed to parse form data',
+        "message": err.message
+      });
     }
 
     const file = files.file[0]; // Assuming 'file' is the form field name

@@ -22,16 +22,33 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         const userEmail = document.getElementById('email').value;
         let message = document.getElementById('details').value;
-        var fileUrl = ""
+        var fileUrls = ""
+        var largerFiles = ""
       
         if (fileInput.length > 0) {
-          fileUrl = await uploadFile(fileInput[0]);
+            for (const file of fileInput) {
+                try {
+                    console.log(file)
+                    if (file.size > 10 * 1024 * 1024) { 
+                        largerFiles += `File "${file.name}" is larger than 10 MB and will not be uploaded.\n`;
+                        continue;
+                    }
+                    const fileUrl = await uploadFile(file);
+                    fileUrls += (fileUrl + "\n")
+                } catch (err) {
+                    console.log("Error in uploading {file.name}: " + err.message)
+                }
+            }
+            
         } 
 
-        if (fileUrl) {
-          message += "\n\nFile Url: "  + fileUrl
+        if (largerFiles) {
+            alert(largerFiles);
         }
-        console.log(message);
+
+        if (fileUrls) {
+          message += "\n\nFile Url(s): \n"  + fileUrls
+        }
 
         const templateParams = {
             feedbackType: feedbackType, // Feedback type (e.g., Feature Request, Bug Report)
