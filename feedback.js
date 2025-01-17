@@ -11,35 +11,37 @@ document.addEventListener('DOMContentLoaded', function() {
         windows: {
             video: 'videos/logs/windows.mov',
             steps: [
-                'Press Windows + R to open Run dialog',
-                'Type %temp% and press Enter',
-                'Look for the DataDash folder',
-                'Inside you\'ll find the log files'
+                'Open the Windows search or press Windows + R, then type "Run" and open it.',
+                'Type %temp% and press Enter.',
+                'Look for and open the "DataDash" folder.',
+                'Inside is "datadashlog.txt", the log file.'
             ]
         },
         linux: {
             video: 'videos/logs/linux.mov',
             steps: [
-                'Open terminal',
-                'Navigate to ~/.config/DataDash/logs',
-                'Log files are stored here'
+                'Open your file manager and go to the home directory.',
+                'Press Ctrl+H to show hidden files if needed.',
+                'Locate and open the ".cache" folder and then "DataDash".',
+                'You will find "datadashlog.txt".'
             ]
         },
         macos: {
             video: 'videos/logs/macos.mov',
             steps: [
-                'Open Finder',
-                'Press Cmd + Shift + G',
-                'Enter ~/Library/Application Support/DataDash/logs',
-                'Log files are stored here'
+                'Open Finder and go to your home directory.',
+                'Press Cmd+Shift+. to show hidden files if needed.',
+                'Open "Library" then "Caches" and look for "DataDash".',
+                'Inside, you should see "datadashlog.txt".'
             ]
         },
         android: {
             video: 'videos/logs/android.mp4',
             steps: [
-                'Open Files app',
-                'Navigate to Internal Storage > Android > data > com.datadash',
-                'Open the logs folder'
+                'Open the Files app and choose Internal Storage.',
+                'Look for and open "Android" > "Media".',
+                'Inside "com.an.crossplatform", locate "Logs".',
+                'The log file is named "log.txt".'
             ]
         }
     };
