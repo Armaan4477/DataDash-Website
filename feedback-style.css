@@ -533,6 +533,8 @@ body {
     border: none;
     background: var(--bg-color);
     color: var(--text-color);
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 .logs-dialog::backdrop {
@@ -551,6 +553,8 @@ body {
 .dialog-content video {
     margin-bottom: 20px;
     border-radius: 8px;
+    max-height: 80vh;
+    object-fit: contain;
 }
 
 .instructions {
@@ -615,12 +619,12 @@ body {
 }
 
 .platform-button i {
-    font-size: 32px;
-    margin-bottom: 12px;
-    background: linear-gradient(47deg, #10b981, #ec4899);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /* remove gradient for original OS color */
+    background: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color: currentColor;
+    color: inherit;
 }
 
 .platform-button span {
