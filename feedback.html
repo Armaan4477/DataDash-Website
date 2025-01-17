@@ -100,8 +100,15 @@
                         <textarea id="details" name="message" rows="5" placeholder="Share your thoughts with us" required></textarea>
                     </div>
 
+                    <div class="form-group">
+                        <label for="upload-file">Attach File (optional)</label>
+                        <input type="file" id="fileInput" name="file">
+                    </div>
+
+
                     <button type="submit">Submit Feedback</button>
                 </form>
+                <div id="result"></div>
                 <div id="feedback-message"></div>
             </section>
         </div>
@@ -114,5 +121,7 @@
     <script src="navigation.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.11.0/dist/email.min.js"></script>
     <script src="feedback.js" type="module"></script>
+    <!-- Uploader Script -->
+    <script src="upload-file.js"></script>
 </body>
 </html>
