@@ -1,3 +1,89 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const dialog = document.getElementById('logsHelpDialog');
+    const showButton = document.getElementById('showLogsHelp');
+    const closeButton = dialog.querySelector('.close-dialog');
+    const platformSelection = dialog.querySelector('.platform-selection');
+    const platformInstructions = dialog.querySelector('.platform-instructions');
+    const backButton = dialog.querySelector('.back-button');
+    const platformButtons = dialog.querySelectorAll('.platform-button');
+    
+    const platformData = {
+        windows: {
+            video: 'videos/logs/windows.mov',
+            steps: [
+                'Press Windows + R to open Run dialog',
+                'Type %temp% and press Enter',
+                'Look for the DataDash folder',
+                'Inside you\'ll find the log files'
+            ]
+        },
+        linux: {
+            video: 'videos/logs/linux.mov',
+            steps: [
+                'Open terminal',
+                'Navigate to ~/.config/DataDash/logs',
+                'Log files are stored here'
+            ]
+        },
+        macos: {
+            video: 'videos/logs/macos.mov',
+            steps: [
+                'Open Finder',
+                'Press Cmd + Shift + G',
+                'Enter ~/Library/Application Support/DataDash/logs',
+                'Log files are stored here'
+            ]
+        },
+        android: {
+            video: 'videos/logs/android.mov',
+            steps: [
+                'Open Files app',
+                'Navigate to Internal Storage > Android > data > com.datadash',
+                'Open the logs folder'
+            ]
+        }
+    };
+
+    showButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        dialog.showModal();
+        platformSelection.style.display = 'block';
+        platformInstructions.style.display = 'none';
+    });
+
+    platformButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const platform = button.dataset.platform;
+            const data = platformData[platform];
+            
+            // Update content
+            dialog.querySelector('.platform-name').textContent = platform.charAt(0).toUpperCase() + platform.slice(1);
+            dialog.querySelector('.instruction-video').src = data.video;
+            const stepsList = dialog.querySelector('.instruction-steps');
+            stepsList.innerHTML = data.steps.map(step => `<li>${step}</li>`).join('');
+            
+            // Switch views
+            platformSelection.style.display = 'none';
+            platformInstructions.style.display = 'block';
+        });
+    });
+
+    backButton.addEventListener('click', () => {
+        platformSelection.style.display = 'block';
+        platformInstructions.style.display = 'none';
+    });
+
+    closeButton.addEventListener('click', () => {
+        dialog.close();
+    });
+
+    dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) {
+            dialog.close();
+        }
+    });
+});
+
 document.querySelectorAll('.feedback-type-card').forEach(card => {
     card.addEventListener('click', () => {
         const feedbackType = card.dataset.type;
