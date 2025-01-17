@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         android: {
-            video: 'videos/logs/android.mov',
+            video: 'videos/logs/android.mp4',
             steps: [
                 'Open Files app',
                 'Navigate to Internal Storage > Android > data > com.datadash',
@@ -49,6 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
         dialog.showModal();
         platformSelection.style.display = 'block';
         platformInstructions.style.display = 'none';
+        
+        // Reset video source when opening dialog
+        const videoElement = dialog.querySelector('video');
+        videoElement.pause();
+        videoElement.currentTime = 0;
+        videoElement.querySelector('source').removeAttribute('src');
     });
 
     platformButtons.forEach(button => {
@@ -58,7 +64,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Update content
             dialog.querySelector('.platform-name').textContent = platform.charAt(0).toUpperCase() + platform.slice(1);
-            dialog.querySelector('.instruction-video').src = data.video;
+            
+            // Update video source properly
+            const videoElement = dialog.querySelector('video');
+            const videoSource = videoElement.querySelector('source');
+            videoSource.src = data.video;
+            videoElement.load(); // Important: reload the video after changing source
+            
             const stepsList = dialog.querySelector('.instruction-steps');
             stepsList.innerHTML = data.steps.map(step => `<li>${step}</li>`).join('');
             
@@ -69,6 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     backButton.addEventListener('click', () => {
+        // Reset video when going back
+        const videoElement = dialog.querySelector('video');
+        videoElement.pause();
+        videoElement.currentTime = 0;
+        videoElement.querySelector('source').removeAttribute('src');
+        
         platformSelection.style.display = 'block';
         platformInstructions.style.display = 'none';
     });
