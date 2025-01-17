@@ -44,7 +44,7 @@ export default async function handler(req, res) {
       const uploadParams = {
         Bucket: 'openmediabucket', 
         Key: fileName,
-        Body: fs.readFileSync(file.filepath, 'utf8'),
+        Body: fs.readFileSync(file.filepath),
         ContentType: file.mimetype,
       };
 
