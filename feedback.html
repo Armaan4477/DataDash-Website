@@ -101,10 +101,47 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="upload-file">Attach File (optional)</label>
+                        <label for="upload-file">Attach File (optional) <a href="#" id="showLogsHelp">(For instructions on how to get logs, click here)</a></label>
                         <input type="file" id="fileInput" name="file" multiple>
                     </div>
 
+                    <dialog id="logsHelpDialog" class="logs-dialog">
+                        <div class="dialog-content">
+                            <div class="platform-selection">
+                                <h2>How to get DataDash Logs</h2>
+                                <div class="platform-grid">
+                                    <button class="platform-button" data-platform="windows">
+                                        <i class="fab fa-windows"></i>
+                                        <span>Windows</span>
+                                    </button>
+                                    <button class="platform-button" data-platform="linux">
+                                        <i class="fab fa-linux"></i>
+                                        <span>Linux</span>
+                                    </button>
+                                    <button class="platform-button" data-platform="macos">
+                                        <i class="fab fa-apple"></i>
+                                        <span>macOS</span>
+                                    </button>
+                                    <button class="platform-button" data-platform="android">
+                                        <i class="fab fa-android"></i>
+                                        <span>Android</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="platform-instructions" style="display: none;">
+                                <button class="back-button">← Back</button>
+                                <h2 class="platform-title">How to get DataDash Logs - <span class="platform-name">Windows</span></h2>
+                                <video width="100%" controls>
+                                    <source src="" type="video/mp4" class="instruction-video">
+                                </video>
+                                <div class="instructions">
+                                    <h3>Instructions:</h3>
+                                    <ol class="instruction-steps"></ol>
+                                </div>
+                            </div>
+                            <button class="close-dialog">Close</button>
+                        </div>
+                    </dialog>
 
                     <button type="submit">Submit Feedback</button>
                 </form>

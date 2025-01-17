@@ -1,3 +1,109 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const dialog = document.getElementById('logsHelpDialog');
+    const showButton = document.getElementById('showLogsHelp');
+    const closeButton = dialog.querySelector('.close-dialog');
+    const platformSelection = dialog.querySelector('.platform-selection');
+    const platformInstructions = dialog.querySelector('.platform-instructions');
+    const backButton = dialog.querySelector('.back-button');
+    const platformButtons = dialog.querySelectorAll('.platform-button');
+    
+    const platformData = {
+        windows: {
+            video: 'videos/logs/windows.mov',
+            steps: [
+                'Open the Windows search or press Windows + R, then type "Run" and open it.',
+                'Type %temp% and press Enter.',
+                'Look for and open the "DataDash" folder.',
+                'Inside is "datadashlog.txt", the log file.'
+            ]
+        },
+        linux: {
+            video: 'videos/logs/linux.mov',
+            steps: [
+                'Open your file manager and go to the home directory.',
+                'Press Ctrl+H to show hidden files if needed.',
+                'Locate and open the ".cache" folder and then "DataDash".',
+                'You will find "datadashlog.txt".'
+            ]
+        },
+        macos: {
+            video: 'videos/logs/macos.mov',
+            steps: [
+                'Open Finder and go to your home directory.',
+                'Press Cmd+Shift+. to show hidden files if needed.',
+                'Open "Library" then "Caches" and look for "DataDash".',
+                'Inside, you should see "datadashlog.txt".'
+            ]
+        },
+        android: {
+            video: 'videos/logs/android.mp4',
+            steps: [
+                'Open the Files app and choose Internal Storage.',
+                'Look for and open "Android" > "Media".',
+                'Inside "com.an.crossplatform", locate "Logs".',
+                'The log file is named "log.txt".'
+            ]
+        }
+    };
+
+    showButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        dialog.showModal();
+        platformSelection.style.display = 'block';
+        platformInstructions.style.display = 'none';
+        
+        // Reset video source when opening dialog
+        const videoElement = dialog.querySelector('video');
+        videoElement.pause();
+        videoElement.currentTime = 0;
+        videoElement.querySelector('source').removeAttribute('src');
+    });
+
+    platformButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const platform = button.dataset.platform;
+            const data = platformData[platform];
+            
+            // Update content
+            dialog.querySelector('.platform-name').textContent = platform.charAt(0).toUpperCase() + platform.slice(1);
+            
+            // Update video source properly
+            const videoElement = dialog.querySelector('video');
+            const videoSource = videoElement.querySelector('source');
+            videoSource.src = data.video;
+            videoElement.load(); // Important: reload the video after changing source
+            
+            const stepsList = dialog.querySelector('.instruction-steps');
+            stepsList.innerHTML = data.steps.map(step => `<li>${step}</li>`).join('');
+            
+            // Switch views
+            platformSelection.style.display = 'none';
+            platformInstructions.style.display = 'block';
+        });
+    });
+
+    backButton.addEventListener('click', () => {
+        // Reset video when going back
+        const videoElement = dialog.querySelector('video');
+        videoElement.pause();
+        videoElement.currentTime = 0;
+        videoElement.querySelector('source').removeAttribute('src');
+        
+        platformSelection.style.display = 'block';
+        platformInstructions.style.display = 'none';
+    });
+
+    closeButton.addEventListener('click', () => {
+        dialog.close();
+    });
+
+    dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) {
+            dialog.close();
+        }
+    });
+});
+
 document.querySelectorAll('.feedback-type-card').forEach(card => {
     card.addEventListener('click', () => {
         const feedbackType = card.dataset.type;
