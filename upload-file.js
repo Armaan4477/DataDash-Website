@@ -29,7 +29,6 @@ async function uploadFile(file) {
         return data.url;
     } catch (error) {
         console.error('Error:', error);
-        alert('There was an error uploading the file.');
     }
   
 }
