@@ -17,11 +17,18 @@ export default function AboutPage() {
         DataDash: Cross Platform Data Sharing App
       </h1>
 
-      <h2 className="text-4xl text-center text-[rgb(64,206,171)] mt-12 mb-8 font-poppins font-medium">
-        Meet the Team
+      <h2 className="text-4xl text-center text-[rgb(64,206,171)] mt-12 mb-10 font-poppins font-medium">
+        Meet the Team (Alphabetically)
       </h2>
       
-      <div className="flex justify-center flex-wrap gap-10 max-w-7xl mx-auto px-4">
+      <div className="relative flex justify-center flex-nowrap overflow-x-auto gap-8 max-w-[1600px] mx-auto px-8 py-8 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-[rgba(64,206,171,0.05)] before:to-transparent before:rounded-3xl">
+        <TeamMemberCard
+          photo="/photos/aarya.jpg"
+          name="Aarya Walve"
+          github="https://github.com/aaryaa28"
+          linkedin="https://www.linkedin.com/in/aarya-walve-10259325b/"
+        />
+
         <TeamMemberCard
           photo="/photos/arm.jpeg"
           name="Armaan Nakhuda"
@@ -44,17 +51,11 @@ export default function AboutPage() {
         />
       </div>
 
-      <h2 className="text-4xl text-center text-[rgb(64,206,171)] mt-16 mb-8 font-poppins font-medium">
-        Special Thanks To
+      <h2 className="text-4xl text-center text-[rgb(64,206,171)] mt-20 mb-10 font-poppins font-medium">
+        Special Thanks To (Alphabetically)
       </h2>
       
       <div className="flex justify-center flex-nowrap overflow-x-auto lg:flex-wrap gap-5 max-w-7xl mx-auto px-4">
-        <SpecialThanksCard
-          photo="/photos/aarya.jpg"
-          name="Aarya Walve"
-          github="https://github.com/aaryaa28"
-          linkedin="https://www.linkedin.com/in/aarya-walve-10259325b/"
-        />
         
         <SpecialThanksCard
           photo="/photos/adwait.jpg"
@@ -83,8 +84,8 @@ export default function AboutPage() {
 
 function TeamMemberCard({ photo, name, github, linkedin }) {
   return (
-    <div className="py-7 px-7 rounded-[20px] w-[320px] my-4 shadow-[0_10px_25px_rgba(19,156,111,0.384),0_15px_35px_rgba(236,72,154,0.503)] backdrop-blur-[10px] transition-all duration-300 relative overflow-hidden text-white text-center hover:-translate-y-[15px] hover:shadow-[0_15px_35px_rgba(19,156,111,0.384),0_20px_45px_rgba(236,72,154,0.503)]">
-      <div className="relative w-[180px] h-[180px] mx-auto mb-4">
+    <div className="py-7 px-7 rounded-[20px] w-[300px] my-4 shadow-[0_10px_25px_rgba(19,156,111,0.284),0_15px_35px_rgba(236,72,154,0.403)] backdrop-blur-[10px] transition-all duration-300 relative overflow-hidden text-white text-center hover:-translate-y-[15px] hover:shadow-[0_15px_35px_rgba(19,156,111,0.384),0_20px_45px_rgba(236,72,154,0.503)]">
+      <div className="relative w-[160px] h-[160px] mx-auto mb-4">
         <Image 
           src={photo} 
           alt={name} 
@@ -92,21 +93,21 @@ function TeamMemberCard({ photo, name, github, linkedin }) {
           className="rounded-full object-cover border-[3px] border-white shadow-[0_0_10px_#fd49b8f1]"
         />
       </div>
-      <h3 className="text-[1.7rem] mb-2.5 font-bold dark:text-white text-black drop-shadow-[0_0_5px_#fd49b8f1]">
+      <h3 className="text-[1.5rem] mb-2.5 font-bold dark:text-white text-black drop-shadow-[0_0_5px_#fd49b8f1]">
         {name}
       </h3>
       <div className="mt-2.5">
         <Link 
           href={github} 
           target="_blank"
-          className="block mt-2.5 text-[20px] dark:text-[#07b8ed] text-[#1b88a9] no-underline dark:drop-shadow-[0_0_3px_#dcf7ff] drop-shadow-[0_0_3px_#56d5fc] hover:underline hover:text-[#9ccaca]"
+          className="block mt-2.5 text-[18px] dark:text-[#07b8ed] text-[#1b88a9] no-underline dark:drop-shadow-[0_0_3px_#dcf7ff] drop-shadow-[0_0_3px_#56d5fc] hover:underline hover:text-[#9ccaca]"
         >
           GitHub Profile
         </Link>
         <Link 
           href={linkedin} 
           target="_blank"
-          className="block mt-2.5 text-[20px] dark:text-[#07b8ed] text-[#1b88a9] no-underline dark:drop-shadow-[0_0_3px_#dcf7ff] drop-shadow-[0_0_3px_#56d5fc] hover:underline hover:text-[#9ccaca]"
+          className="block mt-2.5 text-[18px] dark:text-[#07b8ed] text-[#1b88a9] no-underline dark:drop-shadow-[0_0_3px_#dcf7ff] drop-shadow-[0_0_3px_#56d5fc] hover:underline hover:text-[#9ccaca]"
         >
           LinkedIn Profile
         </Link>
