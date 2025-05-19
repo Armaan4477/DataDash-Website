@@ -1,6 +1,7 @@
 import { Inter, Poppins, Montserrat } from 'next/font/google'
 import './globals.css'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import { ThemeProvider } from '../context/ThemeContext';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -41,13 +42,13 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${poppins.variable} ${montserrat.variable} min-h-screen dark:bg-dark-bg bg-light-bg dark:text-dark-text text-light-text transition-colors`}>
+      <body className={`${poppins.variable} ${montserrat.variable} min-h-screen dark:bg-dark-bg bg-light-bg dark:text-dark-text text-light-text transition-colors flex flex-col`}>
         <ThemeProvider>
           <Navbar />
-          {children}
-          <footer className="text-center p-5 mt-auto">
-            <p className="bg-gradient-primary text-transparent bg-clip-text text-lg">&copy; 2024 DataDash. All rights reserved.</p>
-          </footer>
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
         </ThemeProvider>
         <script
           dangerouslySetInnerHTML={{

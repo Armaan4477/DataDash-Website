@@ -214,7 +214,7 @@ export default function DownloadPage() {
       <hr className="h-px my-8 bg-linear-to-r from-transparent via-primary-light via-secondary to-transparent opacity-30" />
       
       {/* Source Files Section */}
-      <div className="text-center px-5">
+      <div className="text-center px-5 mb-10">
         <h2 className="text-3xl font-medium mb-5">Source Files</h2>
         <p className="text-base mb-4">Below are the source files for our application, including the Python desktop app (built with PyQt6 and Cryptography) and the Android app.</p>
         
@@ -302,10 +302,6 @@ export default function DownloadPage() {
           </div>
         </div>
       )}
-      
-      <footer className="text-center py-6 mt-8 border-t border-primary/10">
-        <p className="text-secondary-dark">&copy; 2024 DataDash. All rights reserved.</p>
-      </footer>
     </main>
   );
 }
