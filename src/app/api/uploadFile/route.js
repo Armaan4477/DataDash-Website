@@ -1,31 +1,65 @@
-import { put } from '@vercel/blob';
-import { NextResponse } from 'next/server';
-import { writeFile } from 'fs/promises';
-import { join } from 'path';
-import { v4 as uuidv4 } from 'uuid';
-import { tmpdir } from 'os';
+import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+import formidable from 'formidable';
+import crypto from 'crypto';
+import fs from 'fs';
 
-export async function POST(request) {
-  try {
-    const formData = await request.formData();
-    const file = formData.get('file');
+const credentials = {
+  accessKeyId: process.env.S3_ACCESS_KEY_ID,
+  secretAccessKey: process.env.S3_ACCESS_KEY_SECRET
+};
 
-    if (!file) {
-      return NextResponse.json({ error: 'No file provided' }, { status: 400 });
+// Create an S3 service client object.
+const s3Client = new S3Client({
+  endpoint: "https://s3.tebi.io",
+  credentials: credentials,
+  region: "global"
+});
+
+// Set up formidable for handling file uploads
+const form = formidable({
+  maxFileSize: 10 * 1024 * 1024, //10MB Max File Size Limit
+});
+form.keepExtensions = true; // Keep file extensions
+
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Parse the incoming form (file upload)
+  form.parse(req, async (err, fields, files) => {
+    const randomPrefix = crypto.randomBytes(10).toString('hex');
+    if (err) {
+      console.error('Error parsing form data:', err);
+      return res.status(500).json({ 
+        "error": 'Failed to parse form data',
+        "message": err.message
+      });
     }
 
-    // Generate a unique filename
-    const uniqueName = `${uuidv4()}-${file.name}`;
+    const file = files.file[0]; // Assuming 'file' is the form field name
+    const fileName = randomPrefix + "_" + file.originalFilename;
 
-    // Save to Vercel Blob storage
-    const { url } = await put(uniqueName, file, {
-      access: 'public',
-    });
+    if (!file) {
+      return res.status(400).json({ error: 'No file uploaded' });
+    }
 
-    // Return the URL of the uploaded file
-    return NextResponse.json({ url });
-  } catch (error) {
-    console.error('Error uploading file:', error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
-  }
+    try {
+      // Prepare S3 upload parameters
+      const uploadParams = {
+        Bucket: 'openmediabucket', 
+        Key: fileName,
+        Body: fs.readFileSync(file.filepath),
+        ContentType: file.mimetype,
+      };
+
+      // Upload the file to S3
+      const data = await s3Client.send(new PutObjectCommand(uploadParams));
+
+      res.status(200).json({ message: 'File uploaded successfully', url: `https://s3.tebi.io/openmediabucket/${fileName}` });
+    } catch (uploadError) {
+      console.error('Error uploading to S3:', uploadError);
+      res.status(500).json({ error: 'Failed to upload file to S3' });
+    }
+  });
 }
