@@ -3,6 +3,8 @@ import './globals.css'
 import Navbar from '../components/Navbar'
 import { ThemeProvider } from '../context/ThemeContext';
 
+const inter = Inter({ subsets: ['latin'] });
+
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -39,7 +41,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${poppins.variable} ${montserrat.variable} min-h-screen flex flex-col dark:bg-gray-900 pt-16`}>
+      <body className={`${poppins.variable} ${montserrat.variable} min-h-screen dark:bg-dark-bg bg-light-bg dark:text-dark-text text-light-text transition-colors`}>
         <ThemeProvider>
           <Navbar />
           {children}

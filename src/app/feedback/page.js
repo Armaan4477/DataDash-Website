@@ -112,8 +112,8 @@ export default function FeedbackPage() {
   };
   
   return (
-    <main className="min-h-screen">
-      <div className="bg-linear-to-r from-primary/10 to-secondary/10 py-16 px-5 text-center mb-10">
+    <main className="min-h-screen dark:bg-dark-bg bg-light-bg dark:text-dark-text text-light-text transition-colors">
+      <div className="bg-linear-to-r from-primary/10 to-secondary/10 py-10 px-5 text-center mb-10">
         <h1 className="text-5xl md:text-6xl bg-gradient-primary bg-clip-text text-transparent font-medium mb-6">Your Feedback Matters</h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto text-center dark:text-white text-black font-light">
           Help us improve DataDash by sharing your thoughts, reporting issues, or suggesting new features.

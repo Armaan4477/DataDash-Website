@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 export default function HomePage() {
   return (
-    <main>
-      <div className="pt-10">
+    <main className="min-h-screen dark:bg-dark-bg bg-light-bg dark:text-dark-text text-light-text transition-colors">
+      <div>
         <div id="intro" className="px-10 py-10 text-center max-w-full">
           <h1 className="font-poppins text-[clamp(3rem,calc(2rem+4vw),4.5rem)] leading-tight bg-gradient-primary bg-clip-text text-transparent text-left my-[clamp(1rem,5vw,3rem)] p-0 break-words ml-0">
             DataDash
