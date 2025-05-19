@@ -97,6 +97,97 @@ export default function BetaPage() {
         </div>
       </div>
 
+      <hr className="h-px my-8 bg-linear-to-r from-transparent via-primary-light via-secondary to-transparent opacity-30" />
+
+      {/* macOS Section */}
+      <div className="text-center px-5 mb-10">
+        <h2 className="text-3xl font-medium mb-3">MacOS</h2>
+        <p className="text-[15px] text-[#c90065] font-normal mb-5">
+          Minimum Requirement: macOS Ventura <br/> Recommended Requirement: macOS Sequoia
+        </p>
+        <div className="space-x-4 mb-6">
+          <a href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/DataDash(macos%20arm).dmg" className="btn">MacOS (ARM)</a>
+          <a href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/DataDash(macos%20x64).dmg" className="btn">MacOS (x64)</a>
+        </div>
+        
+        <div className="max-w-[700px] mx-auto my-5 p-5 bg-white/5 rounded-xl border border-primary/20 shadow-md">
+          <h3 className="text-xl font-semibold mb-2.5 bg-gradient-primary bg-clip-text text-transparent">Installation Instructions:</h3>
+          <p className="text-base leading-relaxed">
+            1. Download the .dmg file.<br/>
+            2. Open the file and drag the application to your Applications folder.<br/>
+            3. Launch the application from the Applications folder.<br/>
+            4. If you see a warning message, go to <strong>System Settings</strong> &gt; <strong>Privacy & Security</strong>.<br/>
+            5. Scroll down to the "Security" section and find a message about the app.<br/>
+            6. Click <strong>"Allow Anyway"</strong> to grant permission to open the app <br/>(Note: There is no app signing certificate, so this warning is expected;
+            <span className="font-bold text-secondary italic"> (for help see the video below)</span>).
+          </p>
+          <video width="600" controls className="max-w-full h-auto block mx-auto my-5">
+            <source src="/videos/security.mov" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <hr className="h-px my-8 bg-linear-to-r from-transparent via-primary-light via-secondary to-transparent opacity-30" />
+
+      {/* Linux Section */}
+      <div className="text-center px-5 mb-10">
+        <h2 className="text-3xl font-medium mb-3">Linux</h2>
+        <p className="text-[15px] text-[#c90065] font-normal mb-5">
+          Minimum Requirement: 20.04 <br/> Recommended Requirement: 24.04
+        </p>
+        <div className="space-x-4 mb-6">
+          <a href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/DataDash(linux%20arm)" className="btn">Linux (ARM)</a>
+          <a href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/DataDash(linux%20x64)" className="btn">Linux (x64)</a>
+        </div>
+        
+        <div className="max-w-[700px] mx-auto my-5 p-5 bg-white/5 rounded-xl border border-primary/20 shadow-md">
+          <h3 className="text-xl font-semibold mb-2.5 bg-gradient-primary bg-clip-text text-transparent">Building and Running the App:</h3>
+          <p className="text-base leading-relaxed">
+            1. Download the binary file.<br/>
+            2. Rename the file to remove the brackets.<br/>
+            3. Give the binary file execute permissions:<br/>
+            <code className="bg-white/10 px-2 py-1 rounded">chmod +x filename</code><br/>
+            4. Run the app using: 
+            <code className="bg-white/10 px-2 py-1 rounded">./filename</code><br/>
+            <strong>or </strong><br/>
+            double click the file in the downloaded location to open it.<br/>
+            5. No further build steps are necessary.
+            <span className="font-bold text-secondary italic"> (for help see the video below)</span>.
+          </p>
+          <video width="600" controls className="max-w-full h-auto block mx-auto my-5">
+            <source src="/videos/linux_install.mov" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <hr className="h-px my-8 bg-linear-to-r from-transparent via-primary-light via-secondary to-transparent opacity-30" />
+
+      {/* Android Section */}
+      <div className="text-center px-5 mb-10">
+        <h2 className="text-3xl font-medium mb-3">Android</h2>
+        <p className="text-[15px] text-[#c90065] font-normal mb-5">
+          Minimum Requirement: Android 11 <br/> Recommended Requirement: Android 14
+        </p>
+        <div className="space-x-4 mb-6">
+          <a href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/DataDash(android).apk" className="btn">Android App</a>
+        </div>
+        
+        <div className="max-w-[700px] mx-auto my-5 p-5 bg-white/5 rounded-xl border border-primary/20 shadow-md">
+          <h3 className="text-xl font-semibold mb-2.5 bg-gradient-primary bg-clip-text text-transparent">Installation Instructions:</h3>
+          <p className="text-base leading-relaxed">
+            1. Download the APK file.<br/>
+            2. Open the file on your Android device.<br/>
+            3. Allow installations from unknown sources if prompted.<br/>
+            4. Follow the instructions to install the application.
+          </p>
+          <p className="font-bold text-secondary italic">
+            Note: While installing the app, Android will warn that the app is unsafe, this is due to there being no signing certificate present, it can be ignored.
+          </p>
+        </div>
+      </div>
+
       {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
@@ -134,8 +225,6 @@ export default function BetaPage() {
           </div>
         </div>
       )}
-      
-      {/* Add more platform sections here similar to Windows section */}
     </main>
   );
 }
