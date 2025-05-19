@@ -49,6 +49,28 @@ export default function RootLayout({ children }) {
             <p className="bg-gradient-primary text-transparent bg-clip-text text-lg">&copy; 2024 DataDash. All rights reserved.</p>
           </footer>
         </ThemeProvider>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.addEventListener('DOMContentLoaded', function() {
+                // Testimonial Carousel functionality
+                const testimonialList = document.getElementById('testimonial-list');
+                if (testimonialList) {
+                  let currentIndex = 0;
+                  const items = testimonialList.children;
+                  const totalItems = items.length;
+                  
+                  if (totalItems > 1) {
+                    setInterval(() => {
+                      currentIndex = (currentIndex + 1) % totalItems;
+                      testimonialList.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+                    }, 5000);
+                  }
+                }
+              });
+            `
+          }}
+        />
       </body>
     </html>
   )
