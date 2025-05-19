@@ -13,7 +13,7 @@ export default function AboutPage() {
 
   return (
     <div className="dark:bg-dark-bg bg-light-bg dark:text-dark-text text-light-text max-w-full py-12 px-7">
-      <h1 className="text-5xl md:text-7xl text-center font-poppins font-bold bg-gradient-primary bg-clip-text text-transparent mt-8 mb-15">
+      <h1 className="text-5xl md:text-7xl text-center font-poppins font-bold bg-gradient-primary bg-clip-text text-transparent mt-6 mb-10 leading-relaxed md:leading-relaxed py-2">
         DataDash: Cross Platform Data Sharing App
       </h1>
 

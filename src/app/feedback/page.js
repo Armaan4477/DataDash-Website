@@ -9,6 +9,7 @@ export default function FeedbackPage() {
   const [showDialog, setShowDialog] = useState(false);
   const [currentPlatform, setCurrentPlatform] = useState(null);
   const fileInputRef = useRef(null);
+  const formSectionRef = useRef(null);
   
   const platformData = {
     windows: {
@@ -111,9 +112,19 @@ export default function FeedbackPage() {
     );
   };
   
+  const handleFeedbackTypeSelection = (type) => {
+    setFeedbackType(type);
+    
+    // Scroll to the form section with smooth behavior
+    formSectionRef.current.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+  
   return (
     <main className="min-h-screen dark:bg-dark-bg bg-light-bg dark:text-dark-text text-light-text transition-colors">
-      <div className="bg-linear-to-r from-primary/10 to-secondary/10 py-10 px-5 text-center mb-10">
+      <div className="bg-linear-to-r from-primary/10 to-secondary/10 py-10 px-5 text-center mb-20">
         <h1 className="text-5xl md:text-6xl bg-gradient-primary bg-clip-text text-transparent font-medium mb-6">Your Feedback Matters</h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto text-center dark:text-white text-black font-light">
           Help us improve DataDash by sharing your thoughts, reporting issues, or suggesting new features.
@@ -121,28 +132,32 @@ export default function FeedbackPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-5">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-20 min-h-[50vh] items-center">
           <FeedbackTypeCard
             icon="fa-lightbulb"
             title="Feature Request"
             description="Suggest new features or improvements"
-            onClick={() => setFeedbackType('Feature Request')}
+            onClick={() => handleFeedbackTypeSelection('Feature Request')}
           />
           <FeedbackTypeCard
             icon="fa-bug"
             title="Bug Report"
             description="Report issues or unexpected behavior"
-            onClick={() => setFeedbackType('Bug Report')}
+            onClick={() => handleFeedbackTypeSelection('Bug Report')}
           />
           <FeedbackTypeCard
             icon="fa-comment"
             title="Testimony"
             description="Share your experience with DataDash"
-            onClick={() => setFeedbackType('Testimony')}
+            onClick={() => handleFeedbackTypeSelection('Testimony')}
           />
         </div>
 
-        <section id="feedback-form-section" className="bg-white/5 backdrop-filter backdrop-blur-lg rounded-3xl p-8 max-w-3xl mx-auto mb-10">
+        <section 
+          id="feedback-form-section" 
+          ref={formSectionRef}
+          className="bg-white/5 backdrop-filter backdrop-blur-lg rounded-3xl p-8 max-w-3xl mx-auto mb-10 scroll-mt-8"
+        >
           <form id="feedback-form" onSubmit={handleSubmit}>
             <div className="mb-8 text-center">
               <h2 className="text-3xl bg-gradient-primary bg-clip-text text-transparent mb-2">Submit Your Feedback</h2>
@@ -242,7 +257,7 @@ export default function FeedbackPage() {
       {/* Dialog for logs help */}
       {showDialog && (
         <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
-          <div className="bg-linear-to-b from-gray-900 to-black p-6 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-auto">
+          <div className="dark:bg-gray-900 bg-white border dark:border-gray-700 border-gray-200 p-6 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-auto">
             {currentPlatform ? (
               <div>
                 <button 
@@ -251,33 +266,37 @@ export default function FeedbackPage() {
                 >
                   ← Back
                 </button>
-                <h2 className="text-2xl font-medium mb-4">
+                <h2 className="text-2xl font-medium mb-4 dark:text-white text-black">
                   How to get DataDash Logs - <span className="capitalize">{currentPlatform}</span>
                 </h2>
                 <video className="w-full rounded-lg mb-6" controls>
                   <source src={platformData[currentPlatform].video} type="video/mp4" />
                 </video>
                 <div className="mt-4">
-                  <h3 className="text-xl mb-3">Instructions:</h3>
+                  <h3 className="text-xl mb-3 dark:text-white text-black">Instructions:</h3>
                   <ol className="list-decimal pl-6 space-y-2">
                     {platformData[currentPlatform].steps.map((step, index) => (
-                      <li key={index} className="text-base text-gray-200">{step}</li>
+                      <li key={index} className="text-base dark:text-gray-200 text-gray-700">{step}</li>
                     ))}
                   </ol>
                 </div>
               </div>
             ) : (
               <div>
-                <h2 className="text-2xl font-medium mb-6 text-center">How to get DataDash Logs</h2>
+                <h2 className="text-2xl font-medium mb-6 text-center dark:text-white text-black">How to get DataDash Logs</h2>
                 <div className="grid grid-cols-2 gap-4">
                   {Object.keys(platformData).map((platform) => (
                     <button
                       key={platform}
-                      className="flex flex-col items-center justify-center p-6 border border-gray-700 rounded-lg hover:-translate-y-1 transition-transform bg-black/30 hover:border-primary"
+                      className="flex flex-col items-center justify-center p-6 dark:border-gray-700 border-gray-300 border rounded-lg hover:-translate-y-1 transition-transform dark:bg-gray-800/30 bg-gray-100/30 hover:border-primary"
                       onClick={() => setCurrentPlatform(platform)}
                     >
-                      <i className={`fab fa-${platform} text-3xl mb-2`}></i>
-                      <span className="capitalize">{platform}</span>
+                      {platform === 'macos' ? (
+                        <i className="fab fa-apple text-3xl mb-2 dark:text-gray-200 text-gray-700"></i>
+                      ) : (
+                        <i className={`fab fa-${platform} text-3xl mb-2 dark:text-gray-200 text-gray-700`}></i>
+                      )}
+                      <span className="capitalize dark:text-gray-200 text-gray-700">{platform}</span>
                     </button>
                   ))}
                 </div>
