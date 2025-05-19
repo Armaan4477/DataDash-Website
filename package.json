@@ -1,9 +1,30 @@
 {
-  "type": "module",
+  "name": "datadash-website",
+  "version": "0.1.0",
+  "private": true,
+
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.729.0",
+    "@aws-sdk/client-s3": "^3.812.0",
+    "@emailjs/browser": "^4.4.1",
     "@vercel/blob": "^0.27.0",
     "crypto": "^1.0.1",
-    "formidable": "^3.5.2"
+    "formidable": "^3.5.2",
+    "next": "^15.3.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "framer-motion": "^12.11.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.7",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^4.1.7"
   }
 }

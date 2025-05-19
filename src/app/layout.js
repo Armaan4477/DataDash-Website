@@ -1,0 +1,53 @@
+import { Inter, Poppins, Montserrat } from 'next/font/google'
+import './globals.css'
+import Navbar from '../components/Navbar'
+import { ThemeProvider } from '../context/ThemeContext';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+  variable: '--font-poppins'
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+  variable: '--font-montserrat'
+})
+
+export const metadata = {
+  title: 'DataDash',
+  description: 'Effortless File Sharing Anywhere!',
+}
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                let theme = localStorage.getItem('theme');
+                if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.classList.toggle('dark', theme === 'dark');
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
+      <body className={`${poppins.variable} ${montserrat.variable} min-h-screen flex flex-col dark:bg-gray-900 pt-16`}>
+        <ThemeProvider>
+          <Navbar />
+          {children}
+          <footer className="text-center p-5 mt-auto">
+            <p className="bg-gradient-primary text-transparent bg-clip-text text-lg">&copy; 2024 DataDash. All rights reserved.</p>
+          </footer>
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
