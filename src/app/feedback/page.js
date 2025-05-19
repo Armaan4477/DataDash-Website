@@ -240,7 +240,7 @@ export default function FeedbackPage() {
 
             <button 
               type="submit" 
-              className="w-full py-4 bg-gradient-primary rounded-xl text-white text-lg font-semibold hover:shadow-lg transition-transform hover:-translate-y-1"
+              className="btn w-full"
             >
               Submit Feedback
             </button>
@@ -303,7 +303,7 @@ export default function FeedbackPage() {
               </div>
             )}
             <button
-              className="mt-6 bg-gradient-primary px-4 py-2 rounded-lg text-white hover:opacity-90 w-full"
+              className="btn w-full mt-6"
               onClick={() => setShowDialog(false)}
             >
               Close
