@@ -1,15 +1,26 @@
 'use client'
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { uploadFile } from '../../lib/uploadFile';
+import emailjs from '@emailjs/browser';
 
 export default function FeedbackPage() {
   const [feedbackType, setFeedbackType] = useState('');
   const [feedbackMessage, setFeedbackMessage] = useState('');
   const [showDialog, setShowDialog] = useState(false);
   const [currentPlatform, setCurrentPlatform] = useState(null);
+  const [loading, setLoading] = useState(false);
   const fileInputRef = useRef(null);
   const formSectionRef = useRef(null);
+  const formRef = useRef(null);
+  
+  useEffect(() => {
+    // Initialize EmailJS when the component mounts
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_KEY;
+    if (publicKey) {
+      emailjs.init(publicKey);
+    }
+  }, []);
   
   const platformData = {
     windows: {
@@ -52,12 +63,10 @@ export default function FeedbackPage() {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     
     // Getting form data
     const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const email = formData.get('userEmail');
-    const message = formData.get('message');
     const files = fileInputRef.current.files;
     
     let fileUrls = "";
@@ -83,33 +92,34 @@ export default function FeedbackPage() {
       alert(largerFiles);
     }
     
-    let finalMessage = message;
+    // Append file URLs to the hidden field in the form
     if (fileUrls) {
-      finalMessage += "\n\nFile Url(s): \n" + fileUrls;
+      const hiddenField = document.createElement('input');
+      hiddenField.type = 'hidden';
+      hiddenField.name = 'fileUrls';
+      hiddenField.value = fileUrls;
+      e.target.appendChild(hiddenField);
     }
     
-    // Initialize EmailJS
-    window.emailjs.init('q9tVbleQ2wLKetQGl');
-    
-    // Send email
-    window.emailjs.send('service_pkzzkvw', 'template_dczsrp9', {
-      feedbackType,
-      name,
-      userEmail: email,
-      message: finalMessage
-    })
-    .then(
-      function (response) {
-        console.log('SUCCESS!', response.status, response.text);
-        setFeedbackMessage('Thank you for your feedback!');
-        e.target.reset();
-        setFeedbackType('');
-      },
-      function (error) {
-        console.log('FAILED...', error);
-        setFeedbackMessage('An error occurred while submitting your feedback. Please try again later.');
-      }
-    );
+    try {
+      // Send email using emailjs library directly
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        e.target,
+        process.env.NEXT_PUBLIC_EMAILJS_KEY
+      );
+      
+      console.log('SUCCESS!');
+      setFeedbackMessage('Thank you for your feedback!');
+      e.target.reset();
+      setFeedbackType('');
+    } catch (error) {
+      console.log('FAILED...', error);
+      setFeedbackMessage('An error occurred while submitting your feedback. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
   };
   
   const handleFeedbackTypeSelection = (type) => {
@@ -158,7 +168,7 @@ export default function FeedbackPage() {
           ref={formSectionRef}
           className="bg-white/5 backdrop-filter backdrop-blur-lg rounded-3xl p-8 max-w-3xl mx-auto mb-10 scroll-mt-8"
         >
-          <form id="feedback-form" onSubmit={handleSubmit}>
+          <form id="feedback-form" ref={formRef} onSubmit={handleSubmit}>
             <div className="mb-8 text-center">
               <h2 className="text-3xl bg-gradient-primary bg-clip-text text-transparent mb-2">Submit Your Feedback</h2>
               <p className="text-sm dark:text-gray-300 text-gray-600">Help us improve DataDash with your valuable input</p>
@@ -241,13 +251,14 @@ export default function FeedbackPage() {
             <button 
               type="submit" 
               className="btn w-full"
+              disabled={loading}
             >
-              Submit Feedback
+              {loading ? 'Submitting...' : 'Submit Feedback'}
             </button>
           </form>
           
           {feedbackMessage && (
-            <div className="mt-6 p-4 rounded-xl text-center bg-linear-to-r from-primary/10 to-secondary/10">
+            <div className={`mt-6 p-4 rounded-xl text-center bg-linear-to-r ${feedbackMessage.includes('error') ? 'from-red-500/10 to-red-600/10' : 'from-primary/10 to-secondary/10'}`}>
               {feedbackMessage}
             </div>
           )}
