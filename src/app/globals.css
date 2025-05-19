@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-primary-light: #10b981;
+  --color-primary: #10b981;
+  --color-primary-dark: #047857;
+
+  --color-secondary-light: #ec4899;
+  --color-secondary: #ec4899;
+  --color-secondary-dark: #be185d;
+
+  --color-dark-bg: #000000;
+  --color-dark-text: #ffffff;
+  --color-dark-secondary-text: #ebdcdc;
+  --color-dark-card: rgba(255, 255, 255, 0.166);
+
+  --color-light-bg: #ffffff;
+  --color-light-text: #000000;
+  --color-light-secondary-text: #333333;
+  --color-light-card: rgba(0, 0, 0, 0.05);
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+  --background-image-gradient-primary: linear-gradient(
+    135deg,
+    #10b981,
+    #ec4899
+  );
+
+  --shadow-feature:
+    0 10px 25px rgba(19, 156, 111, 0.384), 0 15px 35px rgba(236, 72, 154, 0.503);
+  --shadow-feature-hover:
+    0 15px 35px rgba(19, 156, 111, 0.384), 0 20px 45px rgba(236, 72, 154, 0.503);
+
+  --font-poppins: Poppins, sans-serif;
+  --font-montserrat: Montserrat, sans-serif;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility btn {
+  @apply relative inline-block px-6 py-3 bg-gradient-primary text-white font-poppins font-light rounded-full cursor-pointer transition-all duration-300 overflow-hidden shadow-md hover:shadow-xl hover:scale-105 active:scale-95;
+
+  &::before {
+    content: '';
+    @apply absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/30 to-transparent transition-all duration-500;
+  }
+
+  &:hover::before {
+    @apply left-full;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-poppins;
+  }
+}
