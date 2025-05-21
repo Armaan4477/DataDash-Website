@@ -37,7 +37,7 @@ export default function AboutPage() {
       
       <FadeInOnScroll direction="up" duration={1.0} className="relative flex justify-center flex-nowrap overflow-x-auto gap-8 max-w-[1600px] mx-auto px-8 py-8 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-[rgba(64,206,171,0.05)] before:to-transparent before:rounded-3xl">
         <StaggeredFadeIn 
-          className="flex gap-8"
+          className="flex flex-col md:flex-row gap-8"
           childClassName=""
           staggerDelay={0.15}
           duration={0.8}
@@ -88,8 +88,8 @@ export default function AboutPage() {
       </RevealContainer>
       
       <StaggeredFadeIn 
-        className="flex justify-center flex-nowrap overflow-x-auto lg:flex-wrap gap-5 max-w-7xl mx-auto px-4"
-        childClassName=""
+        className="flex justify-center flex-col md:flex-row flex-wrap md:flex-nowrap md:overflow-x-auto gap-5 max-w-7xl mx-auto px-4"
+        childClassName="mx-auto md:mx-0"
         staggerDelay={0.15}
         duration={0.8}
         direction="up"
@@ -97,25 +97,25 @@ export default function AboutPage() {
         threshold={0.1}
       >
         <SpecialThanksCard
-          photo="/photos/adwait.jpg"
-          name="Adwait Patil"
-          github="https://github.com/Adwait0901"
-          linkedin="https://www.linkedin.com/in/adwaitpatil0901/"
-        />
-        
-        <SpecialThanksCard
-          photo="/photos/nishal.jpg"
-          name="Nishal Poojary"
-          github="https://github.com/Ailover123"
-          linkedin="https://www.linkedin.com/in/nishal-poojary-159530290"
-        />
-        
-        <SpecialThanksCard
-          photo="/photos/urmi.jpg"
-          name="Urmi Joshi"
-          github="https://github.com/ura-dev04"
-          linkedin="https://www.linkedin.com/in/urmi-joshi-6697a7320/"
-        />
+            photo="/photos/adwait.jpg"
+            name="Adwait Patil"
+            github="https://github.com/Adwait0901"
+            linkedin="https://www.linkedin.com/in/adwaitpatil0901/"
+          />
+          
+          <SpecialThanksCard
+            photo="/photos/nishal.jpg"
+            name="Nishal Poojary"
+            github="https://github.com/Ailover123"
+            linkedin="https://www.linkedin.com/in/nishal-poojary-159530290"
+          />
+          
+          <SpecialThanksCard
+            photo="/photos/urmi.jpg"
+            name="Urmi Joshi"
+            github="https://github.com/ura-dev04"
+            linkedin="https://www.linkedin.com/in/urmi-joshi-6697a7320/"
+          />
       </StaggeredFadeIn>
     </div>
   );
@@ -124,7 +124,7 @@ export default function AboutPage() {
 function TeamMemberCard({ photo, name, github, linkedin }) {
   return (
     <motion.div 
-      className="py-7 px-7 rounded-[20px] w-[300px] my-4 shadow-[0_10px_25px_rgba(19,156,111,0.284),0_15px_35px_rgba(236,72,154,0.403)] backdrop-blur-[10px] transition-all duration-300 relative overflow-hidden text-white text-center"
+      className="py-7 px-7 rounded-[20px] w-[300px] my-4 mx-auto md:mx-0 shadow-[0_10px_25px_rgba(19,156,111,0.284),0_15px_35px_rgba(236,72,154,0.403)] backdrop-blur-[10px] transition-all duration-300 relative overflow-hidden text-white text-center"
       whileHover={{
         y: -15,
         boxShadow: "0 15px 35px rgba(19,156,111,0.384), 0 20px 45px rgba(236,72,154,0.503)"

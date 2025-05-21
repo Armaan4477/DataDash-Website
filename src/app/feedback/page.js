@@ -159,7 +159,7 @@ export default function FeedbackPage() {
           className="mb-20"
         >
           <StaggeredFadeIn 
-            className="grid grid-cols-1 md:grid-cols-3 gap-5 min-h-[50vh] items-center"
+            className="grid grid-cols-1 md:grid-cols-3 gap-5 min-h-[50vh] items-center justify-items-center md:justify-items-stretch"
             childClassName=""
             staggerDelay={0.15}
             duration={0.8}

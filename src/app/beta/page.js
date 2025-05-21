@@ -83,19 +83,11 @@ export default function BetaPage() {
           Minimum Requirement: Windows 10 <br/> Recommended Requirement: Windows 11
         </p>
         <StaggeredFadeIn 
-          className="space-x-4 mb-6"
+          className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 mb-6 justify-center"
           childClassName=""
           staggerDelay={0.15}
           duration={0.5}
         >
-          <motion.a 
-            href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/DataDash(windows%20arm).exe" 
-            className="btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Windows (ARM)
-          </motion.a>
           <motion.a 
             href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/DataDash(windows%20x64).exe" 
             className="btn"
@@ -103,6 +95,14 @@ export default function BetaPage() {
             whileTap={{ scale: 0.95 }}
           >
             Windows (x64)
+          </motion.a>
+          <motion.a 
+            href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/DataDash(windows%20arm).exe" 
+            className="btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Windows (ARM)
           </motion.a>
         </StaggeredFadeIn>
         
@@ -140,7 +140,7 @@ export default function BetaPage() {
           Minimum Requirement: macOS Ventura <br/> Recommended Requirement: macOS Sequoia
         </p>
         <StaggeredFadeIn 
-          className="space-x-4 mb-6"
+          className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 mb-6 justify-center"
           childClassName=""
           staggerDelay={0.15}
           duration={0.5}
@@ -190,19 +190,11 @@ export default function BetaPage() {
           Minimum Requirement: 20.04 <br/> Recommended Requirement: 24.04
         </p>
         <StaggeredFadeIn 
-          className="space-x-4 mb-6"
+          className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 mb-6 justify-center"
           childClassName=""
           staggerDelay={0.15}
           duration={0.5}
         >
-          <motion.a 
-            href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/DataDash(linux%20arm)" 
-            className="btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Linux (ARM)
-          </motion.a>
           <motion.a 
             href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/DataDash(linux%20x64)" 
             className="btn"
@@ -210,6 +202,14 @@ export default function BetaPage() {
             whileTap={{ scale: 0.95 }}
           >
             Linux (x64)
+          </motion.a>
+          <motion.a 
+            href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/DataDash(linux%20arm)" 
+            className="btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Linux (ARM)
           </motion.a>
         </StaggeredFadeIn>
         
