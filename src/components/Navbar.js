@@ -22,7 +22,6 @@ export default function Navbar() {
   const hoverTimerRef = useRef(null);
   
   useEffect(() => {
-    // Add small delay before showing navbar items to ensure they animate
     const timer = setTimeout(() => {
       setIsLoaded(true);
     }, 100);
@@ -95,12 +94,10 @@ export default function Navbar() {
     return pathname === path || pathname.startsWith(`${path}/`);
   };
 
-  // Function to handle mouse enter on nav links container
   const handleNavSectionMouseEnter = () => {
     setIsHoveringAnyLink(true);
   };
   
-  // Function to handle mouse leave on nav links container
   const handleNavSectionMouseLeave = () => {
     setIsHoveringAnyLink(false);
     setHoveredLink(null);
