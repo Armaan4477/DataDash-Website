@@ -31,7 +31,7 @@ export default function AboutPage() {
 
       <AnimatedSection animation="fadeIn" duration={1.2}>
         <h2 className="text-4xl text-center text-[rgb(64,206,171)] mt-12 mb-10 font-poppins font-medium">
-          Meet the Team (Alphabetically)
+          Meet the Team
         </h2>
       </AnimatedSection>
       
@@ -44,12 +44,6 @@ export default function AboutPage() {
           direction="up"
           distance={30}
         >
-          <TeamMemberCard
-            photo="/photos/aarya.jpg"
-            name="Aarya Walve"
-            github="https://github.com/aaryaa28"
-            linkedin="https://www.linkedin.com/in/aarya-walve-10259325b/"
-          />
 
           <TeamMemberCard
             photo="/photos/arm.jpeg"
@@ -71,6 +65,14 @@ export default function AboutPage() {
             github="https://github.com/FrosT2k5"
             linkedin="https://www.linkedin.com/in/yash-patil-385171257"
           />
+
+          <TeamMemberCard
+            photo="/photos/aarya.jpg"
+            name="Aarya Walve"
+            github="https://github.com/aaryaa28"
+            linkedin="https://www.linkedin.com/in/aarya-walve-10259325b/"
+          />
+          
         </StaggeredFadeIn>
       </FadeInOnScroll>
 
@@ -81,7 +83,7 @@ export default function AboutPage() {
         threshold={0.3}
       >
         <h2 className="text-4xl text-center text-[rgb(64,206,171)] mt-20 mb-10 font-poppins font-medium">
-          Special Thanks To (Alphabetically)
+          Special Thanks To
         </h2>
       </RevealContainer>
       

@@ -61,7 +61,7 @@ export default function ScrollToTop() {
     });
   };
 
-  if (pathname === '/contact' && !isMobile) {
+  if (pathname === '/feedback' && !isMobile) {
     return null;
   }
 
