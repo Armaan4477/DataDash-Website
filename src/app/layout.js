@@ -67,10 +67,25 @@ export default function RootLayout({ children }) {
                   const items = testimonialList.children;
                   const totalItems = items.length;
                   
+                  const dots = document.querySelectorAll('.indicator-dot');
+                  
+                  if (dots.length > 0) {
+                    dots[0].classList.add('w-6', 'bg-gradient-to-r', 'from-[#40ceab]', 'to-[#019f92]');
+                  }
+                  
                   if (totalItems > 1) {
                     setInterval(() => {
                       currentIndex = (currentIndex + 1) % totalItems;
+                      
                       testimonialList.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+                      
+                      dots.forEach((dot, idx) => {
+                        if (idx === currentIndex) {
+                          dot.classList.add('w-6', 'bg-gradient-to-r', 'from-[#40ceab]', 'to-[#019f92]');
+                        } else {
+                          dot.classList.remove('w-6', 'bg-gradient-to-r', 'from-[#40ceab]', 'to-[#019f92]');
+                        }
+                      });
                     }, 5000);
                   }
                 }
