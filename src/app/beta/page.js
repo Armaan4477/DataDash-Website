@@ -38,11 +38,11 @@ export default function BetaPage() {
   return (
     <main className="dark:bg-dark-bg bg-light-bg dark:text-dark-text text-light-text font-poppins pt-5">
       <RevealContainer 
-        animationType={REVEAL_ANIMATIONS.SLIDE_UP} 
-        duration={0.8} 
-        delay={0.2}
-        className="px-10 py-10 text-center"
-      >
+                animationType={REVEAL_ANIMATIONS.SLIDE_UP} 
+                duration={0.8} 
+                delay={0.2}
+                className="px-10 py-10 text-center max-w-full"
+              >
         <h1 className="text-5xl font-bold font-poppins bg-gradient-primary bg-clip-text text-transparent mb-5">
           Download The Beta Versions Of Our Application
         </h1>

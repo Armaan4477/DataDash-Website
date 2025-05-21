@@ -78,8 +78,9 @@ export default function Navbar() {
   
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Feedback', path: '/feedback' }
+    { name: 'Downloads', path: '/download' },
+    { name: 'Feedback', path: '/feedback' },
+    { name: 'About', path: '/about' }
   ];
   
   const isActive = (path) => {
@@ -87,8 +88,8 @@ export default function Navbar() {
       return false;
     }
     
-    if (path === '/projects') {
-      return pathname === '/projects' || pathname.startsWith('/demos');
+    if (path === '/download') {
+      return pathname === '/download' || pathname.startsWith('/beta');
     }
     
     return pathname === path || pathname.startsWith(`${path}/`);
@@ -123,7 +124,7 @@ export default function Navbar() {
           font-size: 25px;
           font-weight: 600;
           padding: 7px 9px;
-          margin: 1px 47px;
+          margin: 1px 15px;
           transition: background-color 0.3s ease;
           font-family: "Poppins", serif;
         }
@@ -165,7 +166,7 @@ export default function Navbar() {
       `}</style>
       
       <nav className="fixed top-0 left-0 w-full h-[60px] dark:bg-dark-bg bg-light-bg dark:text-dark-text text-light-text shadow-xs z-[1000] transition-colors">
-        <div className="container mx-auto px-5 h-full">
+        <div className="w-full h-full px-5">
           <div className="flex justify-between items-center h-full">
             <Link 
               href="/" 
@@ -221,43 +222,45 @@ export default function Navbar() {
                     {link.name}
                     
                     {/* Shared hover indicator across all nav links */}
-                    {isHoveringAnyLink && hoveredLink === link.path && !isActive(link.path) && (
-                      <motion.div 
-                        layoutId="hoverIndicator"
-                        className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-emerald-500 to-pink-500 rounded-full"
-                        initial={false}
-                        animate={{ width: '100%', opacity: 1 }}
-                        transition={{ duration: 0.2 }}
-                      />
-                    )}
+                    <AnimatePresence>
+                      {isHoveringAnyLink && hoveredLink === link.path && !isActive(link.path) && (
+                        <motion.div 
+                          layoutId="hoverIndicator"
+                          className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-emerald-500 to-pink-500 rounded-full"
+                          initial={{ width: 0, opacity: 0 }}
+                          animate={{ width: '100%', opacity: 1 }}
+                          exit={{ width: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                        />
+                      )}
+                    </AnimatePresence>
                     
-                    {/* Active indicator */}
-                    <AnimatePresence mode="wait">
-                      {isActive(link.path) && (
+                    {/* Active and exit animations for indicators */}
+                    <AnimatePresence>
+                      {isActive(link.path) ? (
                         <motion.div 
                           key={`active-${link.path}`}
                           className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-emerald-500 to-pink-500 rounded-full"
                           initial={{ width: 0, opacity: 0 }}
                           animate={{ width: '100%', opacity: 1 }}
                           exit={{ width: 0, opacity: 0 }}
-                          transition={{ duration: 0.4 }}
+                          transition={{ duration: 0.3 }}
                         />
-                      )}
-                      
-                      {/* Previously active indicator with exit animation */}
-                      {previousActive === link.path && !isActive(link.path) && (
-                        <motion.div 
-                          key={`previous-${link.path}`}
-                          className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-emerald-500 to-pink-500 rounded-full"
-                          initial={{ width: '100%', opacity: 1 }}
-                          animate={{ width: 0, opacity: 0 }}
-                          transition={{ duration: 0.5 }}
-                          onAnimationComplete={() => {
-                            if (previousActive === link.path && !isActive(link.path)) {
-                              setPreviousActive(null);
-                            }
-                          }}
-                        />
+                      ) : (
+                        previousActive === link.path && (
+                          <motion.div 
+                            key={`exit-${link.path}`}
+                            className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-emerald-500 to-pink-500 rounded-full"
+                            initial={{ width: '100%', opacity: 1 }}
+                            animate={{ width: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            onAnimationComplete={() => {
+                              if (previousActive === link.path) {
+                                setPreviousActive(null);
+                              }
+                            }}
+                          />
+                        )
                       )}
                     </AnimatePresence>
                   </Link>

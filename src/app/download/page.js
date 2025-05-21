@@ -113,7 +113,7 @@ export default function DownloadPage() {
       <hr className="h-px my-8 bg-linear-to-r from-transparent via-primary-light via-secondary to-transparent opacity-30" />
 
       {/* Windows Section */}
-      <AnimatedSection animation="fadeIn" duration={1.0} className="text-center px-5">
+      <AnimatedSection animation="fadeIn" duration={1.0} delay={0.6} className="text-center px-5">
         <h2 className="text-3xl font-medium mb-5">Windows</h2>
         <p className="text-sm text-secondary mb-2">Version: {versions.windows}</p>
         <p className="text-sm text-secondary-dark font-normal mb-4">
@@ -124,6 +124,9 @@ export default function DownloadPage() {
           childClassName=""
           staggerDelay={0.15}
           duration={0.5}
+          threshold={0}
+          delay={0.6}
+          once={false}
         >
           <motion.a 
             href="https://github.com/Project-Bois/DataDash-files/raw/refs/heads/main/DataDash(windows%20x64).exe" 
@@ -143,7 +146,15 @@ export default function DownloadPage() {
           </motion.a>
         </StaggeredFadeIn>
         
-        <FadeInOnScroll direction="up" duration={0.8} className="max-w-[700px] mx-auto my-5 p-5 bg-white/5 rounded-xl border border-primary/20 shadow-md">
+        <StaggeredFadeIn 
+          className="max-w-[700px] mx-auto my-5 p-5 bg-white/5 rounded-xl border border-primary/20 shadow-md"
+          childClassName=""
+          staggerDelay={0.15}
+          duration={0.5}
+          threshold={0}
+          delay={0.9}
+          once={false}
+        >
           <h3 className="text-xl font-semibold mb-2.5 bg-gradient-primary bg-clip-text text-transparent">Running the App:</h3>
           <p className="text-base leading-relaxed mb-5">
             1. Download the EXE file
@@ -165,7 +176,7 @@ export default function DownloadPage() {
             Your browser does not support the video tag.
           </video>
           <p className="text-base leading-relaxed">5. Launch the application from the Start menu.</p>
-        </FadeInOnScroll>
+        </StaggeredFadeIn>
       </AnimatedSection>
       
       <hr className="h-px my-8 bg-linear-to-r from-transparent via-primary-light via-secondary to-transparent opacity-30" />

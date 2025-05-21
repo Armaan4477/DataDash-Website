@@ -48,7 +48,7 @@ export default function HomePage() {
             delay={1.0}
             className="button-container flex justify-start items-center mt-5"
           >
-            <Link href="/download" className="btn">
+            <Link href="/download" className="btn md:hidden">
               Visit Downloads
             </Link>
           </RevealContainer>

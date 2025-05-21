@@ -29,20 +29,24 @@ export default function AboutPage() {
         </h1>
       </RevealContainer>
 
-      <AnimatedSection animation="fadeIn" duration={1.2}>
-        <h2 className="text-4xl text-center text-[rgb(64,206,171)] mt-12 mb-10 font-poppins font-medium">
+      <RevealContainer 
+        animationType={REVEAL_ANIMATIONS.SLIDE_UP} 
+        duration={0.8} 
+        delay={0.3}
+      >
+        <h2 className="text-4xl text-center text-[rgb(64,206,171)] mt-20 mb-10 font-poppins font-medium">
           Meet the Team
         </h2>
-      </AnimatedSection>
+      </RevealContainer>
       
-      <FadeInOnScroll direction="up" duration={1.0} className="relative flex justify-center flex-nowrap overflow-x-auto gap-8 max-w-[1600px] mx-auto px-8 py-8 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-[rgba(64,206,171,0.05)] before:to-transparent before:rounded-3xl">
+      <FadeInOnScroll direction="up" duration={1.2} className="relative flex justify-center flex-nowrap overflow-x-auto gap-8 max-w-[1600px] mx-auto px-8 py-8 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-[rgba(64,206,171,0.05)] before:to-transparent before:rounded-3xl">
         <StaggeredFadeIn 
           className="flex flex-col md:flex-row gap-8"
           childClassName=""
-          staggerDelay={0.15}
-          duration={0.8}
+          staggerDelay={0.20}
+          duration={0.9}
           direction="up"
-          distance={30}
+          distance={40}
         >
 
           <TeamMemberCard
