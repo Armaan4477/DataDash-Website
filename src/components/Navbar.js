@@ -16,6 +16,9 @@ export default function Navbar() {
   const [hoverDuration, setHoverDuration] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
   const [spinSpeed, setSpinSpeed] = useState(0);
+  const [hoveredLink, setHoveredLink] = useState(null);
+  const [previousActive, setPreviousActive] = useState(null);
+  const [isHoveringAnyLink, setIsHoveringAnyLink] = useState(false);
   const hoverTimerRef = useRef(null);
   
   useEffect(() => {
@@ -57,6 +60,14 @@ export default function Navbar() {
     };
   }, [isHovering]);
 
+  useEffect(() => {
+    navLinks.forEach(link => {
+      if (isActive(link.path)) {
+        setPreviousActive(link.path);
+      }
+    });
+  }, [pathname]);
+
   const getSpinStyle = () => {
     if (!isSpinning) return {};
     const spinDuration = Math.max(0.2, 5 / (1 + spinSpeed));
@@ -84,6 +95,17 @@ export default function Navbar() {
     return pathname === path || pathname.startsWith(`${path}/`);
   };
 
+  // Function to handle mouse enter on nav links container
+  const handleNavSectionMouseEnter = () => {
+    setIsHoveringAnyLink(true);
+  };
+  
+  // Function to handle mouse leave on nav links container
+  const handleNavSectionMouseLeave = () => {
+    setIsHoveringAnyLink(false);
+    setHoveredLink(null);
+  };
+
   return (
     <>
       <style jsx global>{`
@@ -107,6 +129,11 @@ export default function Navbar() {
           margin: 1px 47px;
           transition: background-color 0.3s ease;
           font-family: "Poppins", serif;
+        }
+        
+        .nav-link.active {
+          font-weight: 800;
+          text-shadow: 0 0 1px rgba(236, 72, 153, 0.3);
         }
         
         .nav-link:hover {
@@ -174,7 +201,11 @@ export default function Navbar() {
             </Link>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-4 justify-end flex-1 mx-5">
+            <div 
+              className="hidden md:flex items-center space-x-4 justify-end flex-1 mx-5"
+              onMouseEnter={handleNavSectionMouseEnter}
+              onMouseLeave={handleNavSectionMouseLeave}
+            >
               {navLinks.map((link, i) => (
                 <motion.div 
                   key={link.path} 
@@ -182,14 +213,56 @@ export default function Navbar() {
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: isLoaded ? 0 : -20, opacity: isLoaded ? 1 : 0 }}
                   transition={{ duration: 0.5, delay: 0.1 + (i * 0.1) }}
+                  onHoverStart={() => setHoveredLink(link.path)}
                 >
                   <Link 
                     href={link.path}
                     className={`gradient-text nav-link ${
-                      isActive(link.path) ? 'font-bold' : ''
+                      isActive(link.path) ? 'active' : ''
                     }`}
                   >
                     {link.name}
+                    
+                    {/* Shared hover indicator across all nav links */}
+                    {isHoveringAnyLink && hoveredLink === link.path && !isActive(link.path) && (
+                      <motion.div 
+                        layoutId="hoverIndicator"
+                        className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-emerald-500 to-pink-500 rounded-full"
+                        initial={false}
+                        animate={{ width: '100%', opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                      />
+                    )}
+                    
+                    {/* Active indicator */}
+                    <AnimatePresence mode="wait">
+                      {isActive(link.path) && (
+                        <motion.div 
+                          key={`active-${link.path}`}
+                          className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-emerald-500 to-pink-500 rounded-full"
+                          initial={{ width: 0, opacity: 0 }}
+                          animate={{ width: '100%', opacity: 1 }}
+                          exit={{ width: 0, opacity: 0 }}
+                          transition={{ duration: 0.4 }}
+                        />
+                      )}
+                      
+                      {/* Previously active indicator with exit animation */}
+                      {previousActive === link.path && !isActive(link.path) && (
+                        <motion.div 
+                          key={`previous-${link.path}`}
+                          className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-emerald-500 to-pink-500 rounded-full"
+                          initial={{ width: '100%', opacity: 1 }}
+                          animate={{ width: 0, opacity: 0 }}
+                          transition={{ duration: 0.5 }}
+                          onAnimationComplete={() => {
+                            if (previousActive === link.path && !isActive(link.path)) {
+                              setPreviousActive(null);
+                            }
+                          }}
+                        />
+                      )}
+                    </AnimatePresence>
                   </Link>
                 </motion.div>
               ))}
@@ -237,7 +310,23 @@ export default function Navbar() {
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      {link.name}
+                      <motion.span
+                        initial={{ x: -10, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {link.name}
+                      </motion.span>
+                      
+                      {/* Active indicator for mobile menu */}
+                      {isActive(link.path) && (
+                        <motion.div 
+                          className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-emerald-500 to-pink-500"
+                          initial={{ width: 0 }}
+                          animate={{ width: '30%' }}
+                          transition={{ duration: 0.3 }}
+                        />
+                      )}
                     </Link>
                   </div>
                 ))}
