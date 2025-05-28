@@ -98,15 +98,21 @@ export default function FeedbackPage() {
       alert(largerFiles);
     }
     
-    // Append file URLs to the hidden field in the form
+    // Append file URLs to the "message" field
     if (fileUrls) {
-      const hiddenField = document.createElement('input');
-      hiddenField.type = 'hidden';
-      hiddenField.name = 'fileUrls';
-      hiddenField.value = fileUrls;
-      e.target.appendChild(hiddenField);
+      const messageField = e.target.elements['message'];
+      if (messageField) {
+        messageField.value += `\n\nUploaded files:\n${fileUrls}`;
+      }
     }
-    
+
+    // Remove file inputs before sending form
+    [...e.target.elements].forEach(el => {
+      if (el.type === 'file') {
+        el.parentNode.removeChild(el);
+      }
+    });
+
     try {
       // Send email using emailjs library directly
       await emailjs.sendForm(

@@ -1,65 +1,98 @@
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
-import formidable from 'formidable';
+import { NextResponse } from 'next/server';
 import crypto from 'crypto';
-import fs from 'fs';
+import Busboy from 'busboy';
 
-const credentials = {
-  accessKeyId: process.env.S3_ACCESS_KEY_ID,
-  secretAccessKey: process.env.S3_ACCESS_KEY_SECRET
+export const config = {
+  api: {
+    bodyParser: false,
+  },
 };
 
-// Create an S3 service client object.
 const s3Client = new S3Client({
   endpoint: "https://s3.tebi.io",
-  credentials: credentials,
-  region: "global"
+  region: "global",
+  credentials: {
+    accessKeyId: process.env.S3_ACCESS_KEY_ID,
+    secretAccessKey: process.env.S3_ACCESS_KEY_SECRET,
+  },
 });
 
-// Set up formidable for handling file uploads
-const form = formidable({
-  maxFileSize: 10 * 1024 * 1024, //10MB Max File Size Limit
-});
-form.keepExtensions = true; // Keep file extensions
+export async function POST(req) {
+  return new Promise(async (resolve, reject) => {
+    const contentType = req.headers.get('content-type');
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
+    if (!contentType) {
+      return reject(NextResponse.json({ error: 'Missing Content-Type' }, { status: 400 }));
+    }
 
-  // Parse the incoming form (file upload)
-  form.parse(req, async (err, fields, files) => {
-    const randomPrefix = crypto.randomBytes(10).toString('hex');
-    if (err) {
-      console.error('Error parsing form data:', err);
-      return res.status(500).json({ 
-        "error": 'Failed to parse form data',
-        "message": err.message
+    const bb = Busboy({
+      headers: {
+        'content-type': contentType,
+      },
+    });
+
+    let fileUploaded = false;
+
+    bb.on('file', (fieldname, file, filename, encoding, mimetype) => {
+      const randomPrefix = crypto.randomBytes(10).toString('hex');
+      const key = `${randomPrefix}_${filename.filename}`; 
+      /* not sure about the filename.filename here, ideally should've been
+      just filename, but the current filename object contains object with description
+      of file which has another filename attribute that has actual string filename */
+
+      const chunks = [];
+
+      file.on('data', (chunk) => chunks.push(chunk));
+
+      file.on('end', async () => {
+        const fileBuffer = Buffer.concat(chunks);
+
+        try {
+          await s3Client.send(new PutObjectCommand({
+            Bucket: 'openmediabucket',
+            Key: key,
+            Body: fileBuffer,
+            ContentType: mimetype,
+          }));
+
+          fileUploaded = true;
+
+          resolve(NextResponse.json({
+            message: 'File uploaded successfully',
+            url: `https://s3.tebi.io/openmediabucket/${key}`,
+          }));
+        } catch (err) {
+          console.error('Upload error:', err);
+          reject(NextResponse.json({ error: 'Upload failed', message: err.message }, { status: 500 }));
+        }
       });
-    }
+    });
 
-    const file = files.file[0]; // Assuming 'file' is the form field name
-    const fileName = randomPrefix + "_" + file.originalFilename;
+    bb.on('error', (err) => {
+      console.error('Busboy error:', err);
+      reject(NextResponse.json({ error: 'Parsing failed', message: err.message }, { status: 500 }));
+    });
 
-    if (!file) {
-      return res.status(400).json({ error: 'No file uploaded' });
-    }
+    const reader = req.body.getReader();
+    const decoder = new TextDecoder();
+    const stream = new ReadableStream({
+      start(controller) {
+        function push() {
+          reader.read().then(({ done, value }) => {
+            if (done) {
+              controller.close();
+              return;
+            }
+            controller.enqueue(value);
+            push();
+          });
+        }
+        push();
+      },
+    });
 
-    try {
-      // Prepare S3 upload parameters
-      const uploadParams = {
-        Bucket: 'openmediabucket', 
-        Key: fileName,
-        Body: fs.readFileSync(file.filepath),
-        ContentType: file.mimetype,
-      };
-
-      // Upload the file to S3
-      const data = await s3Client.send(new PutObjectCommand(uploadParams));
-
-      res.status(200).json({ message: 'File uploaded successfully', url: `https://s3.tebi.io/openmediabucket/${fileName}` });
-    } catch (uploadError) {
-      console.error('Error uploading to S3:', uploadError);
-      res.status(500).json({ error: 'Failed to upload file to S3' });
-    }
+    const nodeStream = require('stream').Readable.from(stream);
+    nodeStream.pipe(bb);
   });
 }
