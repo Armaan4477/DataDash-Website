@@ -20,7 +20,7 @@ export async function GET(request) {
     // If a specific platform was requested, return just that version
     if (platform && versionData.platformValues && versionData.platformValues[platform]) {
       return NextResponse.json(
-        { version: versionData.platformValues[platform] },
+        { value: versionData.platformValues[platform] },
         {
           status: 200,
           headers: {
