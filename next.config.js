@@ -1,11 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    domains: [],
-    unoptimized: true,
-  },
-  allowedDevOrigins: ['192.168.29.3'],
+  swcMinify: true,
+  // Add any other configurations you need
 }
 
 module.exports = nextConfig
