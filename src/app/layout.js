@@ -6,6 +6,7 @@ import { ThemeProvider } from '../context/ThemeContext';
 import { Analytics } from "@vercel/analytics/next"
 import ScrollObserver from '../components/ScrollObserver';
 import ScrollToTop from '../components/ScrollToTop';
+import AnimatedGradientBackground from '../components/AnimatedGradientBackground';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -51,11 +52,12 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${poppins.variable} ${montserrat.variable} min-h-screen dark:bg-dark-bg bg-light-bg dark:text-dark-text text-light-text transition-colors flex flex-col`}>
         <ThemeProvider>
+          <AnimatedGradientBackground />
           <Navbar />
           <ScrollObserver>
-          <main className="flex-grow">
-            {children}
-          </main>
+            <main className="flex-grow">
+              {children}
+            </main>
           </ScrollObserver>
           <Footer />
           <ScrollToTop />
