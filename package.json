@@ -8,23 +8,23 @@
     "start": "next start"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.812.0",
+    "@aws-sdk/client-s3": "^3.832.0",
     "@emailjs/browser": "^4.4.1",
     "@vercel/analytics": "^1.1.2",
     "busboy": "^1.6.0",
     "crypto": "^1.0.1",
     "formidable": "^3.5.4",
-    "framer-motion": "^12.11.0",
-    "next": "^15.3.2",
+    "framer-motion": "^12.18.1",
+    "next": "^15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.7",
-    "eslint": "^9.27.0",
-    "eslint-config-next": "^15.3.2",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^4.1.7"
+    "@tailwindcss/postcss": "^4.1.10",
+    "eslint": "^9.29.0",
+    "eslint-config-next": "^15.3.4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.10"
   }
 }

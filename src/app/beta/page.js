@@ -240,7 +240,7 @@ export default function BetaPage() {
       <AnimatedSection animation="slideUp" duration={1.0} className="text-center px-5 mb-10">
         <h2 className="text-3xl font-medium mb-3">Android</h2>
         <p className="text-[15px] text-[#c90065] font-normal mb-5">
-          Minimum Requirement: Android 11 <br/> Recommended Requirement: Android 14
+          Minimum Requirement: Android 11 <br/> Recommended Requirement: Android 15
         </p>
         <FadeInOnScroll direction="up" duration={0.6}>
           <motion.a 

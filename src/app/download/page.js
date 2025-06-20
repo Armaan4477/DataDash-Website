@@ -294,7 +294,7 @@ export default function DownloadPage() {
         <h2 className="text-3xl font-medium mb-5">Android</h2>
         <p className="text-sm text-secondary mb-2">Version: {versions.android}</p>
         <p className="text-sm text-secondary-dark font-normal mb-4">
-          Minimum Requirement: Android 11 <br /> Recommended Requirement: Android 14
+          Minimum Requirement: Android 11 <br /> Recommended Requirement: Android 15
         </p>
         <FadeInOnScroll direction="up" duration={0.6}>
           <motion.a 
