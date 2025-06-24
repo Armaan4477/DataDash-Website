@@ -76,8 +76,9 @@ export default function BetaPage() {
 
       <hr className="h-px my-8 bg-linear-to-r from-transparent via-primary-light via-secondary to-transparent opacity-30" />
 
+      {/* Original Windows version, temporary hidden due to no installer in .exe versions */}
       {/* Windows Section */}
-      <AnimatedSection animation="fadeIn" duration={1.0} className="text-center px-5 mb-10">
+      {/* <AnimatedSection animation="fadeIn" duration={1.0} className="text-center px-5 mb-10">
         <h2 className="text-3xl font-medium mb-3">Windows</h2>
         <p className="text-[15px] text-[#c90065] font-normal mb-5">
           Minimum Requirement: Windows 10 <br/> Recommended Requirement: Windows 11
@@ -128,6 +129,58 @@ export default function BetaPage() {
             3. Double click the downloaded .exe file
             <span className="font-bold text-secondary italic"> (Note: Due to no signing certificate, On the first launch Windows will warn that the app is unsafe, click <strong>"More Info"</strong> and then <strong>"Run Anyway"</strong> to install the app)</span>.
           </p>
+        </FadeInOnScroll>
+      </AnimatedSection> */}
+
+      <AnimatedSection animation="fadeIn" duration={1.0} className="text-center px-5 mb-10">
+        <h2 className="text-3xl font-medium mb-3">Windows</h2>
+        <p className="text-[15px] text-[#c90065] font-normal mb-5">
+          Minimum Requirement: Windows 10 <br/> Recommended Requirement: Windows 11
+        </p>
+        <StaggeredFadeIn 
+          className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 mb-6 justify-center"
+          childClassName=""
+          staggerDelay={0.15}
+          duration={0.5}
+        >
+          <motion.a 
+            href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/DataDash(windows%20x64).exe" 
+            className="btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Windows (x64)
+          </motion.a>
+          <motion.a 
+            href="https://github.com/Project-Bois/data-dash-test-files/raw/refs/heads/main/DataDash(windows%20arm).exe" 
+            className="btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Windows (ARM)
+          </motion.a>
+        </StaggeredFadeIn>
+        
+        <FadeInOnScroll direction="up" duration={0.8} className="max-w-[700px] mx-auto my-5 p-5 bg-white/5 rounded-xl border border-primary/20 shadow-md">
+          <h3 className="text-xl font-semibold mb-2.5 bg-gradient-primary bg-clip-text text-transparent">Running the App:</h3>
+                    <p className="text-base leading-relaxed mb-5">
+                      1. Download the EXE file
+                      <span className="font-bold text-secondary italic"> (Note: It may block the download from happening, so you will need to disable Microsoft Defender for the time being - for help see the video below)</span>.
+                    </p>
+                    <video width="600" controls className="max-w-full h-auto block mx-auto my-5">
+                      <source src="/videos/defender.mov" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                    <p className="text-base leading-relaxed">
+                      2. Set the Network type to Private in the Windows settings
+                      <span className="font-bold text-secondary italic"> (for help see the video below)</span>.
+                    </p>
+                    <video width="600" controls className="max-w-full h-auto block mx-auto my-5">
+                      <source src="/videos/network.mov" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                    3. Open the app
+                      <span className="font-bold text-secondary italic"> (Note: Due to no signing certificate, Windows will warn that the app is unsafe, click <strong>"More Info"</strong> and then <strong>"Run Anyway"</strong> to run the app)</span><br />
         </FadeInOnScroll>
       </AnimatedSection>
 
