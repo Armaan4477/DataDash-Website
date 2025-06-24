@@ -37,7 +37,7 @@ export default function AboutPage() {
         <h2 className="text-4xl text-center text-[rgb(64,206,171)] mt-20 mb-10 font-poppins font-medium">
           Meet the Team
         </h2>
-        <p className="text-lg text-center text-gray-600 dark:text-gray-400 mb-10 font-poppins">
+        <p className="text-lg text-center text-gray-600 dark:text-gray-400 font-poppins">
           The core developers who built DataDash
         </p>
       </RevealContainer>
@@ -98,8 +98,8 @@ export default function AboutPage() {
       </RevealContainer>
       
       <StaggeredFadeIn 
-        className="flex justify-center flex-col md:flex-row flex-wrap md:flex-nowrap md:overflow-x-auto gap-5 max-w-7xl mx-auto px-4"
-        childClassName="mx-auto md:mx-0"
+        className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto px-4 justify-items-center"
+        childClassName=""
         staggerDelay={0.15}
         duration={0.8}
         direction="up"
@@ -154,26 +154,32 @@ export default function AboutPage() {
         <BetaTesterCard 
             name="Aishwarya Mishra" 
             photo="/photos/aishwarya.jpg" 
+            github="https://github.com/aishwaryamishraa"
         />
         <BetaTesterCard 
             name="Mandaar Pawar" 
             photo="/photos/mandaar.jpeg" 
+            github="https://github.com/Mandaar1009"
         />
         <BetaTesterCard 
             name="Pratamesh Rane" 
             photo="/photos/pratamesh.jpeg" 
+            github="https://github.com/ORION-pax07"
         />
         <BetaTesterCard 
             name="Sairaj Pai" 
             photo="/photos/sairaj.png" 
+            github="https://github.com/gegendepressed"
         />
         <BetaTesterCard 
             name="Vrishab Shenvi" 
             photo="/photos/vrishab.jpeg" 
+            github="https://github.com/vrishab0105"
         />
         <BetaTesterCard 
             name="Zane Fernandes" 
             photo="/photos/zane.jpeg" 
+            github="https://github.com/ZaneFerns360"
         />
       </StaggeredFadeIn>
     </div>
@@ -260,7 +266,7 @@ function SpecialThanksCard({ photo, name, github, linkedin }) {
   );
 }
 
-function BetaTesterCard({ name, photo }) {
+function BetaTesterCard({ name, photo, github = "#" }) {
   const [firstName, ...lastNameParts] = name.split(' ');
   const lastName = lastNameParts.join(' ');
 
@@ -289,6 +295,15 @@ function BetaTesterCard({ name, photo }) {
           <div className="text-xl font-bold dark:text-white text-black drop-shadow-[0_0_5px_#fd49b8f1] leading-tight">
             {lastName}
           </div>
+          {github && github !== "#" && (
+            <Link 
+              href={github} 
+              target="_blank"
+              className="block mt-2.5 text-base dark:text-[#07b8ed] text-[#1b88a9] no-underline dark:drop-shadow-[0_0_3px_#dcf7ff] drop-shadow-[0_0_3px_#56d5fc] hover:underline hover:text-[#9ccaca]"
+            >
+              GitHub Profile
+            </Link>
+          )}
         </div>
       </div>
     </motion.div>
