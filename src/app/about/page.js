@@ -153,7 +153,7 @@ export default function AboutPage() {
       >
         <BetaTesterCard 
             name="Aishwarya Mishra" 
-            photo="/photos/aishwarya.jpg" 
+            photo="/photos/aishwarya.jpeg" 
             github="https://github.com/aishwaryamishraa"
         />
         <BetaTesterCard 
