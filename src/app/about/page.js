@@ -158,7 +158,7 @@ export default function AboutPage() {
         />
         <BetaTesterCard 
             name="Mandaar Pawar" 
-            photo="/photos/mandaar.jpeg" 
+            photo="/photos/mandaar.jpg" 
             github="https://github.com/Mandaar1009"
         />
         <BetaTesterCard 
