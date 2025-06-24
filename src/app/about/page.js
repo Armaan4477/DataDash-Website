@@ -162,8 +162,8 @@ export default function AboutPage() {
             github="https://github.com/Mandaar1009"
         />
         <BetaTesterCard 
-            name="Pratamesh Rane" 
-            photo="/photos/pratamesh.jpeg" 
+            name="Prathamesh Rane" 
+            photo="/photos/prathamesh.jpeg" 
             github="https://github.com/ORION-pax07"
         />
         <BetaTesterCard 
