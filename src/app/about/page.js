@@ -93,7 +93,7 @@ export default function AboutPage() {
           Special Thanks To
         </h2>
         <p className="text-lg text-center text-gray-600 dark:text-gray-400 mb-10 font-poppins">
-          Contributors who helped with development and features
+          Contributors who helped with development
         </p>
       </RevealContainer>
       
