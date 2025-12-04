@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { ThemeProvider } from '../context/ThemeContext';
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import ScrollObserver from '../components/ScrollObserver';
 import ScrollToTop from '../components/ScrollToTop';
 
@@ -61,6 +62,7 @@ export default function RootLayout({ children }) {
           <ScrollToTop />
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
